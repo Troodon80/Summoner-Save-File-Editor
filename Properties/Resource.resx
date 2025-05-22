@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="characterNames" xml:space="preserve">
+    <value />
+  </data>
+  <data name="items" xml:space="preserve">
+    <value>0	Gold	18	Gold	0	FALSE	
+1	Book of Masad	18	Gold	0	FALSE	
+2	Tablet of Masad	18	Gold	0	FALSE	
+3	Tome of Masad	18	Gold	0	FALSE	
+4	Book of Lenele	18	Gold	0	FALSE	
+5	Tablet of Lenele	18	Gold	0	FALSE	
+6	Tome of Lenele	18	Gold	0	FALSE	
+7	Book of Iona	18	Gold	0	FALSE	
+8	Tablet of Iona	18	Gold	0	FALSE	
+9	Tome of Iona	18	Gold	0	FALSE	
+10	Book of Khosani	18	Gold	0	FALSE	
+11	Tablet of Khosani	18	Gold	0	FALSE	
+12	Tome of Khosani	18	Gold	0	FALSE	
+13	Book of Ikaemos	18	Gold	0	FALSE	
+14	Tablet of Ikaemos	18	Gold	0	FALSE	
+15	Tome of Ikaemos	18	Gold	0	FALSE	
+16	Book of Medeva	18	Gold	0	FALSE	
+17	Tablet of Medeva	18	Gold	0	FALSE	
+18	Tome of Medeva	18	Gold	0	FALSE	
+19	Book of Eleh	18	Gold	0	FALSE	
+20	Tablet of Eleh	18	Gold	0	FALSE	
+21	Tome of Eleh	18	Gold	0	FALSE	
+22	Book of Wolong	18	Gold	0	FALSE	
+23	Tablet of Wolong	18	Gold	0	FALSE	
+24	Tome of Wolong	18	Gold	0	FALSE	
+25	Book of Liangshan	18	Gold	0	FALSE	
+26	Tablet of Liangshan	18	Gold	0	FALSE	
+27	Tome of Liangshan	18	Gold	0	FALSE	
+28	Book of Orenia	18	Gold	0	FALSE	
+29	Tablet of Orenia	18	Gold	0	FALSE	
+30	Tome of Orenia	18	Gold	0	FALSE	
+31	Book of Luminar	18	Gold	0	FALSE	
+32	Tablet of Luminar	18	Gold	0	FALSE	
+33	Tome of Luminar	18	Gold	0	FALSE	
+34	Book of Pyrul	18	Gold	0	FALSE	
+35	Tablet of Pyrul	18	Gold	0	FALSE	
+36	Tome of Pyrul	18	Gold	0	FALSE	
+37	Book of Titus	18	Gold	0	FALSE	
+38	Tablet of Titus	18	Gold	0	FALSE	
+39	Tome of Titus	18	Gold	0	FALSE	
+40	Book of Novices	18	Gold	0	FALSE	
+41	Tablet of Adventurers	18	Gold	0	FALSE	
+42	Tome of the Elite	18	Gold	0	FALSE	
+43	Revive Scroll	13	Scroll	1	FALSE	
+44	Tome of Revive	13	Scroll	5	FALSE	
+45	Fire Arrow Rune	13	Scroll	1	FALSE	
+46	Fire Arrow Tract	13	Scroll	5	FALSE	
+47	Fire Arrow Scroll	13	Scroll	1	FALSE	
+48	Fire Arrow Book	13	Scroll	5	FALSE	
+49	Fire Arrow Tablet	13	Scroll	1	FALSE	
+50	Fire Arrow Tome	13	Scroll	5	FALSE	
+51	Icicle Rune	13	Scroll	1	FALSE	
+52	Icicle Tract	13	Scroll	5	FALSE	
+53	Icicle Scroll	13	Scroll	1	FALSE	
+54	Icicle Book	13	Scroll	5	FALSE	
+55	Icicle Tablet	13	Scroll	1	FALSE	
+56	Icicle Tome	13	Scroll	5	FALSE	
+57	Lightning Rune	13	Scroll	1	FALSE	
+58	Lightning Tract	13	Scroll	5	FALSE	
+59	Lightning Scroll	13	Scroll	1	FALSE	
+60	Lightning Book	13	Scroll	5	FALSE	
+61	Lightning Tablet	13	Scroll	1	FALSE	
+62	Lightning Tome	13	Scroll	5	FALSE	
+63	Inferno Scroll	13	Scroll	1	FALSE	
+64	Meteor Scroll	13	Scroll	1	FALSE	
+65	Curse Scroll	13	Scroll	1	FALSE	
+66	Ice Coffin Scroll	13	Scroll	1	FALSE	
+67	Invisibility Scroll	13	Scroll	1	FALSE	
+68	Blizzard Scroll	13	Scroll	1	FALSE	
+69	Recovery Draught	14	Potion	1	FALSE	
+70	Recovery Tonic	14	Potion	1	FALSE	
+71	Elixir of Recovery	14	Potion	1	FALSE	
+72	Healing Draught	14	Potion	1	FALSE	
+73	Health Tonic	14	Potion	1	FALSE	
+74	Healing Elixir	14	Potion	1	FALSE	
+75	Panacea of Life	14	Potion	1	FALSE	
+76	Cleansing Tonic	14	Potion	1	FALSE	
+77	Cleansing Elixir	14	Potion	5	FALSE	
+78	Invisibility Draught	14	Potion	1	FALSE	
+79	Tears of Usaman	14	Potion	3	FALSE	
+80	Drithen's Brew	14	Potion	1	FALSE	
+81	Tristan's Libation	14	Potion	1	FALSE	
+82	Food	18	Miscellaneous	1	FALSE	
+83	Sama's Book	18	Miscellaneous	0	FALSE	
+84	Bacite Tail	18	Miscellaneous	0	FALSE	
+85	Bottle with Eyes	18	Miscellaneous	0	FALSE	
+86	Chunk of Salt	18	Miscellaneous	0	FALSE	
+87	Forged Document	18	Miscellaneous	0	FALSE	
+88	Leather Pouch	18	Miscellaneous	0	FALSE	
+89	Rag Doll	18	Miscellaneous	0	FALSE	
+90	Salamanka Tongue	18	Miscellaneous	0	FALSE	
+91	Ikaemos Swamp Map	18	Miscellaneous	0	FALSE	
+92	Mangosteen	18	Miscellaneous	0	FALSE	
+93	Onyx Carp	18	Miscellaneous	0	FALSE	
+94	Gulan's Knife	18	Miscellaneous	0	FALSE	
+95	Aesik's Sword	18	Miscellaneous	0	FALSE	
+96	Stick of Charcoal	18	Miscellaneous	0	FALSE	
+97	Minhe's Bowl	18	Miscellaneous	0	FALSE	
+98	Anzhi's Box	18	Miscellaneous	0	FALSE	
+99	Tail of the Rokhul	18	Miscellaneous	1	FALSE	
+100	Khosani Scrolls	18	Miscellaneous	0	FALSE	
+101	Azha's Femur	18	Miscellaneous	0	FALSE	
+102	Khosani Sword#Rhukha's Sword	18	Miscellaneous	0	FALSE	
+103	Khosani Helm#Rhukha's Helm	18	Miscellaneous	0	FALSE	
+104	Yon's Amulet	18	Miscellaneous	0	FALSE	
+105	Tome#Nhuvasarim Tome	18	Miscellaneous	0	FALSE	
+106	Parchment#Tome Page 1	18	Miscellaneous	0	FALSE	
+107	Parchment#Tome Page 2	18	Miscellaneous	0	FALSE	
+108	Parchment#Tome Page 3	18	Miscellaneous	0	FALSE	
+109	Parchment#Tome Page 4	18	Miscellaneous	0	FALSE	
+110	Parchment#Tome Page 5	18	Miscellaneous	0	FALSE	
+111	Parchment#Tome Page 6	18	Miscellaneous	0	FALSE	
+112	Parchment#Tome Page 7	18	Miscellaneous	0	FALSE	
+113	Parchment#Tome Page 8	18	Miscellaneous	0	FALSE	
+114	Hunting Horn#Horn of Vadagar	18	Miscellaneous	0	FALSE	
+115	Hunting Horn	18	Miscellaneous	0	FALSE	
+116	Pipe	18	Miscellaneous	0	FALSE	
+117	Fishing Pole	18	Miscellaneous	0	FALSE	
+118	Spyglass	18	Miscellaneous	0	FALSE	
+119	Chess Piece	18	Miscellaneous	0	FALSE	
+120	Perfume	18	Miscellaneous	0	FALSE	
+121	Green Dragon Scale	18	Miscellaneous	0	FALSE	
+122	Red Dragon Scale	18	Miscellaneous	0	FALSE	
+123	Gray Dragon Scale	18	Miscellaneous	0	FALSE	
+124	Blue Dragon Scale	18	Miscellaneous	0	FALSE	
+125	Yichao's Locket	18	Miscellaneous	0	FALSE	
+126	Daoming's Coin	18	Miscellaneous	0	FALSE	
+127	Longyue's Hat	18	Miscellaneous	0	FALSE	
+128	Blank Parchment	18	Miscellaneous	0	FALSE	
+129	Mirror#Dakhanim Mirror	18	Miscellaneous	0	FALSE	
+130	Mirror#Mirror	18	Miscellaneous	0	FALSE	
+131	Mirror	18	Miscellaneous	0	FALSE	
+132	Huk Kinar's Skull	18	Miscellaneous	0	FALSE	
+133	Udakar's Heart	18	Miscellaneous	0	FALSE	
+134	Bacite's Gallbladder	18	Miscellaneous	0	FALSE	
+135	Eraekor Gemstone	18	Miscellaneous	0	FALSE	
+136	Piaobo's Box	18	Miscellaneous	0	FALSE	
+137	Tome of Gahnis	18	Miscellaneous	0	FALSE	
+138	Tree Bark	18	Miscellaneous	0	FALSE	
+139	Durgan's Earring	18	Miscellaneous	0	FALSE	
+140	Stone Rose	18	Miscellaneous	0	FALSE	
+141	Tablet#Khosani Map	18	Miscellaneous	0	FALSE	
+142	Umakil Carving	18	Miscellaneous	0	FALSE	
+143	Dehilos Carving	18	Miscellaneous	0	FALSE	
+144	Muhul Carving	18	Miscellaneous	0	FALSE	
+145	Iomani Necklace	18	Miscellaneous	0	FALSE	
+146	Nahul Scroll	18	Miscellaneous	0	FALSE	
+147	Axe#Axe of Ikus	18	Miscellaneous	0	FALSE	
+148	Berserker Sword	16	Miscellaneous	0	FALSE	
+149	Ring of Talent	15	Miscellaneous	0	FALSE	
+150	Blue Glass Shard	18	Miscellaneous	0	FALSE	
+151	Red Glass Shard	18	Miscellaneous	0	FALSE	
+152	Green Glass Shard	18	Miscellaneous	0	FALSE	
+153	Shard Sword	1	Miscellaneous	0	TRUE	
+154	Head	18	Miscellaneous	0	FALSE	
+155	Left Arm	18	Miscellaneous	0	FALSE	
+156	Right Arm	18	Miscellaneous	0	FALSE	
+157	Left Leg	18	Miscellaneous	0	FALSE	
+158	Right Leg	18	Miscellaneous	0	FALSE	
+159	Jarl's Sword	18	Miscellaneous	0	FALSE	
+160	Zane's Bow	18	Miscellaneous	0	FALSE	
+161	Lute	18	Miscellaneous	0	FALSE	
+162	Torva's Lute	18	Miscellaneous	0	FALSE	
+163	Silk Garments	18	Miscellaneous	0	FALSE	
+164	Signet Ring	18	Miscellaneous	0	FALSE	
+165	Sparrow's Egg	18	Miscellaneous	0	FALSE	
+166	Ghimaadi's Cloak	18	Miscellaneous	0	FALSE	
+167	Bane's Kiss	16	Miscellaneous	0	FALSE	
+168	Nandi's Potion	18	Miscellaneous	4	FALSE	
+169	Vaesura's Necklace	18	Miscellaneous	0	FALSE	
+170	Gargoyle Blood	18	Miscellaneous	0	FALSE	
+171	Stonefire Lanterns	18	Miscellaneous	0	FALSE	
+172	Urath Feather	18	Miscellaneous	0	FALSE	
+173	Seeds of Aahur	18	Miscellaneous	0	FALSE	
+174	Dust of Aahur	18	Miscellaneous	0	FALSE	
+175	Volume 28	18	Miscellaneous	0	FALSE	
+176	Volume 67	18	Miscellaneous	0	FALSE	
+177	Petey's Hat	18	Miscellaneous	0	FALSE	
+178	Peg Leg	18	Miscellaneous	0	FALSE	
+179	Hook Hand	18	Miscellaneous	0	FALSE	
+180	Ring of Darkness	15	Ring	0	FALSE	Joseph
+181	Ring of Light	15	Ring	0	FALSE	Joseph
+182	Ring of Jade	15	Ring	0	FALSE	Joseph
+183	Ring of Water	15	Ring	0	FALSE	Joseph
+184	Ring of Forest	15	Ring	0	FALSE	Joseph
+185	Ring of Fire	15	Ring	0	FALSE	Joseph
+186	Ring of Stone	15	Ring	0	FALSE	Joseph
+187	Ring of Four Winds	15	Ring	0	FALSE	Joseph
+188	Ring of Proficiency	15	Ring	0	FALSE	
+189	Ring of Expertise	15	Ring	0	FALSE	
+190	Ring of Mastery	15	Ring	0	FALSE	
+191	Ring of Health	15	Ring	0	FALSE	
+192	Ring of Recovery	15	Ring	0	FALSE	
+193	Ring of Might	15	Ring	0	FALSE	
+194	Ring of Puissance	15	Ring	0	FALSE	
+195	Ring of Swiftness	15	Ring	0	FALSE	
+196	Ring of Speed	15	Ring	0	FALSE	
+197	Haste Ring	15	Ring	0	FALSE	
+198	Pyros Ring	15	Ring	0	FALSE	
+199	Frigidis Ring	15	Ring	0	FALSE	
+200	Ring of Grounding	15	Ring	0	FALSE	
+201	Anti-Magus Ring	15	Ring	0	FALSE	
+202	Luminos Ring	15	Ring	0	FALSE	
+203	Ring of Invisibility	15	Ring	0	FALSE	
+204	Ring of the Night	15	Ring	0	FALSE	
+205	Ring of Blessings	15	Ring	0	FALSE	
+206	Ring of Electrus	15	Ring	0	FALSE	
+207	Ring of Dexterity	15	Ring	0	FALSE	
+208	Ring of Protection	15	Ring	0	FALSE	
+209	Preservation Ring	15	Ring	0	FALSE	
+210	Ring of Warding	15	Ring	0	FALSE	
+211	Ring of Shadows	15	Ring	0	FALSE	
+212	Onslaught Ring	15	Ring	0	FALSE	
+213	Ring of Aggression	15	Ring	0	FALSE	
+214	Pyrotechnic Ring	15	Ring	0	FALSE	
+215	Ring of Skill	15	Ring	0	FALSE	
+216	Ring of Storms	15	Ring	0	FALSE	
+217	Ring of Power	15	Ring	0	FALSE	
+218	Ring of Repulsion	15	Ring	0	FALSE	
+219	Ring of Control	15	Ring	0	FALSE	
+220	Ring of Slaying	15	Ring	0	FALSE	
+221	Berserker Ring	1	Ring	0	FALSE	
+222	Ring of the Gods	15	Ring	0	FALSE	
+223	Ring of Thieves	15	Ring	0	FALSE	
+224	Archer's Ring	15	Ring	0	FALSE	
+225	Swordsman's Ring	15	Ring	0	FALSE	
+226	Ring of Flames	15	Ring	0	FALSE	
+227	Ring of Ice	15	Ring	0	FALSE	
+228	Torque of Time	16	Necklace	0	FALSE	
+229	Aeros Medallion	16	Necklace	0	FALSE	
+230	Blessed Necklace	16	Necklace	0	FALSE	
+231	Battle Torque	2	Necklace	0	FALSE	
+232	Hellfire Necklace	16	Necklace	0	FALSE	
+233	Summoner's Torque	16	Necklace	0	FALSE	
+234	Necklace of Stealth	16	Necklace	0	FALSE	
+235	Torque of Haste	16	Necklace	0	FALSE	
+236	Medallion of Vigor	16	Necklace	0	FALSE	
+237	Thermal Medallion	16	Necklace	0	FALSE	
+238	Berserker's Torque	16	Necklace	0	FALSE	
+239	Collar of Health	16	Necklace	0	FALSE	
+240	Shadow Medallion	16	Necklace	0	FALSE	
+241	Anti-Magus Torque	16	Necklace	0	FALSE	
+242	Elemental Necklace	16	Necklace	0	FALSE	
+243	Medallion of Night	16	Necklace	0	FALSE	
+244	Collar of Precision	16	Necklace	0	FALSE	
+245	Torque of Bashing	16	Necklace	0	FALSE	
+246	Farseeing Necklace	16	Necklace	0	FALSE	
+247	Collar of Dexterity	16	Necklace	0	FALSE	
+248	Torque of Celerity	16	Necklace	0	FALSE	
+249	Bacite Medallion	16	Necklace	0	FALSE	
+250	Necklace of Defense	16	Necklace	0	FALSE	
+251	Archer's Medallion	16	Necklace	0	FALSE	
+252	Barbarian's Torque	1	Necklace	0	FALSE	
+253	Fighter's Torque	16	Necklace	0	FALSE	
+254	Thief's Torque	16	Necklace	0	FALSE	
+255	Warding Necklace	16	Necklace	0	FALSE	
+256	Necklace of Anshu	16	Necklace	0	FALSE	
+257	Medallion of Power	16	Necklace	0	FALSE	
+258	Swordsman's Torque	16	Necklace	0	FALSE	
+259	Tancred's Key	18	Key	0	FALSE	
+260	Yago's Key	18	Key	0	FALSE	
+261	Sewer Grate Key	18	Key	0	FALSE	
+262	Bookcase Key	18	Key	0	FALSE	
+263	Blade of Tarun	18	Key	0	FALSE	
+264	Auric Dagger	18	Key	0	FALSE	
+265	Argent Dagger	18	Key	0	FALSE	
+266	Brazen Dagger	18	Key	0	FALSE	
+267	Cupric Dagger	18	Key	0	FALSE	
+268	Ikaemos Armory Key	18	Key	0	FALSE	
+269	Ikaemos Master Key	18	Key	0	FALSE	
+270	Slave Pit Key	18	Key	0	FALSE	
+271	Tomb Key	18	Key	0	FALSE	
+272	Garnet	17	Gem	0	FALSE	
+273	Citrine	17	Gem	0	FALSE	
+274	Tourmaline	17	Gem	0	FALSE	
+275	Iolite	17	Gem	0	FALSE	
+276	Amethyst	17	Gem	0	FALSE	
+277	Leather Boots	8	Boots	0	FALSE	
+278	High Leather Boots	8	Boots	0	FALSE	
+279	Heavy Boots	8	Boots	0	FALSE	Joseph Flece Jekhar
+280	Reinforced Boots	8	Boots	0	FALSE	Joseph Flece Jekhar
+281	Sabatons	8	Boots	0	FALSE	Joseph Jekhar
+282	Dragon Boots	8	Boots	0	FALSE	Rosalind
+283	Mellifuous Scoh	8	Boots	0	FALSE	Rosalind
+284	Steel Heeled Boots	8	Boots	0	FALSE	Flece
+285	Servant's Boots	8	Boots	0	FALSE	Flece
+286	Studded Boots	8	Boots	0	FALSE	
+287	Tough Boots	8	Boots	0	FALSE	Jekhar
+288	Felinus Feet	8	Boots	0	FALSE	Flece
+289	Springsteel Boots	8	Boots	0	FALSE	Joseph Flece Jekhar
+290	Boots of Stealth	8	Boots	0	FALSE	Flece
+291	Battle Boots	16	Boots	0	FALSE	Joseph
+292	Magus Boots	8	Boots	0	FALSE	Rosalind
+293	Nobleman's Sabaton	8	Boots	0	FALSE	Joseph
+294	Summoner Sabaton	8	Boots	0	FALSE	Joseph
+295	Warrior's Sabaton	8	Boots	0	FALSE	Jekhar
+296	Hero's Sabaton	8	Boots	0	FALSE	Jekhar
+297	Iron Gauntlets	9	Gauntlets	0	FALSE	
+298	Cloth Gloves	9	Gauntlets	0	FALSE	
+299	Silk Gloves	9	Gauntlets	0	FALSE	
+300	Leather Gloves	9	Gauntlets	0	FALSE	
+301	Leather Gauntlets	9	Gauntlets	0	FALSE	Joseph Flece Jekhar
+302	Chainmail Gauntlets	9	Gauntlets	0	FALSE	Joseph Flece Jekhar
+303	Bough-Kote	9	Gauntlets	0	FALSE	Joseph Flece Jekhar
+304	Plate Gauntlets	9	Gauntlets	0	FALSE	Joseph Jekhar
+305	Shadow Gauntlets	9	Gauntlets	0	FALSE	Flece
+306	Midnight Gauntlets	9	Gauntlets	0	FALSE	Flece
+307	Horseman's Gauntlets	9	Gauntlets	0	FALSE	Jekhar
+308	Gloves of Pilfering	9	Gauntlets	0	FALSE	Flece
+309	Nobleman's Gauntlets	9	Gauntlets	0	FALSE	Joseph
+310	Summoner Gauntlets	9	Gauntlets	0	FALSE	Joseph
+311	Warrior's Gauntlets	9	Gauntlets	0	FALSE	Jekhar
+312	Hero's Gauntlets	9	Gauntlets	0	FALSE	Jekhar
+313	The Black Hand	9	Gauntlets	0	FALSE	Flece
+314	The Dragon's want	9	Gauntlets	0	FALSE	Rosalind
+315	Mellifluous Mite	9	Gauntlets	0	FALSE	Rosalind
+316	leather armguards	9	Gauntlets	0	FALSE	Flece
+317	Servant's Gloves	9	Gauntlets	0	FALSE	Flece
+318	Springsteel Gloves	9	Gauntlets	0	FALSE	Joseph Flece Jekhar
+319	Thief's Gauntlets	9	Gauntlets	0	FALSE	Flece
+320	Dragon Gauntlets	9	Gauntlets	0	FALSE	Rosalind
+321	Reaver Gauntlets	9	Gauntlets	0	FALSE	Jekhar
+322	Magus Gauntlets	9	Gauntlets	0	FALSE	Rosalind
+323	Steel Gauntlets	9	Gauntlets	0	FALSE	Joseph Flece Jekhar
+324	Studded Leggings	10	Leggings	0	FALSE	Flece
+325	Servant's Leggings	10	Leggings	0	FALSE	Flece
+326	Blue Pants	10	Leggings	0	FALSE	Joseph
+327	Cloth Pants	10	Leggings	0	FALSE	
+328	Studded Pants	10	Leggings	0	FALSE	
+329	Leather Breeches	10	Leggings	0	FALSE	
+330	Silk Breeches	10	Leggings	0	FALSE	Flece Rosalind
+331	Felinus Pantaloons	10	Leggings	0	FALSE	Flece
+332	Chainmail Leggings	10	Leggings	0	FALSE	Joseph Flece Jekhar
+333	Prowler Leggings	10	Leggings	0	FALSE	Flece
+334	Hero's Leggings	10	Leggings	0	FALSE	Jekhar
+335	Summoner Leggings	10	Leggings	0	FALSE	Joseph
+336	Magus Leggings	10	Leggings	0	FALSE	Rosalind
+337	Cloth Shirt	11	Torso	0	FALSE	Flece
+338	Servant's Blouse	11	Torso	0	FALSE	Flece
+339	Leather Armor	11	Torso	0	FALSE	Jekhar
+340	Quilted Robe	11	Torso	0	FALSE	Rosalind
+341	Quilted Holy Robe	11	Torso	0	FALSE	Rosalind
+342	Studded Leather	11	Torso	0	FALSE	Joseph Flece Jekhar
+343	Tunic	11	Torso	0	FALSE	Joseph
+344	Padded Surcoat	11	Torso	0	FALSE	Joseph Flece Jekhar
+345	Blessed Surcoat	11	Torso	0	FALSE	Joseph Flece Jekhar
+346	Leather Jerkin	11	Torso	0	FALSE	Joseph Flece Jekhar
+347	Haramaki	11	Torso	0	FALSE	Joseph Flece Jekhar
+348	Shadow Haramaki	11	Torso	0	FALSE	Flece
+349	Boiled Leather	11	Torso	0	TRUE	Joseph Flece Jekhar
+350	Springsteel Leather	11	Torso	0	TRUE	Flece
+351	Steelshod Leather	11	Torso	0	TRUE	Joseph
+352	Chainmail Tunic	11	Torso	0	FALSE	Joseph Flece Jekhar
+353	Hero's Chainmail	11	Torso	0	FALSE	Jekhar
+354	Bougu-Dou	11	Torso	0	TRUE	Joseph Flece Jekhar
+355	Adamant Bougu-Dou	11	Torso	0	TRUE	Jekhar
+356	Steelcore Bougu-Dou	11	Torso	0	TRUE	Joseph
+357	Brigandine Chest	11	Torso	0	TRUE	Joseph Jekhar
+358	Breastplate	11	Torso	0	TRUE	Joseph Flece Jekhar
+359	Shadow Platemail	11	Torso	0	TRUE	Flece
+360	Midnight Platemail	11	Torso	0	TRUE	Flece
+361	Horseman's Platemail	11	Torso	0	TRUE	Jekhar
+362	Platemail	11	Torso	0	TRUE	Joseph Jekhar
+363	Nobleman's Platemail	11	Torso	0	TRUE	Joseph
+364	Summoner Platemail	11	Torso	0	TRUE	Joseph
+365	Warrior's Platemail	11	Torso	0	TRUE	Jekhar
+366	Hero's Platemail	11	Torso	0	TRUE	Jekhar
+367	Singed Robe	11	Torso	0	FALSE	Rosalind
+368	Arcticus Mantellum	11	Torso	0	FALSE	Rosalind
+369	Draco Robe	11	Torso	0	FALSE	Rosalind
+370	Burnt Robe	11	Torso	0	FALSE	Rosalind
+371	Mellifuous Wrappings	11	Torso	0	FALSE	Rosalind
+372	Bone Jerkin	11	Torso	0	FALSE	Rosalind
+373	Robe of Restoration	11	Torso	0	FALSE	Rosalind
+374	Summoner Chainmail	11	Torso	0	FALSE	Joseph
+375	SNKT Shield	12	Shield	0	FALSE	
+376	CARA Shield	12	Shield	0	FALSE	
+377	Kite Shield	12	Shield	0	FALSE	
+378	Heater Shield	12	Shield	0	FALSE	
+379	Decaying Bulwark	12	Shield	0	FALSE	
+380	Round Shield	12	Shield	0	FALSE	
+381	Scutum Shield	12	Shield	0	FALSE	
+382	Buckler	12	Shield	0	FALSE	
+383	Blinding Buckler	12	Shield	10	FALSE	
+384	Defender Heater	12	Shield	0	FALSE	
+385	Guardian Heater	12	Shield	0	FALSE	
+386	Defender Kite Shield	12	Shield	0	FALSE	
+387	Guardian Kite Shield	12	Shield	0	FALSE	
+388	Defender Scutum	12	Shield	0	FALSE	
+389	Guardian Scutum	12	Shield	0	FALSE	
+390	Battleaxe	15	Axe	0	TRUE	
+391	War Axe	2	Axe	0	FALSE	
+392	Medevan War Axe	2	Axe	0	FALSE	
+393	Woodsman's Axe	2	Axe	0	FALSE	
+394	Medevan Hachet	2	Axe	0	FALSE	
+395	Medevan Battleaxe	2	Axe	0	TRUE	
+396	Heavy War Axe	2	Axe	0	TRUE	
+397	Spineslicer	2	Axe	0	TRUE	
+398	Foecleaver	2	Axe	0	TRUE	
+399	Heavy Battleaxe	2	Axe	0	TRUE	
+400	Kothudin Lance	2	Axe	0	TRUE	
+401	TigerAxe	2	Axe	0	TRUE	
+402	LaharahAxe	2	Axe	0	TRUE	
+403	Sledgehammer	3	Blunt	0	TRUE	
+404	Club	3	Blunt	0	FALSE	
+405	Frozen Club	3	Blunt	10	FALSE	
+406	War Club	3	Blunt	0	FALSE	
+407	Ghork Smashor	3	Blunt	0	TRUE	
+408	Impaler	3	Blunt	0	FALSE	
+409	Warhammer	3	Blunt	0	TRUE	
+410	Debasser	3	Blunt	0	FALSE	
+411	Spiked Mace	3	Blunt	0	TRUE	
+412	Flanged Mace	3	Blunt	0	TRUE	
+413	Bone Bow	4	Bow	0	TRUE	
+414	Iron Bow	4	Bow	0	TRUE	
+415	Phoenix Bow	4	Bow	0	TRUE	
+416	Reinforced Bow	4	Bow	0	TRUE	
+417	Yew Bow	4	Bow	0	TRUE	
+418	Short Bow	4	Bow	0	TRUE	
+419	Standoff Bow	4	Bow	0	TRUE	
+420	Crossbow	4	Bow	0	TRUE	
+421	Siege Bow	4	Bow	0	TRUE	
+422	Assassin's Crossbow	4	Bow	0	TRUE	
+423	Long Bow	4	Bow	0	TRUE	
+424	Reflex Bow	4	Bow	0	TRUE	
+425	Bow of Piercing	4	Bow	0	TRUE	
+426	Scythian Bow	4	Bow	0	TRUE	
+427	Bow of Lynnai	4	Bow	0	TRUE	
+428	Heavy Crossbow	4	Bow	0	TRUE	
+429	Farslayer Bow	4	Bow	0	TRUE	
+430	Bacite Staff	5	Staff	0	TRUE	
+431	TigerSpear	5	Staff	0	TRUE	
+432	Iona Staff	5	Staff	0	TRUE	
+433	OG Staff	5	Staff	0	TRUE	
+434	Oni Staff	5	Staff	0	TRUE	
+435	Priest Staff	5	Staff	0	TRUE	
+436	Nagitana	5	Staff	0	TRUE	
+437	Quarterstaff	5	Staff	0	TRUE	
+438	Hardwood Staff	5	Staff	0	TRUE	
+439	Ironwood Staff	5	Staff	0	TRUE	
+440	Fellstaff	5	Staff	0	TRUE	
+441	Thunder Nagitana	5	Staff	0	TRUE	
+442	Staff	5	Staff	0	TRUE	
+443	Yago Cane	5	Staff	0	TRUE	
+444	Halberd	6	Polearm	0	TRUE	
+445	Yari	6	Polearm	0	TRUE	
+446	Naginata	6	Polearm	0	TRUE	
+447	Stone Lance	6	Polearm	0	TRUE	
+448	Mino Sickle	6	Polearm	0	TRUE	
+449	Pole Axe	6	Polearm	0	TRUE	
+450	Sabre Halberd	6	Polearm	0	TRUE	
+451	BKNT Sword	1	Sword	0	TRUE	
+452	Bone Sword	1	Sword	0	FALSE	
+453	Falchion	7	Sword	0	FALSE	
+454	Precise Falchion	7	Sword	0	FALSE	
+455	Fiery Falchion	7	Sword	0	FALSE	
+456	Sabre	7	Sword	0	FALSE	
+457	Fangsickle	1	Sword	0	FALSE	
+458	FBKT Sword	1	Sword	0	TRUE	
+459	Fine Bladed Katana	1	Sword	0	TRUE	
+460	IKPK Sword	1	Sword	0	FALSE	
+461	Katana	1	Sword	0	TRUE	
+462	Logaros Longsword	1	Sword	0	FALSE	
+463	Long Sword	1	Sword	0	FALSE	
+464	Wakasashi	7	Sword	0	FALSE	
+465	Short Sword	1	Sword	0	FALSE	
+466	Sornehan Dagger	7	Sword	0	FALSE	
+467	Sword of Spirits	1	Sword	0	FALSE	
+468	Worn Katana	1	Sword	0	TRUE	
+469	Razor Shortsword	1	Sword	0	FALSE	
+470	Ionian Bone Cleaver	1	Sword	0	FALSE	
+471	Kishin Impaler	7	Sword	0	FALSE	
+472	Orenian Saber	7	Sword	0	FALSE	
+473	Well-Honed Katana	1	Sword	0	FALSE	
+474	Razor Katana	1	Sword	0	FALSE	
+475	Eversharp Katana	1	Sword	0	TRUE	
+476	Vengeful Katana	1	Sword	0	TRUE	
+477	Reaver Katana	1	Sword	0	TRUE	
+478	Deadly Katana	1	Sword	0	TRUE	
+479	100-Fold Katana	1	Sword	0	TRUE	
+480	Decapitator	1	Sword	0	FALSE	
+481	Devastator	1	Sword	0	TRUE	
+482	Sword of Maiming	1	Sword	0	TRUE	
+483	Rending Shortsword	7	Sword	0	FALSE	
+484	Fine Katana	1	Sword	0	TRUE	
+485	Katana of Skill	1	Sword	0	TRUE	
+486	GHRD Scythe	1	Sword	0	FALSE	
+487	Claymore	1	Sword	0	TRUE	Jekhar
+488	Drithen Sword	1	Sword	0	TRUE	Joseph
+489	Sword of Summoners	1	Sword	0	TRUE	Joseph
+490	Winterlong	1	Sword	0	TRUE	
+491	Dreadblade	1	Sword	0	TRUE	Joseph
+492	Nodachi	1	Sword	0	TRUE	
+493	Breaching Claymore	1	Sword	0	TRUE	Jekhar
+494	Bastard Sword	8	Sword	0	TRUE	
+495	prop-sword-brd1	1	Sword	0	TRUE	
+496	prop-sword-brd10	1	Sword	0	TRUE	
+497	prop-sword-brd2	1	Sword	0	TRUE	
+498	prop-sword-brd3	1	Sword	0	TRUE	
+499	prop-sword-brd5	1	Sword	0	TRUE	
+500	prop-sword-brd6	1	Sword	0	TRUE	
+501	prop-sword-brd7	1	Sword	0	TRUE	
+502	prop-sword-brd9	1	Sword	0	TRUE	
+503	Pijian Claw Left	1	NPC Weapon	0	FALSE	
+504	Pijian Claw Right	1	NPC Weapon	0	FALSE	
+505	CSAM Katana	1	NPC Weapon	0	FALSE	
+506	CSAM Short Katana	1	NPC Weapon	0	FALSE	
+507	Sharp Dagger	7	Dagger	0	FALSE	
+508	Katar	7	Dagger	0	FALSE	Joseph Flece 
+509	Spinesplitter	7	Dagger	0	FALSE	Flece
+510	Gutting Dirk	7	Dagger	0	FALSE	
+511	Dirk	7	Dagger	0	FALSE	
+512	Parrying Dagger	7	Dagger	0	FALSE	
+513	Dagger	7	Dagger	0	FALSE	Flece
+514	High Quality Knife	7	Dagger	0	FALSE	
+515	Icy Dagger	7	Dagger	0	FALSE	
+516	Broom	19	Prop	0	FALSE	
+517	MBoy Axe	19	Prop	0	FALSE	
+518	Spoon	19	Prop	0	FALSE	
+519	Backpack	18	Container	0	FALSE	
+520	Leather Bag	18	Container	0	FALSE	
+</value>
+  </data>
+</root>
