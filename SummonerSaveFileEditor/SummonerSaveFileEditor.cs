@@ -683,6 +683,8 @@ namespace SummonerSaveFileEditor
                 UpdateCharacterTabsState();
 
                 DisplayThumbnailImage();
+
+                SettingsManager.SaveLastFolder(Path.GetDirectoryName(dialog.FileName));
             }
         }
 
@@ -780,6 +782,7 @@ namespace SummonerSaveFileEditor
                     SaveFileService.WriteContSection(writer, _saveGameViewModel);
                 });
 
+                SettingsManager.SaveLastFolder(Path.GetDirectoryName(dialog.FileName));
                 MessageBox.Show("Save completed successfully.", "Save File", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

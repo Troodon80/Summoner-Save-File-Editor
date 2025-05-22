@@ -169,7 +169,7 @@ namespace SummonerSaveFileEditor.Services
                 return savedPath;
             }
 
-            // If not, check common locations
+            // If not, check common locations. Only checking Steam location, and I am not spending all day on it.
             string[] possiblePaths = {
                 @"C:\Program Files (x86)\Steam\steamapps\common\Summoner",
                 @"D:\Steam\steamapps\common\Summoner",
