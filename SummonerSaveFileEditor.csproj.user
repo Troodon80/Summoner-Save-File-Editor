@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>D:\Users\Administrator\source\repos\Summoner\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="SummonerSaveFileEditor\SaveGameBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SummonerSaveFileEditor\SummonerSaveFileEditor.cs">
       <SubType>Form</SubType>
     </Compile>

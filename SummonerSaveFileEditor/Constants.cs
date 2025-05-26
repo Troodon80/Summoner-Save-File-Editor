@@ -26,6 +26,10 @@ namespace SummonerSaveFileEditor
         public const int CAMERA_START = 0x00037EB3;
         public const int CONT_START = 0x00037EDB;
 
+        // This is the start of the unlabelled section that contains quest related data, and maybe
+        // other things. We'll read from this offset and keep it intact as well.
+        public const int POST_CONT_START = 0x0003978F;
+
         public const uint CHAR_LENGTH = 384u;
         public const uint OTHER_LENGTH = 376u;
 

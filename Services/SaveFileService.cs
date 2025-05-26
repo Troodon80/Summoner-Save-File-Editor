@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Security.Policy;
 using System.Text;
 
@@ -480,29 +481,112 @@ namespace SummonerSaveFileEditor.Services
             writer.Write(block.CameraMode);
         }
 
-        public static void ReadContSection(BinaryReader reader, SaveGameViewModel viewModel)
+        public static void ReadContainerSection(BinaryReader reader, SaveGameViewModel viewModel)
         {
-            reader.BaseStream.Seek(Constants.CONT_START, SeekOrigin.Begin);
+            // Position at CONT section
+            reader.BaseStream.Position = Constants.CONT_START;
 
-            // Now we should be at the CONT section
-            string contHeader = Encoding.ASCII.GetString(reader.ReadBytes(4));
-            if (contHeader != "CONT") throw new InvalidDataException("Invalid CONT section header");
+            // Read section header
+            string signature = new string(reader.ReadChars(4));
+            if (signature != "CONT")
+                throw new FormatException($"Invalid CONT section header at offset 0x{Constants.CONT_START:X8}. Found '{signature}' instead of 'CONT'");
 
-            // Read the entire remaining data, since I don't know the size of the section
-            // I'll just read to the end of the stream
-            long startPos = reader.BaseStream.Position;
-            long remainingBytes = reader.BaseStream.Length - startPos;
-            viewModel.ContSectionData = reader.ReadBytes((int)remainingBytes);
+            // Read container count
+            int containerCount = reader.ReadInt32();
+            var containers = new List<Container>(containerCount);
+
+            // Parse each container
+            for (int i = 0; i < containerCount; i++)
+            {
+                var container = new Container
+                {
+                    Position = new Vector3(
+                        reader.ReadSingle(),    // X
+                        reader.ReadSingle(),    // Y
+                        reader.ReadSingle()     // Z
+                    ),
+                    ContentCount = reader.ReadInt32(),
+                    Flags = reader.ReadByte()
+                };
+
+                int contentCount = container.ContentCount;
+                // Read content count and items
+                for (int j = 0; j < contentCount; j++)
+                {
+                    var item = new ContainerItem
+                    {
+                        ReferenceId = reader.ReadInt32(),
+                        Quantity = reader.ReadInt16(),
+                        Charges = reader.ReadInt16()
+                    };
+                    container.Contents.Add(item);
+                }
+
+                containers.Add(container);
+            }
+
+            viewModel.Containers = containers;
         }
 
-        public static void WriteContSection(BinaryWriter writer, SaveGameViewModel viewModel)
+        /// <summary>
+        /// Writes container data to the save file.
+        /// </summary>
+        public static void WriteContainerSection(BinaryWriter writer, SaveGameViewModel viewModel)
         {
-            writer.BaseStream.Seek(Constants.CONT_START, SeekOrigin.Begin);
-            writer.Write(Encoding.ASCII.GetBytes("CONT"));
+            // Position at CONT section
+            writer.BaseStream.Position = Constants.CONT_START;
 
-            if (viewModel.ContSectionData != null)
+            // Write section header
+            writer.Write(new char[] { 'C', 'O', 'N', 'T' });
+
+            // Write container count
+            writer.Write(viewModel.Containers.Count);
+
+            // Write each container
+            foreach (var container in viewModel.Containers)
             {
-                writer.Write(viewModel.ContSectionData);
+                // Write position
+                writer.Write(container.Position.X);
+                writer.Write(container.Position.Y);
+                writer.Write(container.Position.Z);
+
+                // Write content count
+                writer.Write(container.Contents.Count);
+
+                // Write flags
+                writer.Write(container.Flags);
+
+                // Write each item
+                foreach (var item in container.Contents)
+                {
+                    writer.Write(item.ReferenceId);
+                    writer.Write(item.Quantity);
+                    writer.Write(item.Charges);
+                }
+            }
+        }
+
+        public static void ReadPostContainerData(BinaryReader reader, SaveGameViewModel viewModel)
+        {
+            // Position at POST_CONT_START section
+            reader.BaseStream.Seek(Constants.POST_CONT_START, SeekOrigin.Begin);
+
+            // Calculate remaining bytes until end of file
+            long remainingBytes = reader.BaseStream.Length - reader.BaseStream.Position;
+
+            // Read all remaining data to the end of the file
+            viewModel.RemainingData = reader.ReadBytes((int)remainingBytes);
+        }
+
+        public static void WritePostContainerData(BinaryWriter writer, SaveGameViewModel viewModel)
+        {
+            // Position at POST_CONT_START section
+            writer.BaseStream.Seek(Constants.POST_CONT_START, SeekOrigin.Begin);
+
+            // Write the data if it exists
+            if (viewModel.RemainingData != null && viewModel.RemainingData.Length > 0)
+            {
+                writer.Write(viewModel.RemainingData);
             }
         }
 

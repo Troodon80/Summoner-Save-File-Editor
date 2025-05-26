@@ -326,6 +326,38 @@ namespace SummonerSaveFileEditor
             lblTime = new Label();
             numTime = new NumericUpDown();
             tabMain = new TabControl();
+            tabPageContainer = new TabPage();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btnRemoveContainer = new Button();
+            btnAddContainer = new Button();
+            btnToggleContainerLock = new Button();
+            numContainerPosZ = new NumericUpDown();
+            label22 = new Label();
+            numContainerPosY = new NumericUpDown();
+            label21 = new Label();
+            numContainerPosX = new NumericUpDown();
+            label20 = new Label();
+            btnModifyContainer = new Button();
+            lvContainerGameItems = new ListView();
+            columnHeader21 = new ColumnHeader();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            btnAddToContainer = new Button();
+            btnRemoveFromContainer = new Button();
+            btnApplyToContainerItems = new Button();
+            numContainerItemQuantity = new NumericUpDown();
+            numContainerItemCharges = new NumericUpDown();
+            label23 = new Label();
+            label24 = new Label();
+            lblContainers = new Label();
+            lblContainerContent = new Label();
+            lvContainers = new ListView();
+            columnHeader6 = new ColumnHeader();
+            columnHeader20 = new ColumnHeader();
+            lvContainerContent = new ListView();
+            columnHeader7 = new ColumnHeader();
+            columnHeader18 = new ColumnHeader();
+            columnHeader19 = new ColumnHeader();
             fileToolStripMenuItem = new ToolStripMenuItem();
             openFileToolStripMenuItem = new ToolStripMenuItem();
             applyChangesToolStripMenuItem = new ToolStripMenuItem();
@@ -413,6 +445,15 @@ namespace SummonerSaveFileEditor
             ((System.ComponentModel.ISupportInitialize)imgPreview).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numTime).BeginInit();
             tabMain.SuspendLayout();
+            tabPageContainer.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numContainerPosZ).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numContainerPosY).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numContainerPosX).BeginInit();
+            tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numContainerItemQuantity).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numContainerItemCharges).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -509,11 +550,11 @@ namespace SummonerSaveFileEditor
             // tabPageOther
             // 
             tabPageOther.Controls.Add(tableLayoutPanel5);
-            tabPageOther.Location = new Point(4, 30);
+            tabPageOther.Location = new Point(4, 24);
             tabPageOther.Margin = new Padding(4, 3, 4, 3);
             tabPageOther.Name = "tabPageOther";
             tabPageOther.Padding = new Padding(4, 3, 4, 3);
-            tabPageOther.Size = new Size(973, 456);
+            tabPageOther.Size = new Size(973, 507);
             tabPageOther.TabIndex = 4;
             tabPageOther.Text = "Other";
             tabPageOther.UseVisualStyleBackColor = true;
@@ -521,8 +562,8 @@ namespace SummonerSaveFileEditor
             // tableLayoutPanel5
             // 
             tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 28.2901554F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 71.70985F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.9067364F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.09326F));
             tableLayoutPanel5.Controls.Add(tblCreatureEdit, 0, 0);
             tableLayoutPanel5.Controls.Add(lvCreatureList, 1, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
@@ -531,7 +572,7 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Size = new Size(965, 450);
+            tableLayoutPanel5.Size = new Size(965, 501);
             tableLayoutPanel5.TabIndex = 0;
             // 
             // tblCreatureEdit
@@ -561,14 +602,14 @@ namespace SummonerSaveFileEditor
             tblCreatureEdit.Margin = new Padding(0);
             tblCreatureEdit.Name = "tblCreatureEdit";
             tblCreatureEdit.RowCount = 7;
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblCreatureEdit.Size = new Size(273, 450);
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblCreatureEdit.Size = new Size(250, 501);
             tblCreatureEdit.TabIndex = 25;
             // 
             // LabelOtherLevel
@@ -578,7 +619,7 @@ namespace SummonerSaveFileEditor
             LabelOtherLevel.Location = new Point(4, 0);
             LabelOtherLevel.Margin = new Padding(4, 0, 4, 0);
             LabelOtherLevel.Name = "LabelOtherLevel";
-            LabelOtherLevel.Size = new Size(90, 36);
+            LabelOtherLevel.Size = new Size(69, 29);
             LabelOtherLevel.TabIndex = 0;
             LabelOtherLevel.Text = "Level:";
             LabelOtherLevel.TextAlign = ContentAlignment.MiddleLeft;
@@ -586,12 +627,12 @@ namespace SummonerSaveFileEditor
             // numCreatureLevel
             // 
             numCreatureLevel.Dock = DockStyle.Fill;
-            numCreatureLevel.Location = new Point(102, 3);
+            numCreatureLevel.Location = new Point(81, 3);
             numCreatureLevel.Margin = new Padding(4, 3, 4, 3);
             numCreatureLevel.Maximum = new decimal(new int[] { 16752, 0, 0, 0 });
             numCreatureLevel.Minimum = new decimal(new int[] { 1, 0, 0, int.MinValue });
             numCreatureLevel.Name = "numCreatureLevel";
-            numCreatureLevel.Size = new Size(107, 29);
+            numCreatureLevel.Size = new Size(107, 23);
             numCreatureLevel.TabIndex = 1;
             numCreatureLevel.Value = new decimal(new int[] { 1, 0, 0, 0 });
             numCreatureLevel.ValueChanged += CreaturePropertyChanged;
@@ -599,10 +640,10 @@ namespace SummonerSaveFileEditor
             // btnMaxOtherLevel
             // 
             btnMaxOtherLevel.Dock = DockStyle.Fill;
-            btnMaxOtherLevel.Location = new Point(217, 3);
+            btnMaxOtherLevel.Location = new Point(196, 3);
             btnMaxOtherLevel.Margin = new Padding(4, 3, 4, 3);
             btnMaxOtherLevel.Name = "btnMaxOtherLevel";
-            btnMaxOtherLevel.Size = new Size(52, 30);
+            btnMaxOtherLevel.Size = new Size(52, 23);
             btnMaxOtherLevel.TabIndex = 16;
             btnMaxOtherLevel.Text = "Max";
             btnMaxOtherLevel.UseVisualStyleBackColor = true;
@@ -611,31 +652,31 @@ namespace SummonerSaveFileEditor
             // 
             LabelOtherMaxHP.AutoSize = true;
             LabelOtherMaxHP.Dock = DockStyle.Fill;
-            LabelOtherMaxHP.Location = new Point(4, 36);
+            LabelOtherMaxHP.Location = new Point(4, 29);
             LabelOtherMaxHP.Margin = new Padding(4, 0, 4, 0);
             LabelOtherMaxHP.Name = "LabelOtherMaxHP";
-            LabelOtherMaxHP.Size = new Size(90, 36);
+            LabelOtherMaxHP.Size = new Size(69, 29);
             LabelOtherMaxHP.TabIndex = 17;
             LabelOtherMaxHP.Text = "Base HP:";
             LabelOtherMaxHP.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // numCreatureBaseHP
             // 
-            numCreatureBaseHP.Location = new Point(102, 39);
+            numCreatureBaseHP.Location = new Point(81, 32);
             numCreatureBaseHP.Margin = new Padding(4, 3, 4, 3);
             numCreatureBaseHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numCreatureBaseHP.Name = "numCreatureBaseHP";
-            numCreatureBaseHP.Size = new Size(107, 29);
+            numCreatureBaseHP.Size = new Size(107, 23);
             numCreatureBaseHP.TabIndex = 18;
             numCreatureBaseHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             numCreatureBaseHP.ValueChanged += CreaturePropertyChanged;
             // 
             // btnMaxOtherBaseHP
             // 
-            btnMaxOtherBaseHP.Location = new Point(217, 39);
+            btnMaxOtherBaseHP.Location = new Point(196, 32);
             btnMaxOtherBaseHP.Margin = new Padding(4, 3, 4, 3);
             btnMaxOtherBaseHP.Name = "btnMaxOtherBaseHP";
-            btnMaxOtherBaseHP.Size = new Size(52, 30);
+            btnMaxOtherBaseHP.Size = new Size(52, 23);
             btnMaxOtherBaseHP.TabIndex = 19;
             btnMaxOtherBaseHP.Text = "Max";
             btnMaxOtherBaseHP.UseVisualStyleBackColor = true;
@@ -644,31 +685,31 @@ namespace SummonerSaveFileEditor
             // 
             LabelOtherCurrHP.AutoSize = true;
             LabelOtherCurrHP.Dock = DockStyle.Fill;
-            LabelOtherCurrHP.Location = new Point(4, 72);
+            LabelOtherCurrHP.Location = new Point(4, 58);
             LabelOtherCurrHP.Margin = new Padding(4, 0, 4, 0);
             LabelOtherCurrHP.Name = "LabelOtherCurrHP";
-            LabelOtherCurrHP.Size = new Size(90, 36);
+            LabelOtherCurrHP.Size = new Size(69, 29);
             LabelOtherCurrHP.TabIndex = 17;
             LabelOtherCurrHP.Text = "Current HP:";
             LabelOtherCurrHP.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // numCreatureCurrentHP
             // 
-            numCreatureCurrentHP.Location = new Point(102, 75);
+            numCreatureCurrentHP.Location = new Point(81, 61);
             numCreatureCurrentHP.Margin = new Padding(4, 3, 4, 3);
             numCreatureCurrentHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numCreatureCurrentHP.Name = "numCreatureCurrentHP";
-            numCreatureCurrentHP.Size = new Size(107, 29);
+            numCreatureCurrentHP.Size = new Size(107, 23);
             numCreatureCurrentHP.TabIndex = 18;
             numCreatureCurrentHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             numCreatureCurrentHP.ValueChanged += CreaturePropertyChanged;
             // 
             // btnMaxOtherCurrentHP
             // 
-            btnMaxOtherCurrentHP.Location = new Point(217, 75);
+            btnMaxOtherCurrentHP.Location = new Point(196, 61);
             btnMaxOtherCurrentHP.Margin = new Padding(4, 3, 4, 3);
             btnMaxOtherCurrentHP.Name = "btnMaxOtherCurrentHP";
-            btnMaxOtherCurrentHP.Size = new Size(52, 30);
+            btnMaxOtherCurrentHP.Size = new Size(52, 23);
             btnMaxOtherCurrentHP.TabIndex = 19;
             btnMaxOtherCurrentHP.Text = "Max";
             btnMaxOtherCurrentHP.UseVisualStyleBackColor = true;
@@ -677,31 +718,31 @@ namespace SummonerSaveFileEditor
             // 
             LabelOtherMaxAP.AutoSize = true;
             LabelOtherMaxAP.Dock = DockStyle.Fill;
-            LabelOtherMaxAP.Location = new Point(4, 108);
+            LabelOtherMaxAP.Location = new Point(4, 87);
             LabelOtherMaxAP.Margin = new Padding(4, 0, 4, 0);
             LabelOtherMaxAP.Name = "LabelOtherMaxAP";
-            LabelOtherMaxAP.Size = new Size(90, 36);
+            LabelOtherMaxAP.Size = new Size(69, 29);
             LabelOtherMaxAP.TabIndex = 20;
             LabelOtherMaxAP.Text = "Base AP:";
             LabelOtherMaxAP.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // numCreatureBaseAP
             // 
-            numCreatureBaseAP.Location = new Point(102, 111);
+            numCreatureBaseAP.Location = new Point(81, 90);
             numCreatureBaseAP.Margin = new Padding(4, 3, 4, 3);
             numCreatureBaseAP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numCreatureBaseAP.Name = "numCreatureBaseAP";
-            numCreatureBaseAP.Size = new Size(107, 29);
+            numCreatureBaseAP.Size = new Size(107, 23);
             numCreatureBaseAP.TabIndex = 21;
             numCreatureBaseAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             numCreatureBaseAP.ValueChanged += CreaturePropertyChanged;
             // 
             // btnMaxOtherBaseAP
             // 
-            btnMaxOtherBaseAP.Location = new Point(217, 111);
+            btnMaxOtherBaseAP.Location = new Point(196, 90);
             btnMaxOtherBaseAP.Margin = new Padding(4, 3, 4, 3);
             btnMaxOtherBaseAP.Name = "btnMaxOtherBaseAP";
-            btnMaxOtherBaseAP.Size = new Size(52, 30);
+            btnMaxOtherBaseAP.Size = new Size(52, 23);
             btnMaxOtherBaseAP.TabIndex = 22;
             btnMaxOtherBaseAP.Text = "Max";
             btnMaxOtherBaseAP.UseVisualStyleBackColor = true;
@@ -710,41 +751,41 @@ namespace SummonerSaveFileEditor
             // 
             LabelOtherCurrAP.AutoSize = true;
             LabelOtherCurrAP.Dock = DockStyle.Fill;
-            LabelOtherCurrAP.Location = new Point(4, 144);
+            LabelOtherCurrAP.Location = new Point(4, 116);
             LabelOtherCurrAP.Margin = new Padding(4, 0, 4, 0);
             LabelOtherCurrAP.Name = "LabelOtherCurrAP";
-            LabelOtherCurrAP.Size = new Size(90, 36);
+            LabelOtherCurrAP.Size = new Size(69, 29);
             LabelOtherCurrAP.TabIndex = 20;
             LabelOtherCurrAP.Text = "Current AP:";
             LabelOtherCurrAP.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // numCreatureCurrentAP
             // 
-            numCreatureCurrentAP.Location = new Point(102, 147);
+            numCreatureCurrentAP.Location = new Point(81, 119);
             numCreatureCurrentAP.Margin = new Padding(4, 3, 4, 3);
             numCreatureCurrentAP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numCreatureCurrentAP.Name = "numCreatureCurrentAP";
-            numCreatureCurrentAP.Size = new Size(107, 29);
+            numCreatureCurrentAP.Size = new Size(107, 23);
             numCreatureCurrentAP.TabIndex = 21;
             numCreatureCurrentAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             numCreatureCurrentAP.ValueChanged += CreaturePropertyChanged;
             // 
             // btnMaxOtherCurrentAP
             // 
-            btnMaxOtherCurrentAP.Location = new Point(217, 147);
+            btnMaxOtherCurrentAP.Location = new Point(196, 119);
             btnMaxOtherCurrentAP.Margin = new Padding(4, 3, 4, 3);
             btnMaxOtherCurrentAP.Name = "btnMaxOtherCurrentAP";
-            btnMaxOtherCurrentAP.Size = new Size(52, 30);
+            btnMaxOtherCurrentAP.Size = new Size(52, 23);
             btnMaxOtherCurrentAP.TabIndex = 22;
             btnMaxOtherCurrentAP.Text = "Max";
             btnMaxOtherCurrentAP.UseVisualStyleBackColor = true;
             // 
             // btnMaxOther
             // 
-            btnMaxOther.Location = new Point(102, 183);
+            btnMaxOther.Location = new Point(81, 148);
             btnMaxOther.Margin = new Padding(4, 3, 4, 3);
             btnMaxOther.Name = "btnMaxOther";
-            btnMaxOther.Size = new Size(107, 30);
+            btnMaxOther.Size = new Size(107, 23);
             btnMaxOther.TabIndex = 16;
             btnMaxOther.Text = "Max All";
             btnMaxOther.UseVisualStyleBackColor = true;
@@ -755,10 +796,10 @@ namespace SummonerSaveFileEditor
             lvCreatureList.Dock = DockStyle.Fill;
             lvCreatureList.Font = new Font("Consolas", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lvCreatureList.FullRowSelect = true;
-            lvCreatureList.Location = new Point(277, 3);
+            lvCreatureList.Location = new Point(254, 3);
             lvCreatureList.Margin = new Padding(4, 3, 4, 3);
             lvCreatureList.Name = "lvCreatureList";
-            lvCreatureList.Size = new Size(684, 444);
+            lvCreatureList.Size = new Size(707, 495);
             lvCreatureList.Sorting = SortOrder.Ascending;
             lvCreatureList.TabIndex = 21;
             lvCreatureList.UseCompatibleStateImageBehavior = false;
@@ -789,10 +830,10 @@ namespace SummonerSaveFileEditor
             // 
             tabPageCamera.Controls.Add(label19);
             tabPageCamera.Controls.Add(tbleCameraPanel);
-            tabPageCamera.Location = new Point(4, 30);
+            tabPageCamera.Location = new Point(4, 24);
             tabPageCamera.Name = "tabPageCamera";
             tabPageCamera.Padding = new Padding(3);
-            tabPageCamera.Size = new Size(973, 456);
+            tabPageCamera.Size = new Size(973, 507);
             tabPageCamera.TabIndex = 7;
             tabPageCamera.Text = "Camera";
             tabPageCamera.UseVisualStyleBackColor = true;
@@ -802,7 +843,7 @@ namespace SummonerSaveFileEditor
             label19.AutoSize = true;
             label19.Location = new Point(310, 36);
             label19.Name = "label19";
-            label19.Size = new Size(355, 21);
+            label19.Size = new Size(270, 15);
             label19.TabIndex = 1;
             label19.Text = "Currently disabled until I can verify what these do.";
             // 
@@ -833,26 +874,26 @@ namespace SummonerSaveFileEditor
             tbleCameraPanel.Location = new Point(8, 6);
             tbleCameraPanel.Name = "tbleCameraPanel";
             tbleCameraPanel.RowCount = 10;
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tbleCameraPanel.Size = new Size(259, 438);
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tbleCameraPanel.Size = new Size(259, 338);
             tbleCameraPanel.TabIndex = 0;
             // 
             // numCameraMode
             // 
             numCameraMode.DecimalPlaces = 5;
-            numCameraMode.Location = new Point(132, 283);
+            numCameraMode.Location = new Point(132, 235);
             numCameraMode.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraMode.Name = "numCameraMode";
-            numCameraMode.Size = new Size(124, 29);
+            numCameraMode.Size = new Size(124, 23);
             numCameraMode.TabIndex = 1;
             // 
             // numCameraUnknown
@@ -861,70 +902,70 @@ namespace SummonerSaveFileEditor
             numCameraUnknown.Location = new Point(132, 3);
             numCameraUnknown.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraUnknown.Name = "numCameraUnknown";
-            numCameraUnknown.Size = new Size(124, 29);
+            numCameraUnknown.Size = new Size(124, 23);
             numCameraUnknown.TabIndex = 1;
             // 
             // numCameraPosZ
             // 
             numCameraPosZ.DecimalPlaces = 5;
-            numCameraPosZ.Location = new Point(132, 248);
+            numCameraPosZ.Location = new Point(132, 206);
             numCameraPosZ.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraPosZ.Name = "numCameraPosZ";
-            numCameraPosZ.Size = new Size(124, 29);
+            numCameraPosZ.Size = new Size(124, 23);
             numCameraPosZ.TabIndex = 1;
             // 
             // numCameraFoV
             // 
             numCameraFoV.DecimalPlaces = 5;
-            numCameraFoV.Location = new Point(132, 38);
+            numCameraFoV.Location = new Point(132, 32);
             numCameraFoV.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraFoV.Name = "numCameraFoV";
-            numCameraFoV.Size = new Size(124, 29);
+            numCameraFoV.Size = new Size(124, 23);
             numCameraFoV.TabIndex = 1;
             // 
             // numCameraPosY
             // 
             numCameraPosY.DecimalPlaces = 5;
-            numCameraPosY.Location = new Point(132, 213);
+            numCameraPosY.Location = new Point(132, 177);
             numCameraPosY.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraPosY.Name = "numCameraPosY";
-            numCameraPosY.Size = new Size(124, 29);
+            numCameraPosY.Size = new Size(124, 23);
             numCameraPosY.TabIndex = 1;
             // 
             // numCameraPitch
             // 
             numCameraPitch.DecimalPlaces = 5;
-            numCameraPitch.Location = new Point(132, 73);
+            numCameraPitch.Location = new Point(132, 61);
             numCameraPitch.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraPitch.Name = "numCameraPitch";
-            numCameraPitch.Size = new Size(124, 29);
+            numCameraPitch.Size = new Size(124, 23);
             numCameraPitch.TabIndex = 1;
             // 
             // numCameraPosX
             // 
             numCameraPosX.DecimalPlaces = 5;
-            numCameraPosX.Location = new Point(132, 178);
+            numCameraPosX.Location = new Point(132, 148);
             numCameraPosX.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraPosX.Name = "numCameraPosX";
-            numCameraPosX.Size = new Size(124, 29);
+            numCameraPosX.Size = new Size(124, 23);
             numCameraPosX.TabIndex = 1;
             // 
             // numCameraYaw
             // 
             numCameraYaw.DecimalPlaces = 5;
-            numCameraYaw.Location = new Point(132, 108);
+            numCameraYaw.Location = new Point(132, 90);
             numCameraYaw.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraYaw.Name = "numCameraYaw";
-            numCameraYaw.Size = new Size(124, 29);
+            numCameraYaw.Size = new Size(124, 23);
             numCameraYaw.TabIndex = 1;
             // 
             // numCameraZoom
             // 
             numCameraZoom.DecimalPlaces = 5;
-            numCameraZoom.Location = new Point(132, 143);
+            numCameraZoom.Location = new Point(132, 119);
             numCameraZoom.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
             numCameraZoom.Name = "numCameraZoom";
-            numCameraZoom.Size = new Size(124, 29);
+            numCameraZoom.Size = new Size(124, 23);
             numCameraZoom.TabIndex = 1;
             // 
             // label1
@@ -932,90 +973,90 @@ namespace SummonerSaveFileEditor
             label1.AutoSize = true;
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(77, 21);
+            label1.Size = new Size(58, 15);
             label1.TabIndex = 2;
             label1.Text = "Unknown";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 35);
+            label2.Location = new Point(3, 29);
             label2.Name = "label2";
-            label2.Size = new Size(106, 21);
+            label2.Size = new Size(79, 15);
             label2.TabIndex = 2;
             label2.Text = "Field of View?";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(3, 70);
+            label3.Location = new Point(3, 58);
             label3.Name = "label3";
-            label3.Size = new Size(51, 21);
+            label3.Size = new Size(39, 15);
             label3.TabIndex = 2;
             label3.Text = "Pitch?";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(3, 105);
+            label8.Location = new Point(3, 87);
             label8.Name = "label8";
-            label8.Size = new Size(45, 21);
+            label8.Size = new Size(33, 15);
             label8.TabIndex = 2;
             label8.Text = "Yaw?";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(3, 140);
+            label9.Location = new Point(3, 116);
             label9.Name = "label9";
-            label9.Size = new Size(58, 21);
+            label9.Size = new Size(44, 15);
             label9.TabIndex = 2;
             label9.Text = "Zoom?";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(3, 175);
+            label11.Location = new Point(3, 145);
             label11.Name = "label11";
-            label11.Size = new Size(78, 21);
+            label11.Size = new Size(60, 15);
             label11.TabIndex = 2;
             label11.Text = "Position X";
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(3, 210);
+            label12.Location = new Point(3, 174);
             label12.Name = "label12";
-            label12.Size = new Size(78, 21);
+            label12.Size = new Size(60, 15);
             label12.TabIndex = 2;
             label12.Text = "Position Y";
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(3, 245);
+            label17.Location = new Point(3, 203);
             label17.Name = "label17";
-            label17.Size = new Size(78, 21);
+            label17.Size = new Size(60, 15);
             label17.TabIndex = 2;
             label17.Text = "Position Z";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(3, 280);
+            label18.Location = new Point(3, 232);
             label18.Name = "label18";
-            label18.Size = new Size(50, 21);
+            label18.Size = new Size(38, 15);
             label18.TabIndex = 2;
             label18.Text = "Mode";
             // 
             // tabPageInventory
             // 
             tabPageInventory.Controls.Add(tableLayoutPanel1);
-            tabPageInventory.Location = new Point(4, 30);
+            tabPageInventory.Location = new Point(4, 24);
             tabPageInventory.Margin = new Padding(4, 3, 4, 3);
             tabPageInventory.Name = "tabPageInventory";
             tabPageInventory.Padding = new Padding(4, 3, 4, 3);
-            tabPageInventory.Size = new Size(973, 456);
+            tabPageInventory.Size = new Size(973, 507);
             tabPageInventory.TabIndex = 5;
             tabPageInventory.Text = "Inventory";
             tabPageInventory.UseVisualStyleBackColor = true;
@@ -1035,20 +1076,22 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel1.Location = new Point(4, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(965, 450);
+            tableLayoutPanel1.Size = new Size(965, 501);
             tableLayoutPanel1.TabIndex = 24;
             // 
             // lblGameItems
             // 
             lblGameItems.AutoSize = true;
+            lblGameItems.Dock = DockStyle.Fill;
             lblGameItems.Location = new Point(4, 0);
             lblGameItems.Margin = new Padding(4, 0, 4, 0);
             lblGameItems.Name = "lblGameItems";
-            lblGameItems.Size = new Size(93, 21);
+            lblGameItems.Size = new Size(323, 29);
             lblGameItems.TabIndex = 17;
             lblGameItems.Text = "Game Items";
+            lblGameItems.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // pnlInventoryControls
             // 
@@ -1060,10 +1103,10 @@ namespace SummonerSaveFileEditor
             pnlInventoryControls.Controls.Add(GBoxItemQuantity);
             pnlInventoryControls.Controls.Add(btnAddAllItems);
             pnlInventoryControls.Dock = DockStyle.Fill;
-            pnlInventoryControls.Location = new Point(331, 28);
+            pnlInventoryControls.Location = new Point(331, 29);
             pnlInventoryControls.Margin = new Padding(0);
             pnlInventoryControls.Name = "pnlInventoryControls";
-            pnlInventoryControls.Size = new Size(252, 422);
+            pnlInventoryControls.Size = new Size(252, 472);
             pnlInventoryControls.TabIndex = 23;
             // 
             // gbGold
@@ -1074,17 +1117,17 @@ namespace SummonerSaveFileEditor
             gbGold.Margin = new Padding(4, 3, 4, 3);
             gbGold.Name = "gbGold";
             gbGold.Padding = new Padding(4, 3, 4, 3);
-            gbGold.Size = new Size(244, 76);
+            gbGold.Size = new Size(244, 63);
             gbGold.TabIndex = 10;
             gbGold.TabStop = false;
             gbGold.Text = "Gold";
             // 
             // btnMaxGold
             // 
-            btnMaxGold.Location = new Point(177, 30);
+            btnMaxGold.Location = new Point(177, 23);
             btnMaxGold.Margin = new Padding(4, 3, 4, 3);
             btnMaxGold.Name = "btnMaxGold";
-            btnMaxGold.Size = new Size(59, 30);
+            btnMaxGold.Size = new Size(59, 26);
             btnMaxGold.TabIndex = 1;
             btnMaxGold.Text = "Max";
             btnMaxGold.UseVisualStyleBackColor = true;
@@ -1092,19 +1135,19 @@ namespace SummonerSaveFileEditor
             // 
             // numGold
             // 
-            numGold.Location = new Point(8, 31);
+            numGold.Location = new Point(8, 24);
             numGold.Margin = new Padding(4, 3, 4, 3);
             numGold.Maximum = new decimal(new int[] { 2000000000, 0, 0, 0 });
             numGold.Name = "numGold";
-            numGold.Size = new Size(161, 29);
+            numGold.Size = new Size(161, 23);
             numGold.TabIndex = 0;
             // 
             // btnAddItem
             // 
-            btnAddItem.Location = new Point(12, 85);
+            btnAddItem.Location = new Point(12, 72);
             btnAddItem.Margin = new Padding(4, 3, 4, 3);
             btnAddItem.Name = "btnAddItem";
-            btnAddItem.Size = new Size(228, 30);
+            btnAddItem.Size = new Size(228, 26);
             btnAddItem.TabIndex = 12;
             btnAddItem.Text = "Add Selected to Inventory 🡆";
             btnAddItem.UseVisualStyleBackColor = true;
@@ -1112,9 +1155,9 @@ namespace SummonerSaveFileEditor
             // 
             // btnToggleIdentified
             // 
-            btnToggleIdentified.Location = new Point(12, 205);
+            btnToggleIdentified.Location = new Point(12, 184);
             btnToggleIdentified.Name = "btnToggleIdentified";
-            btnToggleIdentified.Size = new Size(228, 30);
+            btnToggleIdentified.Size = new Size(228, 26);
             btnToggleIdentified.TabIndex = 21;
             btnToggleIdentified.Text = "🡄 Toggle Identified";
             btnToggleIdentified.UseVisualStyleBackColor = true;
@@ -1122,10 +1165,10 @@ namespace SummonerSaveFileEditor
             // 
             // btnRemoveItem
             // 
-            btnRemoveItem.Location = new Point(12, 175);
+            btnRemoveItem.Location = new Point(12, 156);
             btnRemoveItem.Margin = new Padding(4, 3, 4, 3);
             btnRemoveItem.Name = "btnRemoveItem";
-            btnRemoveItem.Size = new Size(228, 30);
+            btnRemoveItem.Size = new Size(228, 26);
             btnRemoveItem.TabIndex = 13;
             btnRemoveItem.Text = "Remove Selected";
             btnRemoveItem.UseVisualStyleBackColor = true;
@@ -1133,10 +1176,10 @@ namespace SummonerSaveFileEditor
             // 
             // btnClearInventory
             // 
-            btnClearInventory.Location = new Point(12, 145);
+            btnClearInventory.Location = new Point(12, 128);
             btnClearInventory.Margin = new Padding(4, 3, 4, 3);
             btnClearInventory.Name = "btnClearInventory";
-            btnClearInventory.Size = new Size(228, 30);
+            btnClearInventory.Size = new Size(228, 26);
             btnClearInventory.TabIndex = 14;
             btnClearInventory.Text = "Clear Inventory";
             btnClearInventory.UseVisualStyleBackColor = true;
@@ -1150,21 +1193,21 @@ namespace SummonerSaveFileEditor
             GBoxItemQuantity.Controls.Add(numQuantity);
             GBoxItemQuantity.Controls.Add(lblCharges);
             GBoxItemQuantity.Controls.Add(lblQuantity);
-            GBoxItemQuantity.Location = new Point(4, 241);
+            GBoxItemQuantity.Location = new Point(4, 216);
             GBoxItemQuantity.Margin = new Padding(4, 3, 4, 3);
             GBoxItemQuantity.Name = "GBoxItemQuantity";
             GBoxItemQuantity.Padding = new Padding(4, 3, 4, 3);
-            GBoxItemQuantity.Size = new Size(244, 175);
+            GBoxItemQuantity.Size = new Size(244, 147);
             GBoxItemQuantity.TabIndex = 11;
             GBoxItemQuantity.TabStop = false;
             GBoxItemQuantity.Text = "Item Quantity";
             // 
             // btnApplyToAll
             // 
-            btnApplyToAll.Location = new Point(8, 134);
+            btnApplyToAll.Location = new Point(8, 109);
             btnApplyToAll.Margin = new Padding(4, 3, 4, 3);
             btnApplyToAll.Name = "btnApplyToAll";
-            btnApplyToAll.Size = new Size(228, 30);
+            btnApplyToAll.Size = new Size(228, 26);
             btnApplyToAll.TabIndex = 12;
             btnApplyToAll.Text = "Apply to All 🡆";
             btnApplyToAll.UseVisualStyleBackColor = true;
@@ -1172,10 +1215,10 @@ namespace SummonerSaveFileEditor
             // 
             // btnApplyToSelected
             // 
-            btnApplyToSelected.Location = new Point(8, 98);
+            btnApplyToSelected.Location = new Point(8, 80);
             btnApplyToSelected.Margin = new Padding(4, 3, 4, 3);
             btnApplyToSelected.Name = "btnApplyToSelected";
-            btnApplyToSelected.Size = new Size(228, 30);
+            btnApplyToSelected.Size = new Size(228, 26);
             btnApplyToSelected.TabIndex = 13;
             btnApplyToSelected.Text = "Apply to Selected 🡆";
             btnApplyToSelected.UseVisualStyleBackColor = true;
@@ -1183,29 +1226,29 @@ namespace SummonerSaveFileEditor
             // 
             // numCharges
             // 
-            numCharges.Location = new Point(140, 63);
+            numCharges.Location = new Point(140, 48);
             numCharges.Margin = new Padding(4, 3, 4, 3);
             numCharges.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
             numCharges.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numCharges.Name = "numCharges";
-            numCharges.Size = new Size(96, 29);
+            numCharges.Size = new Size(96, 23);
             numCharges.TabIndex = 12;
             numCharges.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // numQuantity
             // 
-            numQuantity.Location = new Point(140, 28);
+            numQuantity.Location = new Point(140, 22);
             numQuantity.Margin = new Padding(4, 3, 4, 3);
             numQuantity.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
             numQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numQuantity.Name = "numQuantity";
-            numQuantity.Size = new Size(96, 29);
+            numQuantity.Size = new Size(96, 23);
             numQuantity.TabIndex = 12;
             numQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // lblCharges
             // 
-            lblCharges.Location = new Point(8, 67);
+            lblCharges.Location = new Point(8, 49);
             lblCharges.Margin = new Padding(4, 0, 4, 0);
             lblCharges.Name = "lblCharges";
             lblCharges.Size = new Size(73, 21);
@@ -1214,7 +1257,7 @@ namespace SummonerSaveFileEditor
             // 
             // lblQuantity
             // 
-            lblQuantity.Location = new Point(8, 32);
+            lblQuantity.Location = new Point(8, 23);
             lblQuantity.Margin = new Padding(4, 0, 4, 0);
             lblQuantity.Name = "lblQuantity";
             lblQuantity.Size = new Size(73, 21);
@@ -1223,10 +1266,10 @@ namespace SummonerSaveFileEditor
             // 
             // btnAddAllItems
             // 
-            btnAddAllItems.Location = new Point(12, 115);
+            btnAddAllItems.Location = new Point(12, 100);
             btnAddAllItems.Margin = new Padding(4, 3, 4, 3);
             btnAddAllItems.Name = "btnAddAllItems";
-            btnAddAllItems.Size = new Size(228, 30);
+            btnAddAllItems.Size = new Size(228, 26);
             btnAddAllItems.TabIndex = 15;
             btnAddAllItems.Text = "Add ALL Items 🡆";
             btnAddAllItems.UseVisualStyleBackColor = true;
@@ -1237,9 +1280,9 @@ namespace SummonerSaveFileEditor
             lvGameItems.Columns.AddRange(new ColumnHeader[] { columnHeader17, columnHeader16 });
             lvGameItems.Dock = DockStyle.Fill;
             lvGameItems.FullRowSelect = true;
-            lvGameItems.Location = new Point(3, 31);
+            lvGameItems.Location = new Point(3, 32);
             lvGameItems.Name = "lvGameItems";
-            lvGameItems.Size = new Size(325, 416);
+            lvGameItems.Size = new Size(325, 466);
             lvGameItems.TabIndex = 22;
             lvGameItems.UseCompatibleStateImageBehavior = false;
             lvGameItems.View = View.Details;
@@ -1247,22 +1290,22 @@ namespace SummonerSaveFileEditor
             // columnHeader17
             // 
             columnHeader17.Text = "Item Name";
-            columnHeader17.Width = 190;
+            columnHeader17.Width = 180;
             // 
             // columnHeader16
             // 
             columnHeader16.Text = "Flag";
-            columnHeader16.Width = 120;
+            columnHeader16.Width = 100;
             // 
             // lvInventory
             // 
             lvInventory.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             lvInventory.Dock = DockStyle.Fill;
             lvInventory.FullRowSelect = true;
-            lvInventory.Location = new Point(587, 31);
+            lvInventory.Location = new Point(587, 32);
             lvInventory.Margin = new Padding(4, 3, 4, 3);
             lvInventory.Name = "lvInventory";
-            lvInventory.Size = new Size(374, 416);
+            lvInventory.Size = new Size(374, 466);
             lvInventory.TabIndex = 20;
             lvInventory.UseCompatibleStateImageBehavior = false;
             lvInventory.View = View.Details;
@@ -1270,7 +1313,7 @@ namespace SummonerSaveFileEditor
             // columnHeader1
             // 
             columnHeader1.Text = "Item Name";
-            columnHeader1.Width = 200;
+            columnHeader1.Width = 180;
             // 
             // columnHeader2
             // 
@@ -1285,21 +1328,23 @@ namespace SummonerSaveFileEditor
             // lblInventory
             // 
             lblInventory.AutoSize = true;
+            lblInventory.Dock = DockStyle.Fill;
             lblInventory.Location = new Point(587, 0);
             lblInventory.Margin = new Padding(4, 0, 4, 0);
             lblInventory.Name = "lblInventory";
-            lblInventory.Size = new Size(76, 21);
+            lblInventory.Size = new Size(374, 29);
             lblInventory.TabIndex = 9;
             lblInventory.Text = "Inventory";
+            lblInventory.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // tabPageJekhar
             // 
             tabPageJekhar.Controls.Add(tblJekhar);
-            tabPageJekhar.Location = new Point(4, 30);
+            tabPageJekhar.Location = new Point(4, 24);
             tabPageJekhar.Margin = new Padding(4, 3, 4, 3);
             tabPageJekhar.Name = "tabPageJekhar";
             tabPageJekhar.Padding = new Padding(4, 3, 4, 3);
-            tabPageJekhar.Size = new Size(973, 456);
+            tabPageJekhar.Size = new Size(973, 507);
             tabPageJekhar.TabIndex = 3;
             tabPageJekhar.Text = "Jekhar";
             // 
@@ -1363,27 +1408,27 @@ namespace SummonerSaveFileEditor
             tblJekhar.Margin = new Padding(4, 3, 4, 3);
             tblJekhar.Name = "tblJekhar";
             tblJekhar.RowCount = 10;
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tblJekhar.Size = new Size(965, 450);
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJekhar.Size = new Size(965, 501);
             tblJekhar.TabIndex = 27;
             // 
             // lblJeAmulet
             // 
             lblJeAmulet.AutoSize = true;
             lblJeAmulet.Dock = DockStyle.Fill;
-            lblJeAmulet.Location = new Point(277, 0);
+            lblJeAmulet.Location = new Point(256, 0);
             lblJeAmulet.Margin = new Padding(4, 0, 4, 0);
             lblJeAmulet.Name = "lblJeAmulet";
-            lblJeAmulet.Size = new Size(83, 36);
+            lblJeAmulet.Size = new Size(62, 29);
             lblJeAmulet.TabIndex = 32;
             lblJeAmulet.Text = "Amulet";
             lblJeAmulet.TextAlign = ContentAlignment.MiddleLeft;
@@ -1392,10 +1437,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeRing1.AutoSize = true;
             lblJeRing1.Dock = DockStyle.Fill;
-            lblJeRing1.Location = new Point(277, 36);
+            lblJeRing1.Location = new Point(256, 29);
             lblJeRing1.Margin = new Padding(4, 0, 4, 0);
             lblJeRing1.Name = "lblJeRing1";
-            lblJeRing1.Size = new Size(83, 36);
+            lblJeRing1.Size = new Size(62, 29);
             lblJeRing1.TabIndex = 33;
             lblJeRing1.Text = "Left Right";
             lblJeRing1.TextAlign = ContentAlignment.MiddleLeft;
@@ -1404,10 +1449,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeRing2.AutoSize = true;
             lblJeRing2.Dock = DockStyle.Fill;
-            lblJeRing2.Location = new Point(277, 72);
+            lblJeRing2.Location = new Point(256, 58);
             lblJeRing2.Margin = new Padding(4, 0, 4, 0);
             lblJeRing2.Name = "lblJeRing2";
-            lblJeRing2.Size = new Size(83, 36);
+            lblJeRing2.Size = new Size(62, 29);
             lblJeRing2.TabIndex = 34;
             lblJeRing2.Text = "Right Ring";
             lblJeRing2.TextAlign = ContentAlignment.MiddleLeft;
@@ -1416,10 +1461,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeGauntlets.AutoSize = true;
             lblJeGauntlets.Dock = DockStyle.Fill;
-            lblJeGauntlets.Location = new Point(277, 108);
+            lblJeGauntlets.Location = new Point(256, 87);
             lblJeGauntlets.Margin = new Padding(4, 0, 4, 0);
             lblJeGauntlets.Name = "lblJeGauntlets";
-            lblJeGauntlets.Size = new Size(83, 36);
+            lblJeGauntlets.Size = new Size(62, 29);
             lblJeGauntlets.TabIndex = 35;
             lblJeGauntlets.Text = "Gauntlets";
             lblJeGauntlets.TextAlign = ContentAlignment.MiddleLeft;
@@ -1428,10 +1473,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeWeapon.AutoSize = true;
             lblJeWeapon.Dock = DockStyle.Fill;
-            lblJeWeapon.Location = new Point(277, 144);
+            lblJeWeapon.Location = new Point(256, 116);
             lblJeWeapon.Margin = new Padding(4, 0, 4, 0);
             lblJeWeapon.Name = "lblJeWeapon";
-            lblJeWeapon.Size = new Size(83, 36);
+            lblJeWeapon.Size = new Size(62, 29);
             lblJeWeapon.TabIndex = 36;
             lblJeWeapon.Text = "Weapon";
             lblJeWeapon.TextAlign = ContentAlignment.MiddleLeft;
@@ -1440,10 +1485,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeShield.AutoSize = true;
             lblJeShield.Dock = DockStyle.Fill;
-            lblJeShield.Location = new Point(277, 180);
+            lblJeShield.Location = new Point(256, 145);
             lblJeShield.Margin = new Padding(4, 0, 4, 0);
             lblJeShield.Name = "lblJeShield";
-            lblJeShield.Size = new Size(83, 36);
+            lblJeShield.Size = new Size(62, 29);
             lblJeShield.TabIndex = 37;
             lblJeShield.Text = "Shield";
             lblJeShield.TextAlign = ContentAlignment.MiddleLeft;
@@ -1452,10 +1497,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeBoots.AutoSize = true;
             lblJeBoots.Dock = DockStyle.Fill;
-            lblJeBoots.Location = new Point(277, 216);
+            lblJeBoots.Location = new Point(256, 174);
             lblJeBoots.Margin = new Padding(4, 0, 4, 0);
             lblJeBoots.Name = "lblJeBoots";
-            lblJeBoots.Size = new Size(83, 36);
+            lblJeBoots.Size = new Size(62, 29);
             lblJeBoots.TabIndex = 38;
             lblJeBoots.Text = "Boots";
             lblJeBoots.TextAlign = ContentAlignment.MiddleLeft;
@@ -1464,10 +1509,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeTorso.AutoSize = true;
             lblJeTorso.Dock = DockStyle.Fill;
-            lblJeTorso.Location = new Point(277, 252);
+            lblJeTorso.Location = new Point(256, 203);
             lblJeTorso.Margin = new Padding(4, 0, 4, 0);
             lblJeTorso.Name = "lblJeTorso";
-            lblJeTorso.Size = new Size(83, 36);
+            lblJeTorso.Size = new Size(62, 29);
             lblJeTorso.TabIndex = 39;
             lblJeTorso.Text = "Torso";
             lblJeTorso.TextAlign = ContentAlignment.MiddleLeft;
@@ -1476,10 +1521,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeCurrentHP.AutoSize = true;
             lblJeCurrentHP.Dock = DockStyle.Fill;
-            lblJeCurrentHP.Location = new Point(4, 144);
+            lblJeCurrentHP.Location = new Point(4, 116);
             lblJeCurrentHP.Margin = new Padding(4, 0, 4, 0);
             lblJeCurrentHP.Name = "lblJeCurrentHP";
-            lblJeCurrentHP.Size = new Size(90, 36);
+            lblJeCurrentHP.Size = new Size(69, 29);
             lblJeCurrentHP.TabIndex = 26;
             lblJeCurrentHP.Text = "Current HP:";
             lblJeCurrentHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -1491,10 +1536,10 @@ namespace SummonerSaveFileEditor
             cbJeLeggings.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeLeggings.FormattingEnabled = true;
             cbJeLeggings.IntegralHeight = false;
-            cbJeLeggings.Location = new Point(368, 291);
+            cbJeLeggings.Location = new Point(326, 235);
             cbJeLeggings.Margin = new Padding(4, 3, 4, 3);
             cbJeLeggings.Name = "cbJeLeggings";
-            cbJeLeggings.Size = new Size(252, 29);
+            cbJeLeggings.Size = new Size(252, 23);
             cbJeLeggings.TabIndex = 23;
             // 
             // cbJeTorso
@@ -1504,10 +1549,10 @@ namespace SummonerSaveFileEditor
             cbJeTorso.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeTorso.FormattingEnabled = true;
             cbJeTorso.IntegralHeight = false;
-            cbJeTorso.Location = new Point(368, 255);
+            cbJeTorso.Location = new Point(326, 206);
             cbJeTorso.Margin = new Padding(4, 3, 4, 3);
             cbJeTorso.Name = "cbJeTorso";
-            cbJeTorso.Size = new Size(252, 29);
+            cbJeTorso.Size = new Size(252, 23);
             cbJeTorso.TabIndex = 23;
             // 
             // cbJeBoots
@@ -1517,10 +1562,10 @@ namespace SummonerSaveFileEditor
             cbJeBoots.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeBoots.FormattingEnabled = true;
             cbJeBoots.IntegralHeight = false;
-            cbJeBoots.Location = new Point(368, 219);
+            cbJeBoots.Location = new Point(326, 177);
             cbJeBoots.Margin = new Padding(4, 3, 4, 3);
             cbJeBoots.Name = "cbJeBoots";
-            cbJeBoots.Size = new Size(252, 29);
+            cbJeBoots.Size = new Size(252, 23);
             cbJeBoots.TabIndex = 23;
             // 
             // cbJeShield
@@ -1530,10 +1575,10 @@ namespace SummonerSaveFileEditor
             cbJeShield.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeShield.FormattingEnabled = true;
             cbJeShield.IntegralHeight = false;
-            cbJeShield.Location = new Point(368, 183);
+            cbJeShield.Location = new Point(326, 148);
             cbJeShield.Margin = new Padding(4, 3, 4, 3);
             cbJeShield.Name = "cbJeShield";
-            cbJeShield.Size = new Size(252, 29);
+            cbJeShield.Size = new Size(252, 23);
             cbJeShield.TabIndex = 23;
             // 
             // cbJeWeapon
@@ -1543,10 +1588,10 @@ namespace SummonerSaveFileEditor
             cbJeWeapon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeWeapon.FormattingEnabled = true;
             cbJeWeapon.IntegralHeight = false;
-            cbJeWeapon.Location = new Point(368, 147);
+            cbJeWeapon.Location = new Point(326, 119);
             cbJeWeapon.Margin = new Padding(4, 3, 4, 3);
             cbJeWeapon.Name = "cbJeWeapon";
-            cbJeWeapon.Size = new Size(252, 29);
+            cbJeWeapon.Size = new Size(252, 23);
             cbJeWeapon.TabIndex = 23;
             // 
             // cbJeGauntlets
@@ -1556,10 +1601,10 @@ namespace SummonerSaveFileEditor
             cbJeGauntlets.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeGauntlets.FormattingEnabled = true;
             cbJeGauntlets.IntegralHeight = false;
-            cbJeGauntlets.Location = new Point(368, 111);
+            cbJeGauntlets.Location = new Point(326, 90);
             cbJeGauntlets.Margin = new Padding(4, 3, 4, 3);
             cbJeGauntlets.Name = "cbJeGauntlets";
-            cbJeGauntlets.Size = new Size(252, 29);
+            cbJeGauntlets.Size = new Size(252, 23);
             cbJeGauntlets.TabIndex = 23;
             // 
             // cbJeRing2
@@ -1569,10 +1614,10 @@ namespace SummonerSaveFileEditor
             cbJeRing2.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeRing2.FormattingEnabled = true;
             cbJeRing2.IntegralHeight = false;
-            cbJeRing2.Location = new Point(368, 75);
+            cbJeRing2.Location = new Point(326, 61);
             cbJeRing2.Margin = new Padding(4, 3, 4, 3);
             cbJeRing2.Name = "cbJeRing2";
-            cbJeRing2.Size = new Size(252, 29);
+            cbJeRing2.Size = new Size(252, 23);
             cbJeRing2.TabIndex = 23;
             // 
             // cbJeRing1
@@ -1582,10 +1627,10 @@ namespace SummonerSaveFileEditor
             cbJeRing1.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeRing1.FormattingEnabled = true;
             cbJeRing1.IntegralHeight = false;
-            cbJeRing1.Location = new Point(368, 39);
+            cbJeRing1.Location = new Point(326, 32);
             cbJeRing1.Margin = new Padding(4, 3, 4, 3);
             cbJeRing1.Name = "cbJeRing1";
-            cbJeRing1.Size = new Size(252, 29);
+            cbJeRing1.Size = new Size(252, 23);
             cbJeRing1.TabIndex = 23;
             // 
             // cbJeAmulet
@@ -1595,30 +1640,30 @@ namespace SummonerSaveFileEditor
             cbJeAmulet.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJeAmulet.FormattingEnabled = true;
             cbJeAmulet.IntegralHeight = false;
-            cbJeAmulet.Location = new Point(368, 3);
+            cbJeAmulet.Location = new Point(326, 3);
             cbJeAmulet.Margin = new Padding(4, 3, 4, 3);
             cbJeAmulet.Name = "cbJeAmulet";
-            cbJeAmulet.Size = new Size(252, 29);
+            cbJeAmulet.Size = new Size(252, 23);
             cbJeAmulet.TabIndex = 23;
             // 
             // numJeCurrentHP
             // 
             numJeCurrentHP.Dock = DockStyle.Fill;
-            numJeCurrentHP.Location = new Point(102, 147);
+            numJeCurrentHP.Location = new Point(81, 119);
             numJeCurrentHP.Margin = new Padding(4, 3, 4, 3);
             numJeCurrentHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numJeCurrentHP.Name = "numJeCurrentHP";
-            numJeCurrentHP.Size = new Size(107, 29);
+            numJeCurrentHP.Size = new Size(107, 23);
             numJeCurrentHP.TabIndex = 24;
             numJeCurrentHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
             // btnJeMaxCurrentHP
             // 
             btnJeMaxCurrentHP.Dock = DockStyle.Fill;
-            btnJeMaxCurrentHP.Location = new Point(217, 147);
+            btnJeMaxCurrentHP.Location = new Point(196, 119);
             btnJeMaxCurrentHP.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxCurrentHP.Name = "btnJeMaxCurrentHP";
-            btnJeMaxCurrentHP.Size = new Size(52, 30);
+            btnJeMaxCurrentHP.Size = new Size(52, 23);
             btnJeMaxCurrentHP.TabIndex = 25;
             btnJeMaxCurrentHP.Text = "Max";
             btnJeMaxCurrentHP.UseVisualStyleBackColor = true;
@@ -1627,10 +1672,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeCurrentAP.AutoSize = true;
             lblJeCurrentAP.Dock = DockStyle.Fill;
-            lblJeCurrentAP.Location = new Point(4, 216);
+            lblJeCurrentAP.Location = new Point(4, 174);
             lblJeCurrentAP.Margin = new Padding(4, 0, 4, 0);
             lblJeCurrentAP.Name = "lblJeCurrentAP";
-            lblJeCurrentAP.Size = new Size(90, 36);
+            lblJeCurrentAP.Size = new Size(69, 29);
             lblJeCurrentAP.TabIndex = 23;
             lblJeCurrentAP.Text = "Current AP:";
             lblJeCurrentAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -1638,21 +1683,21 @@ namespace SummonerSaveFileEditor
             // numJeCurrentAP
             // 
             numJeCurrentAP.Dock = DockStyle.Fill;
-            numJeCurrentAP.Location = new Point(102, 219);
+            numJeCurrentAP.Location = new Point(81, 177);
             numJeCurrentAP.Margin = new Padding(4, 3, 4, 3);
             numJeCurrentAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numJeCurrentAP.Name = "numJeCurrentAP";
-            numJeCurrentAP.Size = new Size(107, 29);
+            numJeCurrentAP.Size = new Size(107, 23);
             numJeCurrentAP.TabIndex = 24;
             numJeCurrentAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // btnJeMaxCurrentAP
             // 
             btnJeMaxCurrentAP.Dock = DockStyle.Fill;
-            btnJeMaxCurrentAP.Location = new Point(217, 219);
+            btnJeMaxCurrentAP.Location = new Point(196, 177);
             btnJeMaxCurrentAP.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxCurrentAP.Name = "btnJeMaxCurrentAP";
-            btnJeMaxCurrentAP.Size = new Size(52, 30);
+            btnJeMaxCurrentAP.Size = new Size(52, 23);
             btnJeMaxCurrentAP.TabIndex = 25;
             btnJeMaxCurrentAP.Text = "Max";
             btnJeMaxCurrentAP.UseVisualStyleBackColor = true;
@@ -1661,10 +1706,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeSpeed.AutoSize = true;
             lblJeSpeed.Dock = DockStyle.Fill;
-            lblJeSpeed.Location = new Point(4, 252);
+            lblJeSpeed.Location = new Point(4, 203);
             lblJeSpeed.Margin = new Padding(4, 0, 4, 0);
             lblJeSpeed.Name = "lblJeSpeed";
-            lblJeSpeed.Size = new Size(90, 36);
+            lblJeSpeed.Size = new Size(69, 29);
             lblJeSpeed.TabIndex = 23;
             lblJeSpeed.Text = "Speed:";
             lblJeSpeed.TextAlign = ContentAlignment.MiddleLeft;
@@ -1672,22 +1717,22 @@ namespace SummonerSaveFileEditor
             // numJeSpeed
             // 
             numJeSpeed.Dock = DockStyle.Fill;
-            numJeSpeed.Location = new Point(102, 255);
+            numJeSpeed.Location = new Point(81, 206);
             numJeSpeed.Margin = new Padding(4, 3, 4, 3);
             numJeSpeed.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             numJeSpeed.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJeSpeed.Name = "numJeSpeed";
-            numJeSpeed.Size = new Size(107, 29);
+            numJeSpeed.Size = new Size(107, 23);
             numJeSpeed.TabIndex = 24;
             numJeSpeed.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // btnJeMaxSpeed
             // 
             btnJeMaxSpeed.Dock = DockStyle.Fill;
-            btnJeMaxSpeed.Location = new Point(217, 255);
+            btnJeMaxSpeed.Location = new Point(196, 206);
             btnJeMaxSpeed.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxSpeed.Name = "btnJeMaxSpeed";
-            btnJeMaxSpeed.Size = new Size(52, 30);
+            btnJeMaxSpeed.Size = new Size(52, 23);
             btnJeMaxSpeed.TabIndex = 25;
             btnJeMaxSpeed.Text = "Max";
             btnJeMaxSpeed.UseVisualStyleBackColor = true;
@@ -1696,10 +1741,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeLeggings.AutoSize = true;
             lblJeLeggings.Dock = DockStyle.Fill;
-            lblJeLeggings.Location = new Point(277, 288);
+            lblJeLeggings.Location = new Point(256, 232);
             lblJeLeggings.Margin = new Padding(4, 0, 4, 0);
             lblJeLeggings.Name = "lblJeLeggings";
-            lblJeLeggings.Size = new Size(83, 36);
+            lblJeLeggings.Size = new Size(62, 29);
             lblJeLeggings.TabIndex = 40;
             lblJeLeggings.Text = "Leggings";
             lblJeLeggings.TextAlign = ContentAlignment.MiddleLeft;
@@ -1707,10 +1752,10 @@ namespace SummonerSaveFileEditor
             // btnJeMaxAll
             // 
             btnJeMaxAll.Dock = DockStyle.Fill;
-            btnJeMaxAll.Location = new Point(102, 291);
+            btnJeMaxAll.Location = new Point(81, 235);
             btnJeMaxAll.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxAll.Name = "btnJeMaxAll";
-            btnJeMaxAll.Size = new Size(107, 30);
+            btnJeMaxAll.Size = new Size(107, 23);
             btnJeMaxAll.TabIndex = 19;
             btnJeMaxAll.Text = "Max All";
             btnJeMaxAll.UseVisualStyleBackColor = true;
@@ -1718,10 +1763,10 @@ namespace SummonerSaveFileEditor
             // btnJeMaxBaseAP
             // 
             btnJeMaxBaseAP.Dock = DockStyle.Fill;
-            btnJeMaxBaseAP.Location = new Point(217, 183);
+            btnJeMaxBaseAP.Location = new Point(196, 148);
             btnJeMaxBaseAP.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxBaseAP.Name = "btnJeMaxBaseAP";
-            btnJeMaxBaseAP.Size = new Size(52, 30);
+            btnJeMaxBaseAP.Size = new Size(52, 23);
             btnJeMaxBaseAP.TabIndex = 28;
             btnJeMaxBaseAP.Text = "Max";
             btnJeMaxBaseAP.UseVisualStyleBackColor = true;
@@ -1729,22 +1774,22 @@ namespace SummonerSaveFileEditor
             // numJeBaseAP
             // 
             numJeBaseAP.Dock = DockStyle.Fill;
-            numJeBaseAP.Location = new Point(102, 183);
+            numJeBaseAP.Location = new Point(81, 148);
             numJeBaseAP.Margin = new Padding(4, 3, 4, 3);
             numJeBaseAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numJeBaseAP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJeBaseAP.Name = "numJeBaseAP";
-            numJeBaseAP.Size = new Size(107, 29);
+            numJeBaseAP.Size = new Size(107, 23);
             numJeBaseAP.TabIndex = 27;
             numJeBaseAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // btnJeMaxBaseHP
             // 
             btnJeMaxBaseHP.Dock = DockStyle.Fill;
-            btnJeMaxBaseHP.Location = new Point(217, 111);
+            btnJeMaxBaseHP.Location = new Point(196, 90);
             btnJeMaxBaseHP.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxBaseHP.Name = "btnJeMaxBaseHP";
-            btnJeMaxBaseHP.Size = new Size(52, 30);
+            btnJeMaxBaseHP.Size = new Size(52, 23);
             btnJeMaxBaseHP.TabIndex = 31;
             btnJeMaxBaseHP.Text = "Max";
             btnJeMaxBaseHP.UseVisualStyleBackColor = true;
@@ -1753,10 +1798,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeBaseAP.AutoSize = true;
             lblJeBaseAP.Dock = DockStyle.Fill;
-            lblJeBaseAP.Location = new Point(4, 180);
+            lblJeBaseAP.Location = new Point(4, 145);
             lblJeBaseAP.Margin = new Padding(4, 0, 4, 0);
             lblJeBaseAP.Name = "lblJeBaseAP";
-            lblJeBaseAP.Size = new Size(90, 36);
+            lblJeBaseAP.Size = new Size(69, 29);
             lblJeBaseAP.TabIndex = 26;
             lblJeBaseAP.Text = "Max AP:";
             lblJeBaseAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -1764,24 +1809,24 @@ namespace SummonerSaveFileEditor
             // numJeBaseHP
             // 
             numJeBaseHP.Dock = DockStyle.Fill;
-            numJeBaseHP.Location = new Point(102, 111);
+            numJeBaseHP.Location = new Point(81, 90);
             numJeBaseHP.Margin = new Padding(4, 3, 4, 3);
             numJeBaseHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numJeBaseHP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJeBaseHP.Name = "numJeBaseHP";
-            numJeBaseHP.Size = new Size(107, 29);
+            numJeBaseHP.Size = new Size(107, 23);
             numJeBaseHP.TabIndex = 30;
             numJeBaseHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
             // numJeLevel
             // 
             numJeLevel.Dock = DockStyle.Fill;
-            numJeLevel.Location = new Point(102, 3);
+            numJeLevel.Location = new Point(81, 3);
             numJeLevel.Margin = new Padding(4, 3, 4, 3);
             numJeLevel.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             numJeLevel.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJeLevel.Name = "numJeLevel";
-            numJeLevel.Size = new Size(107, 29);
+            numJeLevel.Size = new Size(107, 23);
             numJeLevel.TabIndex = 1;
             numJeLevel.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -1789,10 +1834,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeBaseHP.AutoSize = true;
             lblJeBaseHP.Dock = DockStyle.Fill;
-            lblJeBaseHP.Location = new Point(4, 108);
+            lblJeBaseHP.Location = new Point(4, 87);
             lblJeBaseHP.Margin = new Padding(4, 0, 4, 0);
             lblJeBaseHP.Name = "lblJeBaseHP";
-            lblJeBaseHP.Size = new Size(90, 36);
+            lblJeBaseHP.Size = new Size(69, 29);
             lblJeBaseHP.TabIndex = 29;
             lblJeBaseHP.Text = "Max HP:";
             lblJeBaseHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -1800,21 +1845,21 @@ namespace SummonerSaveFileEditor
             // numJeExperience
             // 
             numJeExperience.Dock = DockStyle.Fill;
-            numJeExperience.Location = new Point(102, 39);
+            numJeExperience.Location = new Point(81, 32);
             numJeExperience.Margin = new Padding(4, 3, 4, 3);
             numJeExperience.Maximum = new decimal(new int[] { 6327001, 0, 0, 0 });
             numJeExperience.Name = "numJeExperience";
-            numJeExperience.Size = new Size(107, 29);
+            numJeExperience.Size = new Size(107, 23);
             numJeExperience.TabIndex = 2;
             // 
             // lblJeSkillPoints
             // 
             lblJeSkillPoints.AutoSize = true;
             lblJeSkillPoints.Dock = DockStyle.Fill;
-            lblJeSkillPoints.Location = new Point(4, 72);
+            lblJeSkillPoints.Location = new Point(4, 58);
             lblJeSkillPoints.Margin = new Padding(4, 0, 4, 0);
             lblJeSkillPoints.Name = "lblJeSkillPoints";
-            lblJeSkillPoints.Size = new Size(90, 36);
+            lblJeSkillPoints.Size = new Size(69, 29);
             lblJeSkillPoints.TabIndex = 3;
             lblJeSkillPoints.Text = "Skill Points:";
             lblJeSkillPoints.TextAlign = ContentAlignment.MiddleLeft;
@@ -1822,10 +1867,10 @@ namespace SummonerSaveFileEditor
             // btnJeMaxLevel
             // 
             btnJeMaxLevel.Dock = DockStyle.Fill;
-            btnJeMaxLevel.Location = new Point(217, 3);
+            btnJeMaxLevel.Location = new Point(196, 3);
             btnJeMaxLevel.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxLevel.Name = "btnJeMaxLevel";
-            btnJeMaxLevel.Size = new Size(52, 30);
+            btnJeMaxLevel.Size = new Size(52, 23);
             btnJeMaxLevel.TabIndex = 19;
             btnJeMaxLevel.Text = "Max";
             btnJeMaxLevel.UseVisualStyleBackColor = true;
@@ -1837,7 +1882,7 @@ namespace SummonerSaveFileEditor
             lblJeLevel.Location = new Point(4, 0);
             lblJeLevel.Margin = new Padding(4, 0, 4, 0);
             lblJeLevel.Name = "lblJeLevel";
-            lblJeLevel.Size = new Size(90, 36);
+            lblJeLevel.Size = new Size(69, 29);
             lblJeLevel.TabIndex = 0;
             lblJeLevel.Text = "Level:";
             lblJeLevel.TextAlign = ContentAlignment.MiddleLeft;
@@ -1846,10 +1891,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJeExperience.AutoSize = true;
             lblJeExperience.Dock = DockStyle.Fill;
-            lblJeExperience.Location = new Point(4, 36);
+            lblJeExperience.Location = new Point(4, 29);
             lblJeExperience.Margin = new Padding(4, 0, 4, 0);
             lblJeExperience.Name = "lblJeExperience";
-            lblJeExperience.Size = new Size(90, 36);
+            lblJeExperience.Size = new Size(69, 29);
             lblJeExperience.TabIndex = 2;
             lblJeExperience.Text = "Experience:";
             lblJeExperience.TextAlign = ContentAlignment.MiddleLeft;
@@ -1857,10 +1902,10 @@ namespace SummonerSaveFileEditor
             // btnJeMaxExp
             // 
             btnJeMaxExp.Dock = DockStyle.Fill;
-            btnJeMaxExp.Location = new Point(217, 39);
+            btnJeMaxExp.Location = new Point(196, 32);
             btnJeMaxExp.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxExp.Name = "btnJeMaxExp";
-            btnJeMaxExp.Size = new Size(52, 30);
+            btnJeMaxExp.Size = new Size(52, 23);
             btnJeMaxExp.TabIndex = 19;
             btnJeMaxExp.Text = "Max";
             btnJeMaxExp.UseVisualStyleBackColor = true;
@@ -1868,20 +1913,20 @@ namespace SummonerSaveFileEditor
             // numJeSkill
             // 
             numJeSkill.Dock = DockStyle.Fill;
-            numJeSkill.Location = new Point(102, 75);
+            numJeSkill.Location = new Point(81, 61);
             numJeSkill.Margin = new Padding(4, 3, 4, 3);
             numJeSkill.Maximum = new decimal(new int[] { 160, 0, 0, 0 });
             numJeSkill.Name = "numJeSkill";
-            numJeSkill.Size = new Size(107, 29);
+            numJeSkill.Size = new Size(107, 23);
             numJeSkill.TabIndex = 2;
             // 
             // btnJeMaxSkill
             // 
             btnJeMaxSkill.Dock = DockStyle.Fill;
-            btnJeMaxSkill.Location = new Point(217, 75);
+            btnJeMaxSkill.Location = new Point(196, 61);
             btnJeMaxSkill.Margin = new Padding(4, 3, 4, 3);
             btnJeMaxSkill.Name = "btnJeMaxSkill";
-            btnJeMaxSkill.Size = new Size(52, 30);
+            btnJeMaxSkill.Size = new Size(52, 23);
             btnJeMaxSkill.TabIndex = 19;
             btnJeMaxSkill.Text = "Max";
             btnJeMaxSkill.UseVisualStyleBackColor = true;
@@ -1891,11 +1936,11 @@ namespace SummonerSaveFileEditor
             lvJekharSkills.Columns.AddRange(new ColumnHeader[] { columnSkillName, columnSkillValue });
             lvJekharSkills.Dock = DockStyle.Fill;
             lvJekharSkills.FullRowSelect = true;
-            lvJekharSkills.Location = new Point(628, 3);
+            lvJekharSkills.Location = new Point(586, 3);
             lvJekharSkills.Margin = new Padding(4, 3, 4, 3);
             lvJekharSkills.Name = "lvJekharSkills";
             tblJekhar.SetRowSpan(lvJekharSkills, 8);
-            lvJekharSkills.Size = new Size(333, 282);
+            lvJekharSkills.Size = new Size(375, 226);
             lvJekharSkills.TabIndex = 0;
             lvJekharSkills.UseCompatibleStateImageBehavior = false;
             lvJekharSkills.View = View.Details;
@@ -1919,12 +1964,12 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel7.Controls.Add(numJeSkillValue, 0, 0);
             tableLayoutPanel7.Controls.Add(btnJeUpdateSkill, 1, 0);
             tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(624, 288);
+            tableLayoutPanel7.Location = new Point(582, 232);
             tableLayoutPanel7.Margin = new Padding(0);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 1;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel7.Size = new Size(341, 36);
+            tableLayoutPanel7.Size = new Size(383, 29);
             tableLayoutPanel7.TabIndex = 23;
             // 
             // numJeSkillValue
@@ -1935,16 +1980,16 @@ namespace SummonerSaveFileEditor
             numJeSkillValue.Margin = new Padding(4, 3, 4, 3);
             numJeSkillValue.Maximum = new decimal(new int[] { 25, 0, 0, 0 });
             numJeSkillValue.Name = "numJeSkillValue";
-            numJeSkillValue.Size = new Size(162, 29);
+            numJeSkillValue.Size = new Size(183, 23);
             numJeSkillValue.TabIndex = 3;
             // 
             // btnJeUpdateSkill
             // 
             btnJeUpdateSkill.Dock = DockStyle.Fill;
-            btnJeUpdateSkill.Location = new Point(174, 3);
+            btnJeUpdateSkill.Location = new Point(195, 3);
             btnJeUpdateSkill.Margin = new Padding(4, 3, 4, 3);
             btnJeUpdateSkill.Name = "btnJeUpdateSkill";
-            btnJeUpdateSkill.Size = new Size(163, 30);
+            btnJeUpdateSkill.Size = new Size(184, 23);
             btnJeUpdateSkill.TabIndex = 4;
             btnJeUpdateSkill.Text = "Update Skill";
             btnJeUpdateSkill.UseVisualStyleBackColor = true;
@@ -1953,11 +1998,11 @@ namespace SummonerSaveFileEditor
             // tabPageRosalind
             // 
             tabPageRosalind.Controls.Add(tblRosalind);
-            tabPageRosalind.Location = new Point(4, 30);
+            tabPageRosalind.Location = new Point(4, 24);
             tabPageRosalind.Margin = new Padding(4, 3, 4, 3);
             tabPageRosalind.Name = "tabPageRosalind";
             tabPageRosalind.Padding = new Padding(4, 3, 4, 3);
-            tabPageRosalind.Size = new Size(973, 456);
+            tabPageRosalind.Size = new Size(973, 507);
             tabPageRosalind.TabIndex = 2;
             tabPageRosalind.Text = "Rosalind";
             // 
@@ -2021,17 +2066,17 @@ namespace SummonerSaveFileEditor
             tblRosalind.Margin = new Padding(4, 3, 4, 3);
             tblRosalind.Name = "tblRosalind";
             tblRosalind.RowCount = 10;
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblRosalind.Size = new Size(965, 450);
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblRosalind.Size = new Size(965, 501);
             tblRosalind.TabIndex = 26;
             // 
             // tableLayoutPanel10
@@ -2042,12 +2087,12 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel10.Controls.Add(numRoSkillValue, 0, 0);
             tableLayoutPanel10.Controls.Add(btnRoUpdateSkill, 1, 0);
             tableLayoutPanel10.Dock = DockStyle.Fill;
-            tableLayoutPanel10.Location = new Point(624, 288);
+            tableLayoutPanel10.Location = new Point(582, 232);
             tableLayoutPanel10.Margin = new Padding(0);
             tableLayoutPanel10.Name = "tableLayoutPanel10";
             tableLayoutPanel10.RowCount = 1;
             tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel10.Size = new Size(341, 36);
+            tableLayoutPanel10.Size = new Size(383, 29);
             tableLayoutPanel10.TabIndex = 26;
             // 
             // numRoSkillValue
@@ -2058,16 +2103,16 @@ namespace SummonerSaveFileEditor
             numRoSkillValue.Margin = new Padding(4, 3, 4, 3);
             numRoSkillValue.Maximum = new decimal(new int[] { 25, 0, 0, 0 });
             numRoSkillValue.Name = "numRoSkillValue";
-            numRoSkillValue.Size = new Size(162, 29);
+            numRoSkillValue.Size = new Size(183, 23);
             numRoSkillValue.TabIndex = 3;
             // 
             // btnRoUpdateSkill
             // 
             btnRoUpdateSkill.Dock = DockStyle.Fill;
-            btnRoUpdateSkill.Location = new Point(174, 3);
+            btnRoUpdateSkill.Location = new Point(195, 3);
             btnRoUpdateSkill.Margin = new Padding(4, 3, 4, 3);
             btnRoUpdateSkill.Name = "btnRoUpdateSkill";
-            btnRoUpdateSkill.Size = new Size(163, 30);
+            btnRoUpdateSkill.Size = new Size(184, 23);
             btnRoUpdateSkill.TabIndex = 4;
             btnRoUpdateSkill.Text = "Update Skill";
             btnRoUpdateSkill.UseVisualStyleBackColor = true;
@@ -2078,11 +2123,11 @@ namespace SummonerSaveFileEditor
             lvRosalindSkills.Columns.AddRange(new ColumnHeader[] { columnHeader13, columnHeader14 });
             lvRosalindSkills.Dock = DockStyle.Fill;
             lvRosalindSkills.FullRowSelect = true;
-            lvRosalindSkills.Location = new Point(628, 3);
+            lvRosalindSkills.Location = new Point(586, 3);
             lvRosalindSkills.Margin = new Padding(4, 3, 4, 3);
             lvRosalindSkills.Name = "lvRosalindSkills";
             tblRosalind.SetRowSpan(lvRosalindSkills, 8);
-            lvRosalindSkills.Size = new Size(333, 282);
+            lvRosalindSkills.Size = new Size(375, 226);
             lvRosalindSkills.TabIndex = 29;
             lvRosalindSkills.UseCompatibleStateImageBehavior = false;
             lvRosalindSkills.View = View.Details;
@@ -2102,10 +2147,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoAmulet.AutoSize = true;
             lblRoAmulet.Dock = DockStyle.Fill;
-            lblRoAmulet.Location = new Point(277, 0);
+            lblRoAmulet.Location = new Point(256, 0);
             lblRoAmulet.Margin = new Padding(4, 0, 4, 0);
             lblRoAmulet.Name = "lblRoAmulet";
-            lblRoAmulet.Size = new Size(83, 36);
+            lblRoAmulet.Size = new Size(62, 29);
             lblRoAmulet.TabIndex = 29;
             lblRoAmulet.Text = "Amulet";
             lblRoAmulet.TextAlign = ContentAlignment.MiddleLeft;
@@ -2114,10 +2159,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoRing1.AutoSize = true;
             lblRoRing1.Dock = DockStyle.Fill;
-            lblRoRing1.Location = new Point(277, 36);
+            lblRoRing1.Location = new Point(256, 29);
             lblRoRing1.Margin = new Padding(4, 0, 4, 0);
             lblRoRing1.Name = "lblRoRing1";
-            lblRoRing1.Size = new Size(83, 36);
+            lblRoRing1.Size = new Size(62, 29);
             lblRoRing1.TabIndex = 30;
             lblRoRing1.Text = "Left Right";
             lblRoRing1.TextAlign = ContentAlignment.MiddleLeft;
@@ -2126,10 +2171,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoRing2.AutoSize = true;
             lblRoRing2.Dock = DockStyle.Fill;
-            lblRoRing2.Location = new Point(277, 72);
+            lblRoRing2.Location = new Point(256, 58);
             lblRoRing2.Margin = new Padding(4, 0, 4, 0);
             lblRoRing2.Name = "lblRoRing2";
-            lblRoRing2.Size = new Size(83, 36);
+            lblRoRing2.Size = new Size(62, 29);
             lblRoRing2.TabIndex = 31;
             lblRoRing2.Text = "Right Ring";
             lblRoRing2.TextAlign = ContentAlignment.MiddleLeft;
@@ -2138,10 +2183,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoGauntlets.AutoSize = true;
             lblRoGauntlets.Dock = DockStyle.Fill;
-            lblRoGauntlets.Location = new Point(277, 108);
+            lblRoGauntlets.Location = new Point(256, 87);
             lblRoGauntlets.Margin = new Padding(4, 0, 4, 0);
             lblRoGauntlets.Name = "lblRoGauntlets";
-            lblRoGauntlets.Size = new Size(83, 36);
+            lblRoGauntlets.Size = new Size(62, 29);
             lblRoGauntlets.TabIndex = 32;
             lblRoGauntlets.Text = "Gauntlets";
             lblRoGauntlets.TextAlign = ContentAlignment.MiddleLeft;
@@ -2150,10 +2195,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoWeapon.AutoSize = true;
             lblRoWeapon.Dock = DockStyle.Fill;
-            lblRoWeapon.Location = new Point(277, 144);
+            lblRoWeapon.Location = new Point(256, 116);
             lblRoWeapon.Margin = new Padding(4, 0, 4, 0);
             lblRoWeapon.Name = "lblRoWeapon";
-            lblRoWeapon.Size = new Size(83, 36);
+            lblRoWeapon.Size = new Size(62, 29);
             lblRoWeapon.TabIndex = 33;
             lblRoWeapon.Text = "Weapon";
             lblRoWeapon.TextAlign = ContentAlignment.MiddleLeft;
@@ -2162,10 +2207,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoShield.AutoSize = true;
             lblRoShield.Dock = DockStyle.Fill;
-            lblRoShield.Location = new Point(277, 180);
+            lblRoShield.Location = new Point(256, 145);
             lblRoShield.Margin = new Padding(4, 0, 4, 0);
             lblRoShield.Name = "lblRoShield";
-            lblRoShield.Size = new Size(83, 36);
+            lblRoShield.Size = new Size(62, 29);
             lblRoShield.TabIndex = 34;
             lblRoShield.Text = "Shield";
             lblRoShield.TextAlign = ContentAlignment.MiddleLeft;
@@ -2174,10 +2219,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoBoots.AutoSize = true;
             lblRoBoots.Dock = DockStyle.Fill;
-            lblRoBoots.Location = new Point(277, 216);
+            lblRoBoots.Location = new Point(256, 174);
             lblRoBoots.Margin = new Padding(4, 0, 4, 0);
             lblRoBoots.Name = "lblRoBoots";
-            lblRoBoots.Size = new Size(83, 36);
+            lblRoBoots.Size = new Size(62, 29);
             lblRoBoots.TabIndex = 35;
             lblRoBoots.Text = "Boots";
             lblRoBoots.TextAlign = ContentAlignment.MiddleLeft;
@@ -2186,10 +2231,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoTorso.AutoSize = true;
             lblRoTorso.Dock = DockStyle.Fill;
-            lblRoTorso.Location = new Point(277, 252);
+            lblRoTorso.Location = new Point(256, 203);
             lblRoTorso.Margin = new Padding(4, 0, 4, 0);
             lblRoTorso.Name = "lblRoTorso";
-            lblRoTorso.Size = new Size(83, 36);
+            lblRoTorso.Size = new Size(62, 29);
             lblRoTorso.TabIndex = 36;
             lblRoTorso.Text = "Torso";
             lblRoTorso.TextAlign = ContentAlignment.MiddleLeft;
@@ -2198,10 +2243,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoCurrentHP.AutoSize = true;
             lblRoCurrentHP.Dock = DockStyle.Fill;
-            lblRoCurrentHP.Location = new Point(4, 144);
+            lblRoCurrentHP.Location = new Point(4, 116);
             lblRoCurrentHP.Margin = new Padding(4, 0, 4, 0);
             lblRoCurrentHP.Name = "lblRoCurrentHP";
-            lblRoCurrentHP.Size = new Size(90, 36);
+            lblRoCurrentHP.Size = new Size(69, 29);
             lblRoCurrentHP.TabIndex = 26;
             lblRoCurrentHP.Text = "Current HP:";
             lblRoCurrentHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2213,10 +2258,10 @@ namespace SummonerSaveFileEditor
             cbRoLeggings.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoLeggings.FormattingEnabled = true;
             cbRoLeggings.IntegralHeight = false;
-            cbRoLeggings.Location = new Point(368, 291);
+            cbRoLeggings.Location = new Point(326, 235);
             cbRoLeggings.Margin = new Padding(4, 3, 4, 3);
             cbRoLeggings.Name = "cbRoLeggings";
-            cbRoLeggings.Size = new Size(252, 29);
+            cbRoLeggings.Size = new Size(252, 23);
             cbRoLeggings.TabIndex = 23;
             // 
             // cbRoTorso
@@ -2226,10 +2271,10 @@ namespace SummonerSaveFileEditor
             cbRoTorso.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoTorso.FormattingEnabled = true;
             cbRoTorso.IntegralHeight = false;
-            cbRoTorso.Location = new Point(368, 255);
+            cbRoTorso.Location = new Point(326, 206);
             cbRoTorso.Margin = new Padding(4, 3, 4, 3);
             cbRoTorso.Name = "cbRoTorso";
-            cbRoTorso.Size = new Size(252, 29);
+            cbRoTorso.Size = new Size(252, 23);
             cbRoTorso.TabIndex = 23;
             // 
             // cbRoBoots
@@ -2239,10 +2284,10 @@ namespace SummonerSaveFileEditor
             cbRoBoots.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoBoots.FormattingEnabled = true;
             cbRoBoots.IntegralHeight = false;
-            cbRoBoots.Location = new Point(368, 219);
+            cbRoBoots.Location = new Point(326, 177);
             cbRoBoots.Margin = new Padding(4, 3, 4, 3);
             cbRoBoots.Name = "cbRoBoots";
-            cbRoBoots.Size = new Size(252, 29);
+            cbRoBoots.Size = new Size(252, 23);
             cbRoBoots.TabIndex = 23;
             // 
             // cbRoShield
@@ -2252,10 +2297,10 @@ namespace SummonerSaveFileEditor
             cbRoShield.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoShield.FormattingEnabled = true;
             cbRoShield.IntegralHeight = false;
-            cbRoShield.Location = new Point(368, 183);
+            cbRoShield.Location = new Point(326, 148);
             cbRoShield.Margin = new Padding(4, 3, 4, 3);
             cbRoShield.Name = "cbRoShield";
-            cbRoShield.Size = new Size(252, 29);
+            cbRoShield.Size = new Size(252, 23);
             cbRoShield.TabIndex = 23;
             // 
             // cbRoWeapon
@@ -2265,10 +2310,10 @@ namespace SummonerSaveFileEditor
             cbRoWeapon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoWeapon.FormattingEnabled = true;
             cbRoWeapon.IntegralHeight = false;
-            cbRoWeapon.Location = new Point(368, 147);
+            cbRoWeapon.Location = new Point(326, 119);
             cbRoWeapon.Margin = new Padding(4, 3, 4, 3);
             cbRoWeapon.Name = "cbRoWeapon";
-            cbRoWeapon.Size = new Size(252, 29);
+            cbRoWeapon.Size = new Size(252, 23);
             cbRoWeapon.TabIndex = 23;
             // 
             // cbRoGauntlets
@@ -2278,10 +2323,10 @@ namespace SummonerSaveFileEditor
             cbRoGauntlets.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoGauntlets.FormattingEnabled = true;
             cbRoGauntlets.IntegralHeight = false;
-            cbRoGauntlets.Location = new Point(368, 111);
+            cbRoGauntlets.Location = new Point(326, 90);
             cbRoGauntlets.Margin = new Padding(4, 3, 4, 3);
             cbRoGauntlets.Name = "cbRoGauntlets";
-            cbRoGauntlets.Size = new Size(252, 29);
+            cbRoGauntlets.Size = new Size(252, 23);
             cbRoGauntlets.TabIndex = 23;
             // 
             // cbRoRing2
@@ -2291,10 +2336,10 @@ namespace SummonerSaveFileEditor
             cbRoRing2.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoRing2.FormattingEnabled = true;
             cbRoRing2.IntegralHeight = false;
-            cbRoRing2.Location = new Point(368, 75);
+            cbRoRing2.Location = new Point(326, 61);
             cbRoRing2.Margin = new Padding(4, 3, 4, 3);
             cbRoRing2.Name = "cbRoRing2";
-            cbRoRing2.Size = new Size(252, 29);
+            cbRoRing2.Size = new Size(252, 23);
             cbRoRing2.TabIndex = 23;
             // 
             // cbRoRing1
@@ -2304,10 +2349,10 @@ namespace SummonerSaveFileEditor
             cbRoRing1.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoRing1.FormattingEnabled = true;
             cbRoRing1.IntegralHeight = false;
-            cbRoRing1.Location = new Point(368, 39);
+            cbRoRing1.Location = new Point(326, 32);
             cbRoRing1.Margin = new Padding(4, 3, 4, 3);
             cbRoRing1.Name = "cbRoRing1";
-            cbRoRing1.Size = new Size(252, 29);
+            cbRoRing1.Size = new Size(252, 23);
             cbRoRing1.TabIndex = 23;
             // 
             // cbRoAmulet
@@ -2317,30 +2362,30 @@ namespace SummonerSaveFileEditor
             cbRoAmulet.DropDownStyle = ComboBoxStyle.DropDownList;
             cbRoAmulet.FormattingEnabled = true;
             cbRoAmulet.IntegralHeight = false;
-            cbRoAmulet.Location = new Point(368, 3);
+            cbRoAmulet.Location = new Point(326, 3);
             cbRoAmulet.Margin = new Padding(4, 3, 4, 3);
             cbRoAmulet.Name = "cbRoAmulet";
-            cbRoAmulet.Size = new Size(252, 29);
+            cbRoAmulet.Size = new Size(252, 23);
             cbRoAmulet.TabIndex = 23;
             // 
             // numRoCurrentHP
             // 
             numRoCurrentHP.Dock = DockStyle.Fill;
-            numRoCurrentHP.Location = new Point(102, 147);
+            numRoCurrentHP.Location = new Point(81, 119);
             numRoCurrentHP.Margin = new Padding(4, 3, 4, 3);
             numRoCurrentHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numRoCurrentHP.Name = "numRoCurrentHP";
-            numRoCurrentHP.Size = new Size(107, 29);
+            numRoCurrentHP.Size = new Size(107, 23);
             numRoCurrentHP.TabIndex = 24;
             numRoCurrentHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
             // btnRoMaxCurrentHP
             // 
             btnRoMaxCurrentHP.Dock = DockStyle.Fill;
-            btnRoMaxCurrentHP.Location = new Point(217, 147);
+            btnRoMaxCurrentHP.Location = new Point(196, 119);
             btnRoMaxCurrentHP.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxCurrentHP.Name = "btnRoMaxCurrentHP";
-            btnRoMaxCurrentHP.Size = new Size(52, 30);
+            btnRoMaxCurrentHP.Size = new Size(52, 23);
             btnRoMaxCurrentHP.TabIndex = 25;
             btnRoMaxCurrentHP.Text = "Max";
             btnRoMaxCurrentHP.UseVisualStyleBackColor = true;
@@ -2349,10 +2394,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoCurrentAP.AutoSize = true;
             lblRoCurrentAP.Dock = DockStyle.Fill;
-            lblRoCurrentAP.Location = new Point(4, 216);
+            lblRoCurrentAP.Location = new Point(4, 174);
             lblRoCurrentAP.Margin = new Padding(4, 0, 4, 0);
             lblRoCurrentAP.Name = "lblRoCurrentAP";
-            lblRoCurrentAP.Size = new Size(90, 36);
+            lblRoCurrentAP.Size = new Size(69, 29);
             lblRoCurrentAP.TabIndex = 23;
             lblRoCurrentAP.Text = "Current AP:";
             lblRoCurrentAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2360,21 +2405,21 @@ namespace SummonerSaveFileEditor
             // numRoCurrentAP
             // 
             numRoCurrentAP.Dock = DockStyle.Fill;
-            numRoCurrentAP.Location = new Point(102, 219);
+            numRoCurrentAP.Location = new Point(81, 177);
             numRoCurrentAP.Margin = new Padding(4, 3, 4, 3);
             numRoCurrentAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numRoCurrentAP.Name = "numRoCurrentAP";
-            numRoCurrentAP.Size = new Size(107, 29);
+            numRoCurrentAP.Size = new Size(107, 23);
             numRoCurrentAP.TabIndex = 24;
             numRoCurrentAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // btnRoMaxCurrentAP
             // 
             btnRoMaxCurrentAP.Dock = DockStyle.Fill;
-            btnRoMaxCurrentAP.Location = new Point(217, 219);
+            btnRoMaxCurrentAP.Location = new Point(196, 177);
             btnRoMaxCurrentAP.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxCurrentAP.Name = "btnRoMaxCurrentAP";
-            btnRoMaxCurrentAP.Size = new Size(52, 30);
+            btnRoMaxCurrentAP.Size = new Size(52, 23);
             btnRoMaxCurrentAP.TabIndex = 25;
             btnRoMaxCurrentAP.Text = "Max";
             btnRoMaxCurrentAP.UseVisualStyleBackColor = true;
@@ -2383,10 +2428,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoSpeed.AutoSize = true;
             lblRoSpeed.Dock = DockStyle.Fill;
-            lblRoSpeed.Location = new Point(4, 252);
+            lblRoSpeed.Location = new Point(4, 203);
             lblRoSpeed.Margin = new Padding(4, 0, 4, 0);
             lblRoSpeed.Name = "lblRoSpeed";
-            lblRoSpeed.Size = new Size(90, 36);
+            lblRoSpeed.Size = new Size(69, 29);
             lblRoSpeed.TabIndex = 23;
             lblRoSpeed.Text = "Speed:";
             lblRoSpeed.TextAlign = ContentAlignment.MiddleLeft;
@@ -2394,22 +2439,22 @@ namespace SummonerSaveFileEditor
             // numRoSpeed
             // 
             numRoSpeed.Dock = DockStyle.Fill;
-            numRoSpeed.Location = new Point(102, 255);
+            numRoSpeed.Location = new Point(81, 206);
             numRoSpeed.Margin = new Padding(4, 3, 4, 3);
             numRoSpeed.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             numRoSpeed.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRoSpeed.Name = "numRoSpeed";
-            numRoSpeed.Size = new Size(107, 29);
+            numRoSpeed.Size = new Size(107, 23);
             numRoSpeed.TabIndex = 24;
             numRoSpeed.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // btnRoMaxSpeed
             // 
             btnRoMaxSpeed.Dock = DockStyle.Fill;
-            btnRoMaxSpeed.Location = new Point(217, 255);
+            btnRoMaxSpeed.Location = new Point(196, 206);
             btnRoMaxSpeed.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxSpeed.Name = "btnRoMaxSpeed";
-            btnRoMaxSpeed.Size = new Size(52, 30);
+            btnRoMaxSpeed.Size = new Size(52, 23);
             btnRoMaxSpeed.TabIndex = 25;
             btnRoMaxSpeed.Text = "Max";
             btnRoMaxSpeed.UseVisualStyleBackColor = true;
@@ -2418,10 +2463,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoLeggings.AutoSize = true;
             lblRoLeggings.Dock = DockStyle.Fill;
-            lblRoLeggings.Location = new Point(277, 288);
+            lblRoLeggings.Location = new Point(256, 232);
             lblRoLeggings.Margin = new Padding(4, 0, 4, 0);
             lblRoLeggings.Name = "lblRoLeggings";
-            lblRoLeggings.Size = new Size(83, 36);
+            lblRoLeggings.Size = new Size(62, 29);
             lblRoLeggings.TabIndex = 37;
             lblRoLeggings.Text = "Leggings";
             lblRoLeggings.TextAlign = ContentAlignment.MiddleLeft;
@@ -2429,10 +2474,10 @@ namespace SummonerSaveFileEditor
             // btnRoMaxAll
             // 
             btnRoMaxAll.Dock = DockStyle.Fill;
-            btnRoMaxAll.Location = new Point(102, 291);
+            btnRoMaxAll.Location = new Point(81, 235);
             btnRoMaxAll.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxAll.Name = "btnRoMaxAll";
-            btnRoMaxAll.Size = new Size(107, 30);
+            btnRoMaxAll.Size = new Size(107, 23);
             btnRoMaxAll.TabIndex = 18;
             btnRoMaxAll.Text = "Max All";
             btnRoMaxAll.UseVisualStyleBackColor = true;
@@ -2440,10 +2485,10 @@ namespace SummonerSaveFileEditor
             // btnRoMaxBaseAP
             // 
             btnRoMaxBaseAP.Dock = DockStyle.Fill;
-            btnRoMaxBaseAP.Location = new Point(217, 183);
+            btnRoMaxBaseAP.Location = new Point(196, 148);
             btnRoMaxBaseAP.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxBaseAP.Name = "btnRoMaxBaseAP";
-            btnRoMaxBaseAP.Size = new Size(52, 30);
+            btnRoMaxBaseAP.Size = new Size(52, 23);
             btnRoMaxBaseAP.TabIndex = 28;
             btnRoMaxBaseAP.Text = "Max";
             btnRoMaxBaseAP.UseVisualStyleBackColor = true;
@@ -2451,22 +2496,22 @@ namespace SummonerSaveFileEditor
             // numRoBaseAP
             // 
             numRoBaseAP.Dock = DockStyle.Fill;
-            numRoBaseAP.Location = new Point(102, 183);
+            numRoBaseAP.Location = new Point(81, 148);
             numRoBaseAP.Margin = new Padding(4, 3, 4, 3);
             numRoBaseAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numRoBaseAP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRoBaseAP.Name = "numRoBaseAP";
-            numRoBaseAP.Size = new Size(107, 29);
+            numRoBaseAP.Size = new Size(107, 23);
             numRoBaseAP.TabIndex = 27;
             numRoBaseAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // btnRoMaxBaseHP
             // 
             btnRoMaxBaseHP.Dock = DockStyle.Fill;
-            btnRoMaxBaseHP.Location = new Point(217, 111);
+            btnRoMaxBaseHP.Location = new Point(196, 90);
             btnRoMaxBaseHP.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxBaseHP.Name = "btnRoMaxBaseHP";
-            btnRoMaxBaseHP.Size = new Size(52, 30);
+            btnRoMaxBaseHP.Size = new Size(52, 23);
             btnRoMaxBaseHP.TabIndex = 28;
             btnRoMaxBaseHP.Text = "Max";
             btnRoMaxBaseHP.UseVisualStyleBackColor = true;
@@ -2475,10 +2520,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoBaseAP.AutoSize = true;
             lblRoBaseAP.Dock = DockStyle.Fill;
-            lblRoBaseAP.Location = new Point(4, 180);
+            lblRoBaseAP.Location = new Point(4, 145);
             lblRoBaseAP.Margin = new Padding(4, 0, 4, 0);
             lblRoBaseAP.Name = "lblRoBaseAP";
-            lblRoBaseAP.Size = new Size(90, 36);
+            lblRoBaseAP.Size = new Size(69, 29);
             lblRoBaseAP.TabIndex = 26;
             lblRoBaseAP.Text = "Max AP:";
             lblRoBaseAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2486,12 +2531,12 @@ namespace SummonerSaveFileEditor
             // numRoBaseHP
             // 
             numRoBaseHP.Dock = DockStyle.Fill;
-            numRoBaseHP.Location = new Point(102, 111);
+            numRoBaseHP.Location = new Point(81, 90);
             numRoBaseHP.Margin = new Padding(4, 3, 4, 3);
             numRoBaseHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numRoBaseHP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRoBaseHP.Name = "numRoBaseHP";
-            numRoBaseHP.Size = new Size(107, 29);
+            numRoBaseHP.Size = new Size(107, 23);
             numRoBaseHP.TabIndex = 27;
             numRoBaseHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
@@ -2499,10 +2544,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoBaseHP.AutoSize = true;
             lblRoBaseHP.Dock = DockStyle.Fill;
-            lblRoBaseHP.Location = new Point(4, 108);
+            lblRoBaseHP.Location = new Point(4, 87);
             lblRoBaseHP.Margin = new Padding(4, 0, 4, 0);
             lblRoBaseHP.Name = "lblRoBaseHP";
-            lblRoBaseHP.Size = new Size(90, 36);
+            lblRoBaseHP.Size = new Size(69, 29);
             lblRoBaseHP.TabIndex = 26;
             lblRoBaseHP.Text = "Max HP:";
             lblRoBaseHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2510,10 +2555,10 @@ namespace SummonerSaveFileEditor
             // btnRoMaxSkill
             // 
             btnRoMaxSkill.Dock = DockStyle.Fill;
-            btnRoMaxSkill.Location = new Point(217, 75);
+            btnRoMaxSkill.Location = new Point(196, 61);
             btnRoMaxSkill.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxSkill.Name = "btnRoMaxSkill";
-            btnRoMaxSkill.Size = new Size(52, 30);
+            btnRoMaxSkill.Size = new Size(52, 23);
             btnRoMaxSkill.TabIndex = 18;
             btnRoMaxSkill.Text = "Max";
             btnRoMaxSkill.UseVisualStyleBackColor = true;
@@ -2521,20 +2566,20 @@ namespace SummonerSaveFileEditor
             // numRoSkill
             // 
             numRoSkill.Dock = DockStyle.Fill;
-            numRoSkill.Location = new Point(102, 75);
+            numRoSkill.Location = new Point(81, 61);
             numRoSkill.Margin = new Padding(4, 3, 4, 3);
             numRoSkill.Maximum = new decimal(new int[] { 160, 0, 0, 0 });
             numRoSkill.Name = "numRoSkill";
-            numRoSkill.Size = new Size(107, 29);
+            numRoSkill.Size = new Size(107, 23);
             numRoSkill.TabIndex = 2;
             // 
             // btnRoMaxExp
             // 
             btnRoMaxExp.Dock = DockStyle.Fill;
-            btnRoMaxExp.Location = new Point(217, 39);
+            btnRoMaxExp.Location = new Point(196, 32);
             btnRoMaxExp.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxExp.Name = "btnRoMaxExp";
-            btnRoMaxExp.Size = new Size(52, 30);
+            btnRoMaxExp.Size = new Size(52, 23);
             btnRoMaxExp.TabIndex = 17;
             btnRoMaxExp.Text = "Max";
             btnRoMaxExp.UseVisualStyleBackColor = true;
@@ -2543,10 +2588,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoSkillPoints.AutoSize = true;
             lblRoSkillPoints.Dock = DockStyle.Fill;
-            lblRoSkillPoints.Location = new Point(4, 72);
+            lblRoSkillPoints.Location = new Point(4, 58);
             lblRoSkillPoints.Margin = new Padding(4, 0, 4, 0);
             lblRoSkillPoints.Name = "lblRoSkillPoints";
-            lblRoSkillPoints.Size = new Size(90, 36);
+            lblRoSkillPoints.Size = new Size(69, 29);
             lblRoSkillPoints.TabIndex = 3;
             lblRoSkillPoints.Text = "Skill Points:";
             lblRoSkillPoints.TextAlign = ContentAlignment.MiddleLeft;
@@ -2554,32 +2599,32 @@ namespace SummonerSaveFileEditor
             // numRoLevel
             // 
             numRoLevel.Dock = DockStyle.Fill;
-            numRoLevel.Location = new Point(102, 3);
+            numRoLevel.Location = new Point(81, 3);
             numRoLevel.Margin = new Padding(4, 3, 4, 3);
             numRoLevel.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             numRoLevel.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numRoLevel.Name = "numRoLevel";
-            numRoLevel.Size = new Size(107, 29);
+            numRoLevel.Size = new Size(107, 23);
             numRoLevel.TabIndex = 1;
             numRoLevel.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // numRoExperience
             // 
             numRoExperience.Dock = DockStyle.Fill;
-            numRoExperience.Location = new Point(102, 39);
+            numRoExperience.Location = new Point(81, 32);
             numRoExperience.Margin = new Padding(4, 3, 4, 3);
             numRoExperience.Maximum = new decimal(new int[] { 6327001, 0, 0, 0 });
             numRoExperience.Name = "numRoExperience";
-            numRoExperience.Size = new Size(107, 29);
+            numRoExperience.Size = new Size(107, 23);
             numRoExperience.TabIndex = 2;
             // 
             // btnRoMaxLevel
             // 
             btnRoMaxLevel.Dock = DockStyle.Fill;
-            btnRoMaxLevel.Location = new Point(217, 3);
+            btnRoMaxLevel.Location = new Point(196, 3);
             btnRoMaxLevel.Margin = new Padding(4, 3, 4, 3);
             btnRoMaxLevel.Name = "btnRoMaxLevel";
-            btnRoMaxLevel.Size = new Size(52, 30);
+            btnRoMaxLevel.Size = new Size(52, 23);
             btnRoMaxLevel.TabIndex = 18;
             btnRoMaxLevel.Text = "Max";
             btnRoMaxLevel.UseVisualStyleBackColor = true;
@@ -2591,7 +2636,7 @@ namespace SummonerSaveFileEditor
             lblRoLevel.Location = new Point(4, 0);
             lblRoLevel.Margin = new Padding(4, 0, 4, 0);
             lblRoLevel.Name = "lblRoLevel";
-            lblRoLevel.Size = new Size(90, 36);
+            lblRoLevel.Size = new Size(69, 29);
             lblRoLevel.TabIndex = 0;
             lblRoLevel.Text = "Level:";
             lblRoLevel.TextAlign = ContentAlignment.MiddleLeft;
@@ -2600,10 +2645,10 @@ namespace SummonerSaveFileEditor
             // 
             lblRoExperience.AutoSize = true;
             lblRoExperience.Dock = DockStyle.Fill;
-            lblRoExperience.Location = new Point(4, 36);
+            lblRoExperience.Location = new Point(4, 29);
             lblRoExperience.Margin = new Padding(4, 0, 4, 0);
             lblRoExperience.Name = "lblRoExperience";
-            lblRoExperience.Size = new Size(90, 36);
+            lblRoExperience.Size = new Size(69, 29);
             lblRoExperience.TabIndex = 2;
             lblRoExperience.Text = "Experience:";
             lblRoExperience.TextAlign = ContentAlignment.MiddleLeft;
@@ -2612,11 +2657,11 @@ namespace SummonerSaveFileEditor
             // 
             tabPageFlece.BackgroundImageLayout = ImageLayout.Stretch;
             tabPageFlece.Controls.Add(tblFlece);
-            tabPageFlece.Location = new Point(4, 30);
+            tabPageFlece.Location = new Point(4, 24);
             tabPageFlece.Margin = new Padding(4, 3, 4, 3);
             tabPageFlece.Name = "tabPageFlece";
             tabPageFlece.Padding = new Padding(4, 3, 4, 3);
-            tabPageFlece.Size = new Size(973, 456);
+            tabPageFlece.Size = new Size(973, 507);
             tabPageFlece.TabIndex = 1;
             tabPageFlece.Text = "Flece";
             // 
@@ -2680,27 +2725,27 @@ namespace SummonerSaveFileEditor
             tblFlece.Margin = new Padding(4, 3, 4, 3);
             tblFlece.Name = "tblFlece";
             tblFlece.RowCount = 10;
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblFlece.Size = new Size(965, 450);
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblFlece.Size = new Size(965, 501);
             tblFlece.TabIndex = 27;
             // 
             // lblFlAmulet
             // 
             lblFlAmulet.AutoSize = true;
             lblFlAmulet.Dock = DockStyle.Fill;
-            lblFlAmulet.Location = new Point(277, 0);
+            lblFlAmulet.Location = new Point(256, 0);
             lblFlAmulet.Margin = new Padding(4, 0, 4, 0);
             lblFlAmulet.Name = "lblFlAmulet";
-            lblFlAmulet.Size = new Size(83, 36);
+            lblFlAmulet.Size = new Size(62, 29);
             lblFlAmulet.TabIndex = 29;
             lblFlAmulet.Text = "Amulet";
             lblFlAmulet.TextAlign = ContentAlignment.MiddleLeft;
@@ -2710,11 +2755,11 @@ namespace SummonerSaveFileEditor
             lvFleceSkills.Columns.AddRange(new ColumnHeader[] { columnHeader11, columnHeader12 });
             lvFleceSkills.Dock = DockStyle.Fill;
             lvFleceSkills.FullRowSelect = true;
-            lvFleceSkills.Location = new Point(628, 3);
+            lvFleceSkills.Location = new Point(586, 3);
             lvFleceSkills.Margin = new Padding(4, 3, 4, 3);
             lvFleceSkills.Name = "lvFleceSkills";
             tblFlece.SetRowSpan(lvFleceSkills, 8);
-            lvFleceSkills.Size = new Size(333, 282);
+            lvFleceSkills.Size = new Size(375, 226);
             lvFleceSkills.TabIndex = 28;
             lvFleceSkills.UseCompatibleStateImageBehavior = false;
             lvFleceSkills.View = View.Details;
@@ -2738,12 +2783,12 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel8.Controls.Add(numFlSkillValue, 0, 0);
             tableLayoutPanel8.Controls.Add(btnFlUpdateSkill, 1, 0);
             tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(624, 288);
+            tableLayoutPanel8.Location = new Point(582, 232);
             tableLayoutPanel8.Margin = new Padding(0);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 1;
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel8.Size = new Size(341, 36);
+            tableLayoutPanel8.Size = new Size(383, 29);
             tableLayoutPanel8.TabIndex = 24;
             // 
             // numFlSkillValue
@@ -2754,16 +2799,16 @@ namespace SummonerSaveFileEditor
             numFlSkillValue.Margin = new Padding(4, 3, 4, 3);
             numFlSkillValue.Maximum = new decimal(new int[] { 25, 0, 0, 0 });
             numFlSkillValue.Name = "numFlSkillValue";
-            numFlSkillValue.Size = new Size(162, 29);
+            numFlSkillValue.Size = new Size(183, 23);
             numFlSkillValue.TabIndex = 3;
             // 
             // btnFlUpdateSkill
             // 
             btnFlUpdateSkill.Dock = DockStyle.Fill;
-            btnFlUpdateSkill.Location = new Point(174, 3);
+            btnFlUpdateSkill.Location = new Point(195, 3);
             btnFlUpdateSkill.Margin = new Padding(4, 3, 4, 3);
             btnFlUpdateSkill.Name = "btnFlUpdateSkill";
-            btnFlUpdateSkill.Size = new Size(163, 30);
+            btnFlUpdateSkill.Size = new Size(184, 23);
             btnFlUpdateSkill.TabIndex = 4;
             btnFlUpdateSkill.Text = "Update Skill";
             btnFlUpdateSkill.UseVisualStyleBackColor = true;
@@ -2773,10 +2818,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlRing1.AutoSize = true;
             lblFlRing1.Dock = DockStyle.Fill;
-            lblFlRing1.Location = new Point(277, 36);
+            lblFlRing1.Location = new Point(256, 29);
             lblFlRing1.Margin = new Padding(4, 0, 4, 0);
             lblFlRing1.Name = "lblFlRing1";
-            lblFlRing1.Size = new Size(83, 36);
+            lblFlRing1.Size = new Size(62, 29);
             lblFlRing1.TabIndex = 30;
             lblFlRing1.Text = "Left Right";
             lblFlRing1.TextAlign = ContentAlignment.MiddleLeft;
@@ -2785,10 +2830,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlRing2.AutoSize = true;
             lblFlRing2.Dock = DockStyle.Fill;
-            lblFlRing2.Location = new Point(277, 72);
+            lblFlRing2.Location = new Point(256, 58);
             lblFlRing2.Margin = new Padding(4, 0, 4, 0);
             lblFlRing2.Name = "lblFlRing2";
-            lblFlRing2.Size = new Size(83, 36);
+            lblFlRing2.Size = new Size(62, 29);
             lblFlRing2.TabIndex = 31;
             lblFlRing2.Text = "Right Ring";
             lblFlRing2.TextAlign = ContentAlignment.MiddleLeft;
@@ -2797,10 +2842,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlGauntlets.AutoSize = true;
             lblFlGauntlets.Dock = DockStyle.Fill;
-            lblFlGauntlets.Location = new Point(277, 108);
+            lblFlGauntlets.Location = new Point(256, 87);
             lblFlGauntlets.Margin = new Padding(4, 0, 4, 0);
             lblFlGauntlets.Name = "lblFlGauntlets";
-            lblFlGauntlets.Size = new Size(83, 36);
+            lblFlGauntlets.Size = new Size(62, 29);
             lblFlGauntlets.TabIndex = 32;
             lblFlGauntlets.Text = "Gauntlets";
             lblFlGauntlets.TextAlign = ContentAlignment.MiddleLeft;
@@ -2809,10 +2854,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlWeapon.AutoSize = true;
             lblFlWeapon.Dock = DockStyle.Fill;
-            lblFlWeapon.Location = new Point(277, 144);
+            lblFlWeapon.Location = new Point(256, 116);
             lblFlWeapon.Margin = new Padding(4, 0, 4, 0);
             lblFlWeapon.Name = "lblFlWeapon";
-            lblFlWeapon.Size = new Size(83, 36);
+            lblFlWeapon.Size = new Size(62, 29);
             lblFlWeapon.TabIndex = 33;
             lblFlWeapon.Text = "Weapon";
             lblFlWeapon.TextAlign = ContentAlignment.MiddleLeft;
@@ -2821,10 +2866,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlShield.AutoSize = true;
             lblFlShield.Dock = DockStyle.Fill;
-            lblFlShield.Location = new Point(277, 180);
+            lblFlShield.Location = new Point(256, 145);
             lblFlShield.Margin = new Padding(4, 0, 4, 0);
             lblFlShield.Name = "lblFlShield";
-            lblFlShield.Size = new Size(83, 36);
+            lblFlShield.Size = new Size(62, 29);
             lblFlShield.TabIndex = 34;
             lblFlShield.Text = "Shield";
             lblFlShield.TextAlign = ContentAlignment.MiddleLeft;
@@ -2833,10 +2878,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlBoots.AutoSize = true;
             lblFlBoots.Dock = DockStyle.Fill;
-            lblFlBoots.Location = new Point(277, 216);
+            lblFlBoots.Location = new Point(256, 174);
             lblFlBoots.Margin = new Padding(4, 0, 4, 0);
             lblFlBoots.Name = "lblFlBoots";
-            lblFlBoots.Size = new Size(83, 36);
+            lblFlBoots.Size = new Size(62, 29);
             lblFlBoots.TabIndex = 35;
             lblFlBoots.Text = "Boots";
             lblFlBoots.TextAlign = ContentAlignment.MiddleLeft;
@@ -2845,10 +2890,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlTorso.AutoSize = true;
             lblFlTorso.Dock = DockStyle.Fill;
-            lblFlTorso.Location = new Point(277, 252);
+            lblFlTorso.Location = new Point(256, 203);
             lblFlTorso.Margin = new Padding(4, 0, 4, 0);
             lblFlTorso.Name = "lblFlTorso";
-            lblFlTorso.Size = new Size(83, 36);
+            lblFlTorso.Size = new Size(62, 29);
             lblFlTorso.TabIndex = 36;
             lblFlTorso.Text = "Torso";
             lblFlTorso.TextAlign = ContentAlignment.MiddleLeft;
@@ -2856,10 +2901,10 @@ namespace SummonerSaveFileEditor
             // btnFlMaxAll
             // 
             btnFlMaxAll.Dock = DockStyle.Fill;
-            btnFlMaxAll.Location = new Point(102, 291);
+            btnFlMaxAll.Location = new Point(81, 235);
             btnFlMaxAll.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxAll.Name = "btnFlMaxAll";
-            btnFlMaxAll.Size = new Size(107, 30);
+            btnFlMaxAll.Size = new Size(107, 23);
             btnFlMaxAll.TabIndex = 18;
             btnFlMaxAll.Text = "Max All";
             btnFlMaxAll.UseVisualStyleBackColor = true;
@@ -2867,10 +2912,10 @@ namespace SummonerSaveFileEditor
             // btnFlMaxBaseAP
             // 
             btnFlMaxBaseAP.Dock = DockStyle.Fill;
-            btnFlMaxBaseAP.Location = new Point(217, 183);
+            btnFlMaxBaseAP.Location = new Point(196, 148);
             btnFlMaxBaseAP.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxBaseAP.Name = "btnFlMaxBaseAP";
-            btnFlMaxBaseAP.Size = new Size(52, 30);
+            btnFlMaxBaseAP.Size = new Size(52, 23);
             btnFlMaxBaseAP.TabIndex = 28;
             btnFlMaxBaseAP.Text = "Max";
             btnFlMaxBaseAP.UseVisualStyleBackColor = true;
@@ -2879,10 +2924,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlCurrentHP.AutoSize = true;
             lblFlCurrentHP.Dock = DockStyle.Fill;
-            lblFlCurrentHP.Location = new Point(4, 144);
+            lblFlCurrentHP.Location = new Point(4, 116);
             lblFlCurrentHP.Margin = new Padding(4, 0, 4, 0);
             lblFlCurrentHP.Name = "lblFlCurrentHP";
-            lblFlCurrentHP.Size = new Size(90, 36);
+            lblFlCurrentHP.Size = new Size(69, 29);
             lblFlCurrentHP.TabIndex = 26;
             lblFlCurrentHP.Text = "Current HP:";
             lblFlCurrentHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2890,22 +2935,22 @@ namespace SummonerSaveFileEditor
             // numFlBaseAP
             // 
             numFlBaseAP.Dock = DockStyle.Fill;
-            numFlBaseAP.Location = new Point(102, 183);
+            numFlBaseAP.Location = new Point(81, 148);
             numFlBaseAP.Margin = new Padding(4, 3, 4, 3);
             numFlBaseAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numFlBaseAP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numFlBaseAP.Name = "numFlBaseAP";
-            numFlBaseAP.Size = new Size(107, 29);
+            numFlBaseAP.Size = new Size(107, 23);
             numFlBaseAP.TabIndex = 27;
             numFlBaseAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // btnFlMaxBaseHP
             // 
             btnFlMaxBaseHP.Dock = DockStyle.Fill;
-            btnFlMaxBaseHP.Location = new Point(217, 111);
+            btnFlMaxBaseHP.Location = new Point(196, 90);
             btnFlMaxBaseHP.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxBaseHP.Name = "btnFlMaxBaseHP";
-            btnFlMaxBaseHP.Size = new Size(52, 30);
+            btnFlMaxBaseHP.Size = new Size(52, 23);
             btnFlMaxBaseHP.TabIndex = 28;
             btnFlMaxBaseHP.Text = "Max";
             btnFlMaxBaseHP.UseVisualStyleBackColor = true;
@@ -2914,10 +2959,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlBaseAP.AutoSize = true;
             lblFlBaseAP.Dock = DockStyle.Fill;
-            lblFlBaseAP.Location = new Point(4, 180);
+            lblFlBaseAP.Location = new Point(4, 145);
             lblFlBaseAP.Margin = new Padding(4, 0, 4, 0);
             lblFlBaseAP.Name = "lblFlBaseAP";
-            lblFlBaseAP.Size = new Size(90, 36);
+            lblFlBaseAP.Size = new Size(69, 29);
             lblFlBaseAP.TabIndex = 26;
             lblFlBaseAP.Text = "Max AP:";
             lblFlBaseAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -2929,10 +2974,10 @@ namespace SummonerSaveFileEditor
             cbFlLeggings.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlLeggings.FormattingEnabled = true;
             cbFlLeggings.IntegralHeight = false;
-            cbFlLeggings.Location = new Point(368, 291);
+            cbFlLeggings.Location = new Point(326, 235);
             cbFlLeggings.Margin = new Padding(4, 3, 4, 3);
             cbFlLeggings.Name = "cbFlLeggings";
-            cbFlLeggings.Size = new Size(252, 29);
+            cbFlLeggings.Size = new Size(252, 23);
             cbFlLeggings.TabIndex = 23;
             // 
             // cbFlTorso
@@ -2942,10 +2987,10 @@ namespace SummonerSaveFileEditor
             cbFlTorso.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlTorso.FormattingEnabled = true;
             cbFlTorso.IntegralHeight = false;
-            cbFlTorso.Location = new Point(368, 255);
+            cbFlTorso.Location = new Point(326, 206);
             cbFlTorso.Margin = new Padding(4, 3, 4, 3);
             cbFlTorso.Name = "cbFlTorso";
-            cbFlTorso.Size = new Size(252, 29);
+            cbFlTorso.Size = new Size(252, 23);
             cbFlTorso.TabIndex = 23;
             // 
             // cbFlBoots
@@ -2955,21 +3000,21 @@ namespace SummonerSaveFileEditor
             cbFlBoots.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlBoots.FormattingEnabled = true;
             cbFlBoots.IntegralHeight = false;
-            cbFlBoots.Location = new Point(368, 219);
+            cbFlBoots.Location = new Point(326, 177);
             cbFlBoots.Margin = new Padding(4, 3, 4, 3);
             cbFlBoots.Name = "cbFlBoots";
-            cbFlBoots.Size = new Size(252, 29);
+            cbFlBoots.Size = new Size(252, 23);
             cbFlBoots.TabIndex = 23;
             // 
             // numFlBaseHP
             // 
             numFlBaseHP.Dock = DockStyle.Fill;
-            numFlBaseHP.Location = new Point(102, 111);
+            numFlBaseHP.Location = new Point(81, 90);
             numFlBaseHP.Margin = new Padding(4, 3, 4, 3);
             numFlBaseHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numFlBaseHP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numFlBaseHP.Name = "numFlBaseHP";
-            numFlBaseHP.Size = new Size(107, 29);
+            numFlBaseHP.Size = new Size(107, 23);
             numFlBaseHP.TabIndex = 27;
             numFlBaseHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
@@ -2980,20 +3025,20 @@ namespace SummonerSaveFileEditor
             cbFlShield.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlShield.FormattingEnabled = true;
             cbFlShield.IntegralHeight = false;
-            cbFlShield.Location = new Point(368, 183);
+            cbFlShield.Location = new Point(326, 148);
             cbFlShield.Margin = new Padding(4, 3, 4, 3);
             cbFlShield.Name = "cbFlShield";
-            cbFlShield.Size = new Size(252, 29);
+            cbFlShield.Size = new Size(252, 23);
             cbFlShield.TabIndex = 23;
             // 
             // lblFlBaseHP
             // 
             lblFlBaseHP.AutoSize = true;
             lblFlBaseHP.Dock = DockStyle.Fill;
-            lblFlBaseHP.Location = new Point(4, 108);
+            lblFlBaseHP.Location = new Point(4, 87);
             lblFlBaseHP.Margin = new Padding(4, 0, 4, 0);
             lblFlBaseHP.Name = "lblFlBaseHP";
-            lblFlBaseHP.Size = new Size(90, 36);
+            lblFlBaseHP.Size = new Size(69, 29);
             lblFlBaseHP.TabIndex = 26;
             lblFlBaseHP.Text = "Max HP:";
             lblFlBaseHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -3005,19 +3050,19 @@ namespace SummonerSaveFileEditor
             cbFlWeapon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlWeapon.FormattingEnabled = true;
             cbFlWeapon.IntegralHeight = false;
-            cbFlWeapon.Location = new Point(368, 147);
+            cbFlWeapon.Location = new Point(326, 119);
             cbFlWeapon.Margin = new Padding(4, 3, 4, 3);
             cbFlWeapon.Name = "cbFlWeapon";
-            cbFlWeapon.Size = new Size(252, 29);
+            cbFlWeapon.Size = new Size(252, 23);
             cbFlWeapon.TabIndex = 23;
             // 
             // btnFlMaxSkill
             // 
             btnFlMaxSkill.Dock = DockStyle.Fill;
-            btnFlMaxSkill.Location = new Point(217, 75);
+            btnFlMaxSkill.Location = new Point(196, 61);
             btnFlMaxSkill.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxSkill.Name = "btnFlMaxSkill";
-            btnFlMaxSkill.Size = new Size(52, 30);
+            btnFlMaxSkill.Size = new Size(52, 23);
             btnFlMaxSkill.TabIndex = 18;
             btnFlMaxSkill.Text = "Max";
             btnFlMaxSkill.UseVisualStyleBackColor = true;
@@ -3029,29 +3074,29 @@ namespace SummonerSaveFileEditor
             cbFlGauntlets.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlGauntlets.FormattingEnabled = true;
             cbFlGauntlets.IntegralHeight = false;
-            cbFlGauntlets.Location = new Point(368, 111);
+            cbFlGauntlets.Location = new Point(326, 90);
             cbFlGauntlets.Margin = new Padding(4, 3, 4, 3);
             cbFlGauntlets.Name = "cbFlGauntlets";
-            cbFlGauntlets.Size = new Size(252, 29);
+            cbFlGauntlets.Size = new Size(252, 23);
             cbFlGauntlets.TabIndex = 23;
             // 
             // numFlSkill
             // 
             numFlSkill.Dock = DockStyle.Fill;
-            numFlSkill.Location = new Point(102, 75);
+            numFlSkill.Location = new Point(81, 61);
             numFlSkill.Margin = new Padding(4, 3, 4, 3);
             numFlSkill.Maximum = new decimal(new int[] { 160, 0, 0, 0 });
             numFlSkill.Name = "numFlSkill";
-            numFlSkill.Size = new Size(107, 29);
+            numFlSkill.Size = new Size(107, 23);
             numFlSkill.TabIndex = 2;
             // 
             // btnFlMaxExp
             // 
             btnFlMaxExp.Dock = DockStyle.Fill;
-            btnFlMaxExp.Location = new Point(217, 39);
+            btnFlMaxExp.Location = new Point(196, 32);
             btnFlMaxExp.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxExp.Name = "btnFlMaxExp";
-            btnFlMaxExp.Size = new Size(52, 30);
+            btnFlMaxExp.Size = new Size(52, 23);
             btnFlMaxExp.TabIndex = 17;
             btnFlMaxExp.Text = "Max";
             btnFlMaxExp.UseVisualStyleBackColor = true;
@@ -3060,10 +3105,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlSkillPoints.AutoSize = true;
             lblFlSkillPoints.Dock = DockStyle.Fill;
-            lblFlSkillPoints.Location = new Point(4, 72);
+            lblFlSkillPoints.Location = new Point(4, 58);
             lblFlSkillPoints.Margin = new Padding(4, 0, 4, 0);
             lblFlSkillPoints.Name = "lblFlSkillPoints";
-            lblFlSkillPoints.Size = new Size(90, 36);
+            lblFlSkillPoints.Size = new Size(69, 29);
             lblFlSkillPoints.TabIndex = 3;
             lblFlSkillPoints.Text = "Skill Points:";
             lblFlSkillPoints.TextAlign = ContentAlignment.MiddleLeft;
@@ -3071,32 +3116,32 @@ namespace SummonerSaveFileEditor
             // numFlLevel
             // 
             numFlLevel.Dock = DockStyle.Fill;
-            numFlLevel.Location = new Point(102, 3);
+            numFlLevel.Location = new Point(81, 3);
             numFlLevel.Margin = new Padding(4, 3, 4, 3);
             numFlLevel.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             numFlLevel.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numFlLevel.Name = "numFlLevel";
-            numFlLevel.Size = new Size(107, 29);
+            numFlLevel.Size = new Size(107, 23);
             numFlLevel.TabIndex = 1;
             numFlLevel.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // numFlExperience
             // 
             numFlExperience.Dock = DockStyle.Fill;
-            numFlExperience.Location = new Point(102, 39);
+            numFlExperience.Location = new Point(81, 32);
             numFlExperience.Margin = new Padding(4, 3, 4, 3);
             numFlExperience.Maximum = new decimal(new int[] { 6327001, 0, 0, 0 });
             numFlExperience.Name = "numFlExperience";
-            numFlExperience.Size = new Size(107, 29);
+            numFlExperience.Size = new Size(107, 23);
             numFlExperience.TabIndex = 2;
             // 
             // btnFlMaxLevel
             // 
             btnFlMaxLevel.Dock = DockStyle.Fill;
-            btnFlMaxLevel.Location = new Point(217, 3);
+            btnFlMaxLevel.Location = new Point(196, 3);
             btnFlMaxLevel.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxLevel.Name = "btnFlMaxLevel";
-            btnFlMaxLevel.Size = new Size(52, 30);
+            btnFlMaxLevel.Size = new Size(52, 23);
             btnFlMaxLevel.TabIndex = 18;
             btnFlMaxLevel.Text = "Max";
             btnFlMaxLevel.UseVisualStyleBackColor = true;
@@ -3108,7 +3153,7 @@ namespace SummonerSaveFileEditor
             lblFlLevel.Location = new Point(4, 0);
             lblFlLevel.Margin = new Padding(4, 0, 4, 0);
             lblFlLevel.Name = "lblFlLevel";
-            lblFlLevel.Size = new Size(90, 36);
+            lblFlLevel.Size = new Size(69, 29);
             lblFlLevel.TabIndex = 0;
             lblFlLevel.Text = "Level:";
             lblFlLevel.TextAlign = ContentAlignment.MiddleLeft;
@@ -3120,20 +3165,20 @@ namespace SummonerSaveFileEditor
             cbFlRing2.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlRing2.FormattingEnabled = true;
             cbFlRing2.IntegralHeight = false;
-            cbFlRing2.Location = new Point(368, 75);
+            cbFlRing2.Location = new Point(326, 61);
             cbFlRing2.Margin = new Padding(4, 3, 4, 3);
             cbFlRing2.Name = "cbFlRing2";
-            cbFlRing2.Size = new Size(252, 29);
+            cbFlRing2.Size = new Size(252, 23);
             cbFlRing2.TabIndex = 23;
             // 
             // lblFlExperience
             // 
             lblFlExperience.AutoSize = true;
             lblFlExperience.Dock = DockStyle.Fill;
-            lblFlExperience.Location = new Point(4, 36);
+            lblFlExperience.Location = new Point(4, 29);
             lblFlExperience.Margin = new Padding(4, 0, 4, 0);
             lblFlExperience.Name = "lblFlExperience";
-            lblFlExperience.Size = new Size(90, 36);
+            lblFlExperience.Size = new Size(69, 29);
             lblFlExperience.TabIndex = 2;
             lblFlExperience.Text = "Experience:";
             lblFlExperience.TextAlign = ContentAlignment.MiddleLeft;
@@ -3145,10 +3190,10 @@ namespace SummonerSaveFileEditor
             cbFlRing1.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlRing1.FormattingEnabled = true;
             cbFlRing1.IntegralHeight = false;
-            cbFlRing1.Location = new Point(368, 39);
+            cbFlRing1.Location = new Point(326, 32);
             cbFlRing1.Margin = new Padding(4, 3, 4, 3);
             cbFlRing1.Name = "cbFlRing1";
-            cbFlRing1.Size = new Size(252, 29);
+            cbFlRing1.Size = new Size(252, 23);
             cbFlRing1.TabIndex = 23;
             // 
             // cbFlAmulet
@@ -3158,30 +3203,30 @@ namespace SummonerSaveFileEditor
             cbFlAmulet.DropDownStyle = ComboBoxStyle.DropDownList;
             cbFlAmulet.FormattingEnabled = true;
             cbFlAmulet.IntegralHeight = false;
-            cbFlAmulet.Location = new Point(368, 3);
+            cbFlAmulet.Location = new Point(326, 3);
             cbFlAmulet.Margin = new Padding(4, 3, 4, 3);
             cbFlAmulet.Name = "cbFlAmulet";
-            cbFlAmulet.Size = new Size(252, 29);
+            cbFlAmulet.Size = new Size(252, 23);
             cbFlAmulet.TabIndex = 23;
             // 
             // numFlCurrentHP
             // 
             numFlCurrentHP.Dock = DockStyle.Fill;
-            numFlCurrentHP.Location = new Point(102, 147);
+            numFlCurrentHP.Location = new Point(81, 119);
             numFlCurrentHP.Margin = new Padding(4, 3, 4, 3);
             numFlCurrentHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numFlCurrentHP.Name = "numFlCurrentHP";
-            numFlCurrentHP.Size = new Size(107, 29);
+            numFlCurrentHP.Size = new Size(107, 23);
             numFlCurrentHP.TabIndex = 24;
             numFlCurrentHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
             // btnFlMaxCurrentHP
             // 
             btnFlMaxCurrentHP.Dock = DockStyle.Fill;
-            btnFlMaxCurrentHP.Location = new Point(217, 147);
+            btnFlMaxCurrentHP.Location = new Point(196, 119);
             btnFlMaxCurrentHP.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxCurrentHP.Name = "btnFlMaxCurrentHP";
-            btnFlMaxCurrentHP.Size = new Size(52, 30);
+            btnFlMaxCurrentHP.Size = new Size(52, 23);
             btnFlMaxCurrentHP.TabIndex = 25;
             btnFlMaxCurrentHP.Text = "Max";
             btnFlMaxCurrentHP.UseVisualStyleBackColor = true;
@@ -3190,10 +3235,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlCurrentAP.AutoSize = true;
             lblFlCurrentAP.Dock = DockStyle.Fill;
-            lblFlCurrentAP.Location = new Point(4, 216);
+            lblFlCurrentAP.Location = new Point(4, 174);
             lblFlCurrentAP.Margin = new Padding(4, 0, 4, 0);
             lblFlCurrentAP.Name = "lblFlCurrentAP";
-            lblFlCurrentAP.Size = new Size(90, 36);
+            lblFlCurrentAP.Size = new Size(69, 29);
             lblFlCurrentAP.TabIndex = 23;
             lblFlCurrentAP.Text = "Current AP:";
             lblFlCurrentAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -3201,21 +3246,21 @@ namespace SummonerSaveFileEditor
             // numFlCurrentAP
             // 
             numFlCurrentAP.Dock = DockStyle.Fill;
-            numFlCurrentAP.Location = new Point(102, 219);
+            numFlCurrentAP.Location = new Point(81, 177);
             numFlCurrentAP.Margin = new Padding(4, 3, 4, 3);
             numFlCurrentAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numFlCurrentAP.Name = "numFlCurrentAP";
-            numFlCurrentAP.Size = new Size(107, 29);
+            numFlCurrentAP.Size = new Size(107, 23);
             numFlCurrentAP.TabIndex = 24;
             numFlCurrentAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // btnFlMaxCurrentAP
             // 
             btnFlMaxCurrentAP.Dock = DockStyle.Fill;
-            btnFlMaxCurrentAP.Location = new Point(217, 219);
+            btnFlMaxCurrentAP.Location = new Point(196, 177);
             btnFlMaxCurrentAP.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxCurrentAP.Name = "btnFlMaxCurrentAP";
-            btnFlMaxCurrentAP.Size = new Size(52, 30);
+            btnFlMaxCurrentAP.Size = new Size(52, 23);
             btnFlMaxCurrentAP.TabIndex = 25;
             btnFlMaxCurrentAP.Text = "Max";
             btnFlMaxCurrentAP.UseVisualStyleBackColor = true;
@@ -3224,10 +3269,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlSpeed.AutoSize = true;
             lblFlSpeed.Dock = DockStyle.Fill;
-            lblFlSpeed.Location = new Point(4, 252);
+            lblFlSpeed.Location = new Point(4, 203);
             lblFlSpeed.Margin = new Padding(4, 0, 4, 0);
             lblFlSpeed.Name = "lblFlSpeed";
-            lblFlSpeed.Size = new Size(90, 36);
+            lblFlSpeed.Size = new Size(69, 29);
             lblFlSpeed.TabIndex = 23;
             lblFlSpeed.Text = "Speed:";
             lblFlSpeed.TextAlign = ContentAlignment.MiddleLeft;
@@ -3235,22 +3280,22 @@ namespace SummonerSaveFileEditor
             // numFlSpeed
             // 
             numFlSpeed.Dock = DockStyle.Fill;
-            numFlSpeed.Location = new Point(102, 255);
+            numFlSpeed.Location = new Point(81, 206);
             numFlSpeed.Margin = new Padding(4, 3, 4, 3);
             numFlSpeed.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             numFlSpeed.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numFlSpeed.Name = "numFlSpeed";
-            numFlSpeed.Size = new Size(107, 29);
+            numFlSpeed.Size = new Size(107, 23);
             numFlSpeed.TabIndex = 24;
             numFlSpeed.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // btnFlMaxSpeed
             // 
             btnFlMaxSpeed.Dock = DockStyle.Fill;
-            btnFlMaxSpeed.Location = new Point(217, 255);
+            btnFlMaxSpeed.Location = new Point(196, 206);
             btnFlMaxSpeed.Margin = new Padding(4, 3, 4, 3);
             btnFlMaxSpeed.Name = "btnFlMaxSpeed";
-            btnFlMaxSpeed.Size = new Size(52, 30);
+            btnFlMaxSpeed.Size = new Size(52, 23);
             btnFlMaxSpeed.TabIndex = 25;
             btnFlMaxSpeed.Text = "Max";
             btnFlMaxSpeed.UseVisualStyleBackColor = true;
@@ -3259,10 +3304,10 @@ namespace SummonerSaveFileEditor
             // 
             lblFlLeggings.AutoSize = true;
             lblFlLeggings.Dock = DockStyle.Fill;
-            lblFlLeggings.Location = new Point(277, 288);
+            lblFlLeggings.Location = new Point(256, 232);
             lblFlLeggings.Margin = new Padding(4, 0, 4, 0);
             lblFlLeggings.Name = "lblFlLeggings";
-            lblFlLeggings.Size = new Size(83, 36);
+            lblFlLeggings.Size = new Size(62, 29);
             lblFlLeggings.TabIndex = 37;
             lblFlLeggings.Text = "Leggings";
             lblFlLeggings.TextAlign = ContentAlignment.MiddleLeft;
@@ -3270,11 +3315,11 @@ namespace SummonerSaveFileEditor
             // tabPageJoseph
             // 
             tabPageJoseph.Controls.Add(tblJoseph);
-            tabPageJoseph.Location = new Point(4, 30);
+            tabPageJoseph.Location = new Point(4, 24);
             tabPageJoseph.Margin = new Padding(4, 3, 4, 3);
             tabPageJoseph.Name = "tabPageJoseph";
             tabPageJoseph.Padding = new Padding(4, 3, 4, 3);
-            tabPageJoseph.Size = new Size(973, 456);
+            tabPageJoseph.Size = new Size(973, 507);
             tabPageJoseph.TabIndex = 0;
             tabPageJoseph.Text = "Joseph";
             // 
@@ -3335,20 +3380,19 @@ namespace SummonerSaveFileEditor
             tblJoseph.Dock = DockStyle.Fill;
             tblJoseph.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tblJoseph.Location = new Point(4, 3);
-            tblJoseph.Margin = new Padding(4, 3, 4, 3);
             tblJoseph.Name = "tblJoseph";
             tblJoseph.RowCount = 10;
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 24F));
-            tblJoseph.Size = new Size(965, 450);
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tblJoseph.Size = new Size(965, 501);
             tblJoseph.TabIndex = 24;
             // 
             // lblJoLevel
@@ -3358,7 +3402,7 @@ namespace SummonerSaveFileEditor
             lblJoLevel.Location = new Point(4, 0);
             lblJoLevel.Margin = new Padding(4, 0, 4, 0);
             lblJoLevel.Name = "lblJoLevel";
-            lblJoLevel.Size = new Size(90, 36);
+            lblJoLevel.Size = new Size(69, 29);
             lblJoLevel.TabIndex = 0;
             lblJoLevel.Text = "Level:";
             lblJoLevel.TextAlign = ContentAlignment.MiddleLeft;
@@ -3370,10 +3414,10 @@ namespace SummonerSaveFileEditor
             cbJoLeggings.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoLeggings.FormattingEnabled = true;
             cbJoLeggings.IntegralHeight = false;
-            cbJoLeggings.Location = new Point(368, 291);
+            cbJoLeggings.Location = new Point(326, 235);
             cbJoLeggings.Margin = new Padding(4, 3, 4, 3);
             cbJoLeggings.Name = "cbJoLeggings";
-            cbJoLeggings.Size = new Size(252, 29);
+            cbJoLeggings.Size = new Size(252, 23);
             cbJoLeggings.TabIndex = 23;
             // 
             // lvJosephSkills
@@ -3381,11 +3425,11 @@ namespace SummonerSaveFileEditor
             lvJosephSkills.Columns.AddRange(new ColumnHeader[] { columnHeader9, columnHeader10 });
             lvJosephSkills.Dock = DockStyle.Fill;
             lvJosephSkills.FullRowSelect = true;
-            lvJosephSkills.Location = new Point(628, 3);
+            lvJosephSkills.Location = new Point(586, 3);
             lvJosephSkills.Margin = new Padding(4, 3, 4, 3);
             lvJosephSkills.Name = "lvJosephSkills";
             tblJoseph.SetRowSpan(lvJosephSkills, 8);
-            lvJosephSkills.Size = new Size(333, 282);
+            lvJosephSkills.Size = new Size(375, 226);
             lvJosephSkills.TabIndex = 27;
             lvJosephSkills.UseCompatibleStateImageBehavior = false;
             lvJosephSkills.View = View.Details;
@@ -3409,12 +3453,12 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel9.Controls.Add(numJoSkillValue, 0, 0);
             tableLayoutPanel9.Controls.Add(btnJoUpdateSkill, 1, 0);
             tableLayoutPanel9.Dock = DockStyle.Fill;
-            tableLayoutPanel9.Location = new Point(624, 288);
+            tableLayoutPanel9.Location = new Point(582, 232);
             tableLayoutPanel9.Margin = new Padding(0);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 1;
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel9.Size = new Size(341, 36);
+            tableLayoutPanel9.Size = new Size(383, 29);
             tableLayoutPanel9.TabIndex = 25;
             // 
             // numJoSkillValue
@@ -3425,16 +3469,16 @@ namespace SummonerSaveFileEditor
             numJoSkillValue.Margin = new Padding(4, 3, 4, 3);
             numJoSkillValue.Maximum = new decimal(new int[] { 25, 0, 0, 0 });
             numJoSkillValue.Name = "numJoSkillValue";
-            numJoSkillValue.Size = new Size(162, 29);
+            numJoSkillValue.Size = new Size(183, 23);
             numJoSkillValue.TabIndex = 3;
             // 
             // btnJoUpdateSkill
             // 
             btnJoUpdateSkill.Dock = DockStyle.Fill;
-            btnJoUpdateSkill.Location = new Point(174, 3);
+            btnJoUpdateSkill.Location = new Point(195, 3);
             btnJoUpdateSkill.Margin = new Padding(4, 3, 4, 3);
             btnJoUpdateSkill.Name = "btnJoUpdateSkill";
-            btnJoUpdateSkill.Size = new Size(163, 30);
+            btnJoUpdateSkill.Size = new Size(184, 23);
             btnJoUpdateSkill.TabIndex = 4;
             btnJoUpdateSkill.Text = "Update Skill";
             btnJoUpdateSkill.UseVisualStyleBackColor = true;
@@ -3443,12 +3487,12 @@ namespace SummonerSaveFileEditor
             // numJoLevel
             // 
             numJoLevel.Dock = DockStyle.Fill;
-            numJoLevel.Location = new Point(102, 3);
+            numJoLevel.Location = new Point(81, 3);
             numJoLevel.Margin = new Padding(4, 3, 4, 3);
             numJoLevel.Maximum = new decimal(new int[] { 50, 0, 0, 0 });
             numJoLevel.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJoLevel.Name = "numJoLevel";
-            numJoLevel.Size = new Size(107, 29);
+            numJoLevel.Size = new Size(107, 23);
             numJoLevel.TabIndex = 1;
             numJoLevel.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
@@ -3459,10 +3503,10 @@ namespace SummonerSaveFileEditor
             cbJoTorso.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoTorso.FormattingEnabled = true;
             cbJoTorso.IntegralHeight = false;
-            cbJoTorso.Location = new Point(368, 255);
+            cbJoTorso.Location = new Point(326, 206);
             cbJoTorso.Margin = new Padding(4, 3, 4, 3);
             cbJoTorso.Name = "cbJoTorso";
-            cbJoTorso.Size = new Size(252, 29);
+            cbJoTorso.Size = new Size(252, 23);
             cbJoTorso.TabIndex = 23;
             // 
             // cbJoBoots
@@ -3472,10 +3516,10 @@ namespace SummonerSaveFileEditor
             cbJoBoots.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoBoots.FormattingEnabled = true;
             cbJoBoots.IntegralHeight = false;
-            cbJoBoots.Location = new Point(368, 219);
+            cbJoBoots.Location = new Point(326, 177);
             cbJoBoots.Margin = new Padding(4, 3, 4, 3);
             cbJoBoots.Name = "cbJoBoots";
-            cbJoBoots.Size = new Size(252, 29);
+            cbJoBoots.Size = new Size(252, 23);
             cbJoBoots.TabIndex = 23;
             // 
             // cbJoShield
@@ -3485,19 +3529,19 @@ namespace SummonerSaveFileEditor
             cbJoShield.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoShield.FormattingEnabled = true;
             cbJoShield.IntegralHeight = false;
-            cbJoShield.Location = new Point(368, 183);
+            cbJoShield.Location = new Point(326, 148);
             cbJoShield.Margin = new Padding(4, 3, 4, 3);
             cbJoShield.Name = "cbJoShield";
-            cbJoShield.Size = new Size(252, 29);
+            cbJoShield.Size = new Size(252, 23);
             cbJoShield.TabIndex = 23;
             // 
             // btnJoMaxLevel
             // 
             btnJoMaxLevel.Dock = DockStyle.Fill;
-            btnJoMaxLevel.Location = new Point(217, 3);
+            btnJoMaxLevel.Location = new Point(196, 3);
             btnJoMaxLevel.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxLevel.Name = "btnJoMaxLevel";
-            btnJoMaxLevel.Size = new Size(52, 30);
+            btnJoMaxLevel.Size = new Size(52, 23);
             btnJoMaxLevel.TabIndex = 16;
             btnJoMaxLevel.Text = "Max";
             btnJoMaxLevel.UseVisualStyleBackColor = true;
@@ -3506,10 +3550,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoExperience.AutoSize = true;
             lblJoExperience.Dock = DockStyle.Fill;
-            lblJoExperience.Location = new Point(4, 36);
+            lblJoExperience.Location = new Point(4, 29);
             lblJoExperience.Margin = new Padding(4, 0, 4, 0);
             lblJoExperience.Name = "lblJoExperience";
-            lblJoExperience.Size = new Size(90, 36);
+            lblJoExperience.Size = new Size(69, 29);
             lblJoExperience.TabIndex = 2;
             lblJoExperience.Text = "Experience:";
             lblJoExperience.TextAlign = ContentAlignment.MiddleLeft;
@@ -3521,20 +3565,20 @@ namespace SummonerSaveFileEditor
             cbJoWeapon.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoWeapon.FormattingEnabled = true;
             cbJoWeapon.IntegralHeight = false;
-            cbJoWeapon.Location = new Point(368, 147);
+            cbJoWeapon.Location = new Point(326, 119);
             cbJoWeapon.Margin = new Padding(4, 3, 4, 3);
             cbJoWeapon.Name = "cbJoWeapon";
-            cbJoWeapon.Size = new Size(252, 29);
+            cbJoWeapon.Size = new Size(252, 23);
             cbJoWeapon.TabIndex = 23;
             // 
             // numJoExperience
             // 
             numJoExperience.Dock = DockStyle.Fill;
-            numJoExperience.Location = new Point(102, 39);
+            numJoExperience.Location = new Point(81, 32);
             numJoExperience.Margin = new Padding(4, 3, 4, 3);
             numJoExperience.Maximum = new decimal(new int[] { 6327001, 0, 0, 0 });
             numJoExperience.Name = "numJoExperience";
-            numJoExperience.Size = new Size(107, 29);
+            numJoExperience.Size = new Size(107, 23);
             numJoExperience.TabIndex = 2;
             // 
             // cbJoGauntlets
@@ -3544,19 +3588,19 @@ namespace SummonerSaveFileEditor
             cbJoGauntlets.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoGauntlets.FormattingEnabled = true;
             cbJoGauntlets.IntegralHeight = false;
-            cbJoGauntlets.Location = new Point(368, 111);
+            cbJoGauntlets.Location = new Point(326, 90);
             cbJoGauntlets.Margin = new Padding(4, 3, 4, 3);
             cbJoGauntlets.Name = "cbJoGauntlets";
-            cbJoGauntlets.Size = new Size(252, 29);
+            cbJoGauntlets.Size = new Size(252, 23);
             cbJoGauntlets.TabIndex = 23;
             // 
             // btnJoMaxExperience
             // 
             btnJoMaxExperience.Dock = DockStyle.Fill;
-            btnJoMaxExperience.Location = new Point(217, 39);
+            btnJoMaxExperience.Location = new Point(196, 32);
             btnJoMaxExperience.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxExperience.Name = "btnJoMaxExperience";
-            btnJoMaxExperience.Size = new Size(52, 30);
+            btnJoMaxExperience.Size = new Size(52, 23);
             btnJoMaxExperience.TabIndex = 16;
             btnJoMaxExperience.Text = "Max";
             btnJoMaxExperience.UseVisualStyleBackColor = true;
@@ -3565,10 +3609,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoSkillPoints.AutoSize = true;
             lblJoSkillPoints.Dock = DockStyle.Fill;
-            lblJoSkillPoints.Location = new Point(4, 72);
+            lblJoSkillPoints.Location = new Point(4, 58);
             lblJoSkillPoints.Margin = new Padding(4, 0, 4, 0);
             lblJoSkillPoints.Name = "lblJoSkillPoints";
-            lblJoSkillPoints.Size = new Size(90, 36);
+            lblJoSkillPoints.Size = new Size(69, 29);
             lblJoSkillPoints.TabIndex = 3;
             lblJoSkillPoints.Text = "Skill Points:";
             lblJoSkillPoints.TextAlign = ContentAlignment.MiddleLeft;
@@ -3580,20 +3624,20 @@ namespace SummonerSaveFileEditor
             cbJoRing2.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoRing2.FormattingEnabled = true;
             cbJoRing2.IntegralHeight = false;
-            cbJoRing2.Location = new Point(368, 75);
+            cbJoRing2.Location = new Point(326, 61);
             cbJoRing2.Margin = new Padding(4, 3, 4, 3);
             cbJoRing2.Name = "cbJoRing2";
-            cbJoRing2.Size = new Size(252, 29);
+            cbJoRing2.Size = new Size(252, 23);
             cbJoRing2.TabIndex = 23;
             // 
             // numJoSkill
             // 
             numJoSkill.Dock = DockStyle.Fill;
-            numJoSkill.Location = new Point(102, 75);
+            numJoSkill.Location = new Point(81, 61);
             numJoSkill.Margin = new Padding(4, 3, 4, 3);
             numJoSkill.Maximum = new decimal(new int[] { 160, 0, 0, 0 });
             numJoSkill.Name = "numJoSkill";
-            numJoSkill.Size = new Size(107, 29);
+            numJoSkill.Size = new Size(107, 23);
             numJoSkill.TabIndex = 2;
             // 
             // cbJoRing1
@@ -3603,19 +3647,19 @@ namespace SummonerSaveFileEditor
             cbJoRing1.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoRing1.FormattingEnabled = true;
             cbJoRing1.IntegralHeight = false;
-            cbJoRing1.Location = new Point(368, 39);
+            cbJoRing1.Location = new Point(326, 32);
             cbJoRing1.Margin = new Padding(4, 3, 4, 3);
             cbJoRing1.Name = "cbJoRing1";
-            cbJoRing1.Size = new Size(252, 29);
+            cbJoRing1.Size = new Size(252, 23);
             cbJoRing1.TabIndex = 23;
             // 
             // btnJoMaxSkillPoints
             // 
             btnJoMaxSkillPoints.Dock = DockStyle.Fill;
-            btnJoMaxSkillPoints.Location = new Point(217, 75);
+            btnJoMaxSkillPoints.Location = new Point(196, 61);
             btnJoMaxSkillPoints.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxSkillPoints.Name = "btnJoMaxSkillPoints";
-            btnJoMaxSkillPoints.Size = new Size(52, 30);
+            btnJoMaxSkillPoints.Size = new Size(52, 23);
             btnJoMaxSkillPoints.TabIndex = 16;
             btnJoMaxSkillPoints.Text = "Max";
             btnJoMaxSkillPoints.UseVisualStyleBackColor = true;
@@ -3627,20 +3671,20 @@ namespace SummonerSaveFileEditor
             cbJoAmulet.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJoAmulet.FormattingEnabled = true;
             cbJoAmulet.IntegralHeight = false;
-            cbJoAmulet.Location = new Point(368, 3);
+            cbJoAmulet.Location = new Point(326, 3);
             cbJoAmulet.Margin = new Padding(4, 3, 4, 3);
             cbJoAmulet.Name = "cbJoAmulet";
-            cbJoAmulet.Size = new Size(252, 29);
+            cbJoAmulet.Size = new Size(252, 23);
             cbJoAmulet.TabIndex = 23;
             // 
             // lblJoMaxHP
             // 
             lblJoMaxHP.AutoSize = true;
             lblJoMaxHP.Dock = DockStyle.Fill;
-            lblJoMaxHP.Location = new Point(4, 108);
+            lblJoMaxHP.Location = new Point(4, 87);
             lblJoMaxHP.Margin = new Padding(4, 0, 4, 0);
             lblJoMaxHP.Name = "lblJoMaxHP";
-            lblJoMaxHP.Size = new Size(90, 36);
+            lblJoMaxHP.Size = new Size(69, 29);
             lblJoMaxHP.TabIndex = 17;
             lblJoMaxHP.Text = "Max HP:";
             lblJoMaxHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -3648,10 +3692,10 @@ namespace SummonerSaveFileEditor
             // btnJoMaxAll
             // 
             btnJoMaxAll.Dock = DockStyle.Fill;
-            btnJoMaxAll.Location = new Point(102, 291);
+            btnJoMaxAll.Location = new Point(81, 235);
             btnJoMaxAll.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxAll.Name = "btnJoMaxAll";
-            btnJoMaxAll.Size = new Size(107, 30);
+            btnJoMaxAll.Size = new Size(107, 23);
             btnJoMaxAll.TabIndex = 16;
             btnJoMaxAll.Text = "Max All";
             btnJoMaxAll.UseVisualStyleBackColor = true;
@@ -3659,10 +3703,10 @@ namespace SummonerSaveFileEditor
             // btnJoMaxSpeed
             // 
             btnJoMaxSpeed.Dock = DockStyle.Fill;
-            btnJoMaxSpeed.Location = new Point(217, 255);
+            btnJoMaxSpeed.Location = new Point(196, 206);
             btnJoMaxSpeed.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxSpeed.Name = "btnJoMaxSpeed";
-            btnJoMaxSpeed.Size = new Size(52, 30);
+            btnJoMaxSpeed.Size = new Size(52, 23);
             btnJoMaxSpeed.TabIndex = 22;
             btnJoMaxSpeed.Text = "Max";
             btnJoMaxSpeed.UseVisualStyleBackColor = true;
@@ -3670,34 +3714,34 @@ namespace SummonerSaveFileEditor
             // numJoBaseHP
             // 
             numJoBaseHP.Dock = DockStyle.Fill;
-            numJoBaseHP.Location = new Point(102, 111);
+            numJoBaseHP.Location = new Point(81, 90);
             numJoBaseHP.Margin = new Padding(4, 3, 4, 3);
             numJoBaseHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numJoBaseHP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJoBaseHP.Name = "numJoBaseHP";
-            numJoBaseHP.Size = new Size(107, 29);
+            numJoBaseHP.Size = new Size(107, 23);
             numJoBaseHP.TabIndex = 18;
             numJoBaseHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
             // numJoSpeed
             // 
             numJoSpeed.Dock = DockStyle.Fill;
-            numJoSpeed.Location = new Point(102, 255);
+            numJoSpeed.Location = new Point(81, 206);
             numJoSpeed.Margin = new Padding(4, 3, 4, 3);
             numJoSpeed.Maximum = new decimal(new int[] { 255, 0, 0, 0 });
             numJoSpeed.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJoSpeed.Name = "numJoSpeed";
-            numJoSpeed.Size = new Size(107, 29);
+            numJoSpeed.Size = new Size(107, 23);
             numJoSpeed.TabIndex = 21;
             numJoSpeed.Value = new decimal(new int[] { 10, 0, 0, 0 });
             // 
             // btnJoMaxCurrentAP
             // 
             btnJoMaxCurrentAP.Dock = DockStyle.Fill;
-            btnJoMaxCurrentAP.Location = new Point(217, 219);
+            btnJoMaxCurrentAP.Location = new Point(196, 177);
             btnJoMaxCurrentAP.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxCurrentAP.Name = "btnJoMaxCurrentAP";
-            btnJoMaxCurrentAP.Size = new Size(52, 30);
+            btnJoMaxCurrentAP.Size = new Size(52, 23);
             btnJoMaxCurrentAP.TabIndex = 22;
             btnJoMaxCurrentAP.Text = "Max";
             btnJoMaxCurrentAP.UseVisualStyleBackColor = true;
@@ -3706,10 +3750,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoSpeed.AutoSize = true;
             lblJoSpeed.Dock = DockStyle.Fill;
-            lblJoSpeed.Location = new Point(4, 252);
+            lblJoSpeed.Location = new Point(4, 203);
             lblJoSpeed.Margin = new Padding(4, 0, 4, 0);
             lblJoSpeed.Name = "lblJoSpeed";
-            lblJoSpeed.Size = new Size(90, 36);
+            lblJoSpeed.Size = new Size(69, 29);
             lblJoSpeed.TabIndex = 20;
             lblJoSpeed.Text = "Speed:";
             lblJoSpeed.TextAlign = ContentAlignment.MiddleLeft;
@@ -3717,10 +3761,10 @@ namespace SummonerSaveFileEditor
             // btnJoMaxBaseHP
             // 
             btnJoMaxBaseHP.Dock = DockStyle.Fill;
-            btnJoMaxBaseHP.Location = new Point(217, 111);
+            btnJoMaxBaseHP.Location = new Point(196, 90);
             btnJoMaxBaseHP.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxBaseHP.Name = "btnJoMaxBaseHP";
-            btnJoMaxBaseHP.Size = new Size(52, 30);
+            btnJoMaxBaseHP.Size = new Size(52, 23);
             btnJoMaxBaseHP.TabIndex = 19;
             btnJoMaxBaseHP.Text = "Max";
             btnJoMaxBaseHP.UseVisualStyleBackColor = true;
@@ -3728,10 +3772,10 @@ namespace SummonerSaveFileEditor
             // btnJoMaxBaseAP
             // 
             btnJoMaxBaseAP.Dock = DockStyle.Fill;
-            btnJoMaxBaseAP.Location = new Point(217, 183);
+            btnJoMaxBaseAP.Location = new Point(196, 148);
             btnJoMaxBaseAP.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxBaseAP.Name = "btnJoMaxBaseAP";
-            btnJoMaxBaseAP.Size = new Size(52, 30);
+            btnJoMaxBaseAP.Size = new Size(52, 23);
             btnJoMaxBaseAP.TabIndex = 22;
             btnJoMaxBaseAP.Text = "Max";
             btnJoMaxBaseAP.UseVisualStyleBackColor = true;
@@ -3740,10 +3784,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoCurrentHP.AutoSize = true;
             lblJoCurrentHP.Dock = DockStyle.Fill;
-            lblJoCurrentHP.Location = new Point(4, 144);
+            lblJoCurrentHP.Location = new Point(4, 116);
             lblJoCurrentHP.Margin = new Padding(4, 0, 4, 0);
             lblJoCurrentHP.Name = "lblJoCurrentHP";
-            lblJoCurrentHP.Size = new Size(90, 36);
+            lblJoCurrentHP.Size = new Size(69, 29);
             lblJoCurrentHP.TabIndex = 17;
             lblJoCurrentHP.Text = "Current HP:";
             lblJoCurrentHP.TextAlign = ContentAlignment.MiddleLeft;
@@ -3751,22 +3795,22 @@ namespace SummonerSaveFileEditor
             // numJoCurrentAP
             // 
             numJoCurrentAP.Dock = DockStyle.Fill;
-            numJoCurrentAP.Location = new Point(102, 219);
+            numJoCurrentAP.Location = new Point(81, 177);
             numJoCurrentAP.Margin = new Padding(4, 3, 4, 3);
             numJoCurrentAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numJoCurrentAP.Name = "numJoCurrentAP";
-            numJoCurrentAP.Size = new Size(107, 29);
+            numJoCurrentAP.Size = new Size(107, 23);
             numJoCurrentAP.TabIndex = 21;
             numJoCurrentAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
             // numJoCurrentHP
             // 
             numJoCurrentHP.Dock = DockStyle.Fill;
-            numJoCurrentHP.Location = new Point(102, 147);
+            numJoCurrentHP.Location = new Point(81, 119);
             numJoCurrentHP.Margin = new Padding(4, 3, 4, 3);
             numJoCurrentHP.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             numJoCurrentHP.Name = "numJoCurrentHP";
-            numJoCurrentHP.Size = new Size(107, 29);
+            numJoCurrentHP.Size = new Size(107, 23);
             numJoCurrentHP.TabIndex = 18;
             numJoCurrentHP.Value = new decimal(new int[] { 64, 0, 0, 0 });
             // 
@@ -3774,10 +3818,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoCurrentAP.AutoSize = true;
             lblJoCurrentAP.Dock = DockStyle.Fill;
-            lblJoCurrentAP.Location = new Point(4, 216);
+            lblJoCurrentAP.Location = new Point(4, 174);
             lblJoCurrentAP.Margin = new Padding(4, 0, 4, 0);
             lblJoCurrentAP.Name = "lblJoCurrentAP";
-            lblJoCurrentAP.Size = new Size(90, 36);
+            lblJoCurrentAP.Size = new Size(69, 29);
             lblJoCurrentAP.TabIndex = 20;
             lblJoCurrentAP.Text = "Current AP:";
             lblJoCurrentAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -3785,10 +3829,10 @@ namespace SummonerSaveFileEditor
             // btnJoMaxCurrentHP
             // 
             btnJoMaxCurrentHP.Dock = DockStyle.Fill;
-            btnJoMaxCurrentHP.Location = new Point(217, 147);
+            btnJoMaxCurrentHP.Location = new Point(196, 119);
             btnJoMaxCurrentHP.Margin = new Padding(4, 3, 4, 3);
             btnJoMaxCurrentHP.Name = "btnJoMaxCurrentHP";
-            btnJoMaxCurrentHP.Size = new Size(52, 30);
+            btnJoMaxCurrentHP.Size = new Size(52, 23);
             btnJoMaxCurrentHP.TabIndex = 19;
             btnJoMaxCurrentHP.Text = "Max";
             btnJoMaxCurrentHP.UseVisualStyleBackColor = true;
@@ -3797,10 +3841,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoBaseAP.AutoSize = true;
             lblJoBaseAP.Dock = DockStyle.Fill;
-            lblJoBaseAP.Location = new Point(4, 180);
+            lblJoBaseAP.Location = new Point(4, 145);
             lblJoBaseAP.Margin = new Padding(4, 0, 4, 0);
             lblJoBaseAP.Name = "lblJoBaseAP";
-            lblJoBaseAP.Size = new Size(90, 36);
+            lblJoBaseAP.Size = new Size(69, 29);
             lblJoBaseAP.TabIndex = 20;
             lblJoBaseAP.Text = "Max AP:";
             lblJoBaseAP.TextAlign = ContentAlignment.MiddleLeft;
@@ -3808,12 +3852,12 @@ namespace SummonerSaveFileEditor
             // numJoBaseAP
             // 
             numJoBaseAP.Dock = DockStyle.Fill;
-            numJoBaseAP.Location = new Point(102, 183);
+            numJoBaseAP.Location = new Point(81, 148);
             numJoBaseAP.Margin = new Padding(4, 3, 4, 3);
             numJoBaseAP.Maximum = new decimal(new int[] { 20000, 0, 0, 0 });
             numJoBaseAP.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numJoBaseAP.Name = "numJoBaseAP";
-            numJoBaseAP.Size = new Size(107, 29);
+            numJoBaseAP.Size = new Size(107, 23);
             numJoBaseAP.TabIndex = 21;
             numJoBaseAP.Value = new decimal(new int[] { 20, 0, 0, 0 });
             // 
@@ -3821,10 +3865,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoAmulet.AutoSize = true;
             lblJoAmulet.Dock = DockStyle.Fill;
-            lblJoAmulet.Location = new Point(277, 0);
+            lblJoAmulet.Location = new Point(256, 0);
             lblJoAmulet.Margin = new Padding(4, 0, 4, 0);
             lblJoAmulet.Name = "lblJoAmulet";
-            lblJoAmulet.Size = new Size(83, 36);
+            lblJoAmulet.Size = new Size(62, 29);
             lblJoAmulet.TabIndex = 24;
             lblJoAmulet.Text = "Amulet";
             lblJoAmulet.TextAlign = ContentAlignment.MiddleLeft;
@@ -3833,10 +3877,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoRing1.AutoSize = true;
             lblJoRing1.Dock = DockStyle.Fill;
-            lblJoRing1.Location = new Point(277, 36);
+            lblJoRing1.Location = new Point(256, 29);
             lblJoRing1.Margin = new Padding(4, 0, 4, 0);
             lblJoRing1.Name = "lblJoRing1";
-            lblJoRing1.Size = new Size(83, 36);
+            lblJoRing1.Size = new Size(62, 29);
             lblJoRing1.TabIndex = 24;
             lblJoRing1.Text = "Left Right";
             lblJoRing1.TextAlign = ContentAlignment.MiddleLeft;
@@ -3845,10 +3889,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoRing2.AutoSize = true;
             lblJoRing2.Dock = DockStyle.Fill;
-            lblJoRing2.Location = new Point(277, 72);
+            lblJoRing2.Location = new Point(256, 58);
             lblJoRing2.Margin = new Padding(4, 0, 4, 0);
             lblJoRing2.Name = "lblJoRing2";
-            lblJoRing2.Size = new Size(83, 36);
+            lblJoRing2.Size = new Size(62, 29);
             lblJoRing2.TabIndex = 24;
             lblJoRing2.Text = "Right Ring";
             lblJoRing2.TextAlign = ContentAlignment.MiddleLeft;
@@ -3857,10 +3901,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoGauntlets.AutoSize = true;
             lblJoGauntlets.Dock = DockStyle.Fill;
-            lblJoGauntlets.Location = new Point(277, 108);
+            lblJoGauntlets.Location = new Point(256, 87);
             lblJoGauntlets.Margin = new Padding(4, 0, 4, 0);
             lblJoGauntlets.Name = "lblJoGauntlets";
-            lblJoGauntlets.Size = new Size(83, 36);
+            lblJoGauntlets.Size = new Size(62, 29);
             lblJoGauntlets.TabIndex = 24;
             lblJoGauntlets.Text = "Gauntlets";
             lblJoGauntlets.TextAlign = ContentAlignment.MiddleLeft;
@@ -3869,10 +3913,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoWeapon.AutoSize = true;
             lblJoWeapon.Dock = DockStyle.Fill;
-            lblJoWeapon.Location = new Point(277, 144);
+            lblJoWeapon.Location = new Point(256, 116);
             lblJoWeapon.Margin = new Padding(4, 0, 4, 0);
             lblJoWeapon.Name = "lblJoWeapon";
-            lblJoWeapon.Size = new Size(83, 36);
+            lblJoWeapon.Size = new Size(62, 29);
             lblJoWeapon.TabIndex = 24;
             lblJoWeapon.Text = "Weapon";
             lblJoWeapon.TextAlign = ContentAlignment.MiddleLeft;
@@ -3881,10 +3925,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoShield.AutoSize = true;
             lblJoShield.Dock = DockStyle.Fill;
-            lblJoShield.Location = new Point(277, 180);
+            lblJoShield.Location = new Point(256, 145);
             lblJoShield.Margin = new Padding(4, 0, 4, 0);
             lblJoShield.Name = "lblJoShield";
-            lblJoShield.Size = new Size(83, 36);
+            lblJoShield.Size = new Size(62, 29);
             lblJoShield.TabIndex = 24;
             lblJoShield.Text = "Shield";
             lblJoShield.TextAlign = ContentAlignment.MiddleLeft;
@@ -3893,10 +3937,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoBoots.AutoSize = true;
             lblJoBoots.Dock = DockStyle.Fill;
-            lblJoBoots.Location = new Point(277, 216);
+            lblJoBoots.Location = new Point(256, 174);
             lblJoBoots.Margin = new Padding(4, 0, 4, 0);
             lblJoBoots.Name = "lblJoBoots";
-            lblJoBoots.Size = new Size(83, 36);
+            lblJoBoots.Size = new Size(62, 29);
             lblJoBoots.TabIndex = 24;
             lblJoBoots.Text = "Boots";
             lblJoBoots.TextAlign = ContentAlignment.MiddleLeft;
@@ -3905,10 +3949,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoTorso.AutoSize = true;
             lblJoTorso.Dock = DockStyle.Fill;
-            lblJoTorso.Location = new Point(277, 252);
+            lblJoTorso.Location = new Point(256, 203);
             lblJoTorso.Margin = new Padding(4, 0, 4, 0);
             lblJoTorso.Name = "lblJoTorso";
-            lblJoTorso.Size = new Size(83, 36);
+            lblJoTorso.Size = new Size(62, 29);
             lblJoTorso.TabIndex = 24;
             lblJoTorso.Text = "Torso";
             lblJoTorso.TextAlign = ContentAlignment.MiddleLeft;
@@ -3917,10 +3961,10 @@ namespace SummonerSaveFileEditor
             // 
             lblJoLeggings.AutoSize = true;
             lblJoLeggings.Dock = DockStyle.Fill;
-            lblJoLeggings.Location = new Point(277, 288);
+            lblJoLeggings.Location = new Point(256, 232);
             lblJoLeggings.Margin = new Padding(4, 0, 4, 0);
             lblJoLeggings.Name = "lblJoLeggings";
-            lblJoLeggings.Size = new Size(83, 36);
+            lblJoLeggings.Size = new Size(62, 29);
             lblJoLeggings.TabIndex = 24;
             lblJoLeggings.Text = "Leggings";
             lblJoLeggings.TextAlign = ContentAlignment.MiddleLeft;
@@ -3928,10 +3972,10 @@ namespace SummonerSaveFileEditor
             // tabPageStart
             // 
             tabPageStart.Controls.Add(tableLayoutPanel11);
-            tabPageStart.Location = new Point(4, 30);
+            tabPageStart.Location = new Point(4, 24);
             tabPageStart.Name = "tabPageStart";
             tabPageStart.Padding = new Padding(3);
-            tabPageStart.Size = new Size(973, 456);
+            tabPageStart.Size = new Size(973, 507);
             tabPageStart.TabIndex = 6;
             tabPageStart.Text = "Start";
             tabPageStart.UseVisualStyleBackColor = true;
@@ -3954,11 +3998,11 @@ namespace SummonerSaveFileEditor
             tableLayoutPanel11.Name = "tableLayoutPanel11";
             tableLayoutPanel11.RowCount = 5;
             tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 188F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
             tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
             tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel11.Size = new Size(967, 450);
+            tableLayoutPanel11.Size = new Size(967, 501);
             tableLayoutPanel11.TabIndex = 0;
             // 
             // imgPreview
@@ -3972,7 +4016,6 @@ namespace SummonerSaveFileEditor
             imgPreview.SizeMode = PictureBoxSizeMode.StretchImage;
             imgPreview.TabIndex = 22;
             imgPreview.TabStop = false;
-            imgPreview.Click += pictureBox1_Click;
             // 
             // txtDescription
             // 
@@ -3990,7 +4033,7 @@ namespace SummonerSaveFileEditor
             // 
             btnOpenFile.Dock = DockStyle.Fill;
             btnOpenFile.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnOpenFile.Location = new Point(237, 261);
+            btnOpenFile.Location = new Point(237, 249);
             btnOpenFile.Margin = new Padding(4, 3, 4, 3);
             btnOpenFile.Name = "btnOpenFile";
             btnOpenFile.Size = new Size(242, 47);
@@ -4003,7 +4046,7 @@ namespace SummonerSaveFileEditor
             // 
             btnSaveFile.Dock = DockStyle.Fill;
             btnSaveFile.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSaveFile.Location = new Point(487, 261);
+            btnSaveFile.Location = new Point(487, 249);
             btnSaveFile.Margin = new Padding(4, 3, 4, 3);
             btnSaveFile.Name = "btnSaveFile";
             btnSaveFile.Size = new Size(242, 47);
@@ -4018,7 +4061,7 @@ namespace SummonerSaveFileEditor
             lblTime.Dock = DockStyle.Fill;
             lblTime.Location = new Point(486, 188);
             lblTime.Name = "lblTime";
-            lblTime.Size = new Size(244, 35);
+            lblTime.Size = new Size(244, 29);
             lblTime.TabIndex = 1;
             lblTime.Text = "Time: 00:00";
             lblTime.TextAlign = ContentAlignment.MiddleLeft;
@@ -4030,7 +4073,7 @@ namespace SummonerSaveFileEditor
             numTime.Location = new Point(236, 191);
             numTime.Maximum = new decimal(new int[] { -1, -1, -1, 0 });
             numTime.Name = "numTime";
-            numTime.Size = new Size(244, 29);
+            numTime.Size = new Size(244, 23);
             numTime.TabIndex = 0;
             // 
             // tabMain
@@ -4043,14 +4086,381 @@ namespace SummonerSaveFileEditor
             tabMain.Controls.Add(tabPageOther);
             tabMain.Controls.Add(tabPageInventory);
             tabMain.Controls.Add(tabPageCamera);
+            tabMain.Controls.Add(tabPageContainer);
             tabMain.Dock = DockStyle.Fill;
-            tabMain.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabMain.Location = new Point(0, 24);
             tabMain.Margin = new Padding(4, 3, 4, 3);
             tabMain.Name = "tabMain";
             tabMain.SelectedIndex = 0;
-            tabMain.Size = new Size(981, 490);
+            tabMain.Size = new Size(981, 535);
             tabMain.TabIndex = 19;
+            // 
+            // tabPageContainer
+            // 
+            tabPageContainer.Controls.Add(tableLayoutPanel2);
+            tabPageContainer.Location = new Point(4, 24);
+            tabPageContainer.Name = "tabPageContainer";
+            tabPageContainer.Padding = new Padding(3);
+            tabPageContainer.Size = new Size(973, 507);
+            tabPageContainer.TabIndex = 8;
+            tabPageContainer.Text = "Containers";
+            tabPageContainer.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel3, 1, 1);
+            tableLayoutPanel2.Controls.Add(lvContainerGameItems, 2, 1);
+            tableLayoutPanel2.Controls.Add(tableLayoutPanel4, 1, 3);
+            tableLayoutPanel2.Controls.Add(lblContainers, 0, 0);
+            tableLayoutPanel2.Controls.Add(lblContainerContent, 0, 2);
+            tableLayoutPanel2.Controls.Add(lvContainers, 0, 1);
+            tableLayoutPanel2.Controls.Add(lvContainerContent, 0, 3);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(3, 3);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 4;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 210F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 210F));
+            tableLayoutPanel2.Size = new Size(967, 501);
+            tableLayoutPanel2.TabIndex = 7;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(btnRemoveContainer, 0, 1);
+            tableLayoutPanel3.Controls.Add(btnAddContainer, 0, 0);
+            tableLayoutPanel3.Controls.Add(btnToggleContainerLock, 0, 6);
+            tableLayoutPanel3.Controls.Add(numContainerPosZ, 1, 5);
+            tableLayoutPanel3.Controls.Add(label22, 0, 5);
+            tableLayoutPanel3.Controls.Add(numContainerPosY, 1, 4);
+            tableLayoutPanel3.Controls.Add(label21, 0, 4);
+            tableLayoutPanel3.Controls.Add(numContainerPosX, 1, 3);
+            tableLayoutPanel3.Controls.Add(label20, 0, 3);
+            tableLayoutPanel3.Controls.Add(btnModifyContainer, 0, 2);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(386, 29);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 7;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel3.Size = new Size(194, 204);
+            tableLayoutPanel3.TabIndex = 8;
+            // 
+            // btnRemoveContainer
+            // 
+            tableLayoutPanel3.SetColumnSpan(btnRemoveContainer, 2);
+            btnRemoveContainer.Dock = DockStyle.Fill;
+            btnRemoveContainer.Location = new Point(3, 32);
+            btnRemoveContainer.Name = "btnRemoveContainer";
+            btnRemoveContainer.Size = new Size(188, 23);
+            btnRemoveContainer.TabIndex = 2;
+            btnRemoveContainer.Text = "Remove Container";
+            btnRemoveContainer.UseVisualStyleBackColor = true;
+            btnRemoveContainer.Click += btnRemoveContainer_Click;
+            // 
+            // btnAddContainer
+            // 
+            tableLayoutPanel3.SetColumnSpan(btnAddContainer, 2);
+            btnAddContainer.Dock = DockStyle.Fill;
+            btnAddContainer.Location = new Point(3, 3);
+            btnAddContainer.Name = "btnAddContainer";
+            btnAddContainer.Size = new Size(188, 23);
+            btnAddContainer.TabIndex = 2;
+            btnAddContainer.Text = "Add Container";
+            btnAddContainer.UseVisualStyleBackColor = true;
+            btnAddContainer.Click += btnAddContainer_Click;
+            // 
+            // btnToggleContainerLock
+            // 
+            tableLayoutPanel3.SetColumnSpan(btnToggleContainerLock, 2);
+            btnToggleContainerLock.Dock = DockStyle.Fill;
+            btnToggleContainerLock.Location = new Point(3, 177);
+            btnToggleContainerLock.Name = "btnToggleContainerLock";
+            btnToggleContainerLock.Size = new Size(188, 24);
+            btnToggleContainerLock.TabIndex = 1;
+            btnToggleContainerLock.Text = "Toggle Lock";
+            btnToggleContainerLock.UseVisualStyleBackColor = true;
+            btnToggleContainerLock.Click += btnToggleContainerLock_Click;
+            // 
+            // numContainerPosZ
+            // 
+            numContainerPosZ.DecimalPlaces = 4;
+            numContainerPosZ.Dock = DockStyle.Fill;
+            numContainerPosZ.Location = new Point(100, 148);
+            numContainerPosZ.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numContainerPosZ.Minimum = new decimal(new int[] { 1000, 0, 0, int.MinValue });
+            numContainerPosZ.Name = "numContainerPosZ";
+            numContainerPosZ.Size = new Size(91, 23);
+            numContainerPosZ.TabIndex = 3;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Dock = DockStyle.Fill;
+            label22.Location = new Point(3, 145);
+            label22.Name = "label22";
+            label22.Size = new Size(91, 29);
+            label22.TabIndex = 4;
+            label22.Text = "Z";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // numContainerPosY
+            // 
+            numContainerPosY.DecimalPlaces = 4;
+            numContainerPosY.Dock = DockStyle.Fill;
+            numContainerPosY.Location = new Point(100, 119);
+            numContainerPosY.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numContainerPosY.Minimum = new decimal(new int[] { 1000, 0, 0, int.MinValue });
+            numContainerPosY.Name = "numContainerPosY";
+            numContainerPosY.Size = new Size(91, 23);
+            numContainerPosY.TabIndex = 3;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Dock = DockStyle.Fill;
+            label21.Location = new Point(3, 116);
+            label21.Name = "label21";
+            label21.Size = new Size(91, 29);
+            label21.TabIndex = 4;
+            label21.Text = "Y";
+            label21.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // numContainerPosX
+            // 
+            numContainerPosX.DecimalPlaces = 4;
+            numContainerPosX.Dock = DockStyle.Fill;
+            numContainerPosX.Location = new Point(100, 90);
+            numContainerPosX.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            numContainerPosX.Minimum = new decimal(new int[] { 1000, 0, 0, int.MinValue });
+            numContainerPosX.Name = "numContainerPosX";
+            numContainerPosX.Size = new Size(91, 23);
+            numContainerPosX.TabIndex = 3;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Dock = DockStyle.Fill;
+            label20.Location = new Point(3, 87);
+            label20.Name = "label20";
+            label20.Size = new Size(91, 29);
+            label20.TabIndex = 4;
+            label20.Text = "X";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnModifyContainer
+            // 
+            tableLayoutPanel3.SetColumnSpan(btnModifyContainer, 2);
+            btnModifyContainer.Dock = DockStyle.Fill;
+            btnModifyContainer.Location = new Point(3, 61);
+            btnModifyContainer.Name = "btnModifyContainer";
+            btnModifyContainer.Size = new Size(188, 23);
+            btnModifyContainer.TabIndex = 2;
+            btnModifyContainer.Text = "Modify Container";
+            btnModifyContainer.UseVisualStyleBackColor = true;
+            btnModifyContainer.Click += btnModifyContainer_Click;
+            // 
+            // lvContainerGameItems
+            // 
+            lvContainerGameItems.Columns.AddRange(new ColumnHeader[] { columnHeader21 });
+            lvContainerGameItems.Dock = DockStyle.Fill;
+            lvContainerGameItems.Location = new Point(586, 29);
+            lvContainerGameItems.Name = "lvContainerGameItems";
+            tableLayoutPanel2.SetRowSpan(lvContainerGameItems, 3);
+            lvContainerGameItems.Size = new Size(378, 469);
+            lvContainerGameItems.TabIndex = 5;
+            lvContainerGameItems.UseCompatibleStateImageBehavior = false;
+            lvContainerGameItems.View = View.Details;
+            // 
+            // columnHeader21
+            // 
+            columnHeader21.Text = "Item Name";
+            columnHeader21.Width = 180;
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.Controls.Add(btnAddToContainer, 0, 0);
+            tableLayoutPanel4.Controls.Add(btnRemoveFromContainer, 0, 1);
+            tableLayoutPanel4.Controls.Add(btnApplyToContainerItems, 0, 2);
+            tableLayoutPanel4.Controls.Add(numContainerItemQuantity, 1, 3);
+            tableLayoutPanel4.Controls.Add(numContainerItemCharges, 1, 4);
+            tableLayoutPanel4.Controls.Add(label23, 0, 3);
+            tableLayoutPanel4.Controls.Add(label24, 0, 4);
+            tableLayoutPanel4.Dock = DockStyle.Fill;
+            tableLayoutPanel4.Location = new Point(386, 265);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 6;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 29F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel4.Size = new Size(194, 233);
+            tableLayoutPanel4.TabIndex = 8;
+            // 
+            // btnAddToContainer
+            // 
+            tableLayoutPanel4.SetColumnSpan(btnAddToContainer, 2);
+            btnAddToContainer.Dock = DockStyle.Fill;
+            btnAddToContainer.Location = new Point(3, 3);
+            btnAddToContainer.Name = "btnAddToContainer";
+            btnAddToContainer.Size = new Size(188, 23);
+            btnAddToContainer.TabIndex = 1;
+            btnAddToContainer.Text = "Add Item";
+            btnAddToContainer.UseVisualStyleBackColor = true;
+            btnAddToContainer.Click += btnAddToContainer_Click;
+            // 
+            // btnRemoveFromContainer
+            // 
+            tableLayoutPanel4.SetColumnSpan(btnRemoveFromContainer, 2);
+            btnRemoveFromContainer.Dock = DockStyle.Fill;
+            btnRemoveFromContainer.Location = new Point(3, 32);
+            btnRemoveFromContainer.Name = "btnRemoveFromContainer";
+            btnRemoveFromContainer.Size = new Size(188, 23);
+            btnRemoveFromContainer.TabIndex = 1;
+            btnRemoveFromContainer.Text = "Remove Item";
+            btnRemoveFromContainer.UseVisualStyleBackColor = true;
+            btnRemoveFromContainer.Click += btnRemoveFromContainer_Click;
+            // 
+            // btnApplyToContainerItems
+            // 
+            tableLayoutPanel4.SetColumnSpan(btnApplyToContainerItems, 2);
+            btnApplyToContainerItems.Dock = DockStyle.Fill;
+            btnApplyToContainerItems.Location = new Point(3, 61);
+            btnApplyToContainerItems.Name = "btnApplyToContainerItems";
+            btnApplyToContainerItems.Size = new Size(188, 23);
+            btnApplyToContainerItems.TabIndex = 2;
+            btnApplyToContainerItems.Text = "Apply to Selected";
+            btnApplyToContainerItems.UseVisualStyleBackColor = true;
+            btnApplyToContainerItems.Click += btnApplyToContainerItems_Click;
+            // 
+            // numContainerItemQuantity
+            // 
+            numContainerItemQuantity.Dock = DockStyle.Fill;
+            numContainerItemQuantity.Location = new Point(100, 90);
+            numContainerItemQuantity.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            numContainerItemQuantity.Name = "numContainerItemQuantity";
+            numContainerItemQuantity.Size = new Size(91, 23);
+            numContainerItemQuantity.TabIndex = 3;
+            // 
+            // numContainerItemCharges
+            // 
+            numContainerItemCharges.Dock = DockStyle.Fill;
+            numContainerItemCharges.Location = new Point(100, 119);
+            numContainerItemCharges.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            numContainerItemCharges.Name = "numContainerItemCharges";
+            numContainerItemCharges.Size = new Size(91, 23);
+            numContainerItemCharges.TabIndex = 3;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Dock = DockStyle.Fill;
+            label23.Location = new Point(3, 87);
+            label23.Name = "label23";
+            label23.Size = new Size(91, 29);
+            label23.TabIndex = 4;
+            label23.Text = "Quantity";
+            label23.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Dock = DockStyle.Fill;
+            label24.Location = new Point(3, 116);
+            label24.Name = "label24";
+            label24.Size = new Size(91, 29);
+            label24.TabIndex = 5;
+            label24.Text = "Charges";
+            label24.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblContainers
+            // 
+            lblContainers.AutoSize = true;
+            lblContainers.Dock = DockStyle.Fill;
+            lblContainers.Location = new Point(3, 0);
+            lblContainers.Name = "lblContainers";
+            lblContainers.Size = new Size(377, 26);
+            lblContainers.TabIndex = 6;
+            lblContainers.Text = "Containers: 0 / 0";
+            lblContainers.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lblContainerContent
+            // 
+            lblContainerContent.AutoSize = true;
+            lblContainerContent.Dock = DockStyle.Fill;
+            lblContainerContent.Location = new Point(3, 236);
+            lblContainerContent.Name = "lblContainerContent";
+            lblContainerContent.Size = new Size(377, 26);
+            lblContainerContent.TabIndex = 6;
+            lblContainerContent.Text = "Container Items: 0 / 16";
+            lblContainerContent.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // lvContainers
+            // 
+            lvContainers.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader20 });
+            lvContainers.Dock = DockStyle.Fill;
+            lvContainers.Location = new Point(3, 29);
+            lvContainers.Name = "lvContainers";
+            lvContainers.Size = new Size(377, 204);
+            lvContainers.TabIndex = 0;
+            lvContainers.UseCompatibleStateImageBehavior = false;
+            lvContainers.View = View.Details;
+            lvContainers.SelectedIndexChanged += lvContainers_SelectedIndexChanged;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "Container";
+            columnHeader6.Width = 180;
+            // 
+            // columnHeader20
+            // 
+            columnHeader20.Text = "Locked";
+            columnHeader20.Width = 100;
+            // 
+            // lvContainerContent
+            // 
+            lvContainerContent.Columns.AddRange(new ColumnHeader[] { columnHeader7, columnHeader18, columnHeader19 });
+            lvContainerContent.Dock = DockStyle.Fill;
+            lvContainerContent.Location = new Point(3, 265);
+            lvContainerContent.Name = "lvContainerContent";
+            lvContainerContent.Size = new Size(377, 233);
+            lvContainerContent.TabIndex = 0;
+            lvContainerContent.UseCompatibleStateImageBehavior = false;
+            lvContainerContent.View = View.Details;
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "Item";
+            columnHeader7.Width = 180;
+            // 
+            // columnHeader18
+            // 
+            columnHeader18.Text = "Quantity";
+            columnHeader18.Width = 80;
+            // 
+            // columnHeader19
+            // 
+            columnHeader19.Text = "Charges";
+            columnHeader19.Width = 80;
             // 
             // fileToolStripMenuItem
             // 
@@ -4109,7 +4519,7 @@ namespace SummonerSaveFileEditor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(981, 514);
+            ClientSize = new Size(981, 559);
             Controls.Add(tabMain);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
@@ -4207,6 +4617,18 @@ namespace SummonerSaveFileEditor
             ((System.ComponentModel.ISupportInitialize)imgPreview).EndInit();
             ((System.ComponentModel.ISupportInitialize)numTime).EndInit();
             tabMain.ResumeLayout(false);
+            tabPageContainer.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numContainerPosZ).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numContainerPosY).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numContainerPosX).EndInit();
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numContainerItemQuantity).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numContainerItemCharges).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -4517,5 +4939,37 @@ namespace SummonerSaveFileEditor
         private Label label19;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel pnlInventoryControls;
+        private TabPage tabPageContainer;
+        private ListView lvContainerContent;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader18;
+        private ColumnHeader columnHeader19;
+        private ListView lvContainers;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader20;
+        private Button btnAddToContainer;
+        private Button btnToggleContainerLock;
+        private Label label22;
+        private Label label21;
+        private Label label20;
+        private NumericUpDown numContainerPosZ;
+        private NumericUpDown numContainerPosY;
+        private NumericUpDown numContainerPosX;
+        private Button btnModifyContainer;
+        private Button btnAddContainer;
+        private ListView lvContainerGameItems;
+        private ColumnHeader columnHeader21;
+        private NumericUpDown numContainerItemCharges;
+        private NumericUpDown numContainerItemQuantity;
+        private Button btnApplyToContainerItems;
+        private Label lblContainerContent;
+        private Label lblContainers;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Button btnRemoveFromContainer;
+        private Button btnRemoveContainer;
+        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel tableLayoutPanel4;
+        private Label label23;
+        private Label label24;
     }
 }

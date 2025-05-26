@@ -24,7 +24,10 @@ namespace SummonerSaveFileEditor.ViewModels
         public CharacterViewModel Jekhar { get; set; }
         public byte[] PostCreatureData { get; set; }
         public CameraViewModel Camera { get; set; }
-        public byte[] ContSectionData { get; set; }
+        public List<Container> Containers { get; set; } = new List<Container>();
+
+        public byte[] RemainingData { get; set; }
+        //public byte[] ContSectionData { get; set; }
         public int Gold { get; set; }
 
         public void LoadFromModel(InventoryData inventoryData, CharacterData characterData, CameraBlock camera = null)

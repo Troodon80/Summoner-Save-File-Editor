@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -49,9 +50,11 @@ namespace SummonerSaveFileEditor
                 await LoadAllResourcesAsync();
                 SettingsManager.ApplyWindowState(this);
                 UpdateCharacterTabsState();
-            }; numTime.ValueChanged += (s, e) => UpdateTimeLabel();
+            };
+            numTime.ValueChanged += (s, e) => UpdateTimeLabel();
 
             SetupEquipmentSlotLogic();
+
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
@@ -575,6 +578,58 @@ namespace SummonerSaveFileEditor
             };
         }
 
+        private void PopulateContainersList()
+        {
+            lvContainers.Items.Clear();
+            foreach (var container in _saveGameViewModel.Containers)
+            {
+                // Create ListViewItem with container ID as first column
+                var item = new ListViewItem($"({container.Position.X:F1}, {container.Position.Y:F1}, {container.Position.Z:F1})")
+                {
+                    Tag = container
+                };
+
+                // Add position and item count as subitems
+                item.SubItems.Add(container.IsLocked ? "Locked" : "Unlocked");
+
+                lvContainers.Items.Add(item);
+            }
+            UpdateContainerCountLabel();
+        }
+
+        private void DisplayContainerContents()
+        {
+            lvContainerContent.Items.Clear();
+
+            if (lvContainers.SelectedItems.Count == 0)
+                return;
+
+            if (lvContainers.SelectedItems[0].Tag is Container container)
+            {
+                foreach (var content in container.Contents)
+                {
+                    string itemName = "Unknown Item";
+
+                    // Try to find the item name in the known items list
+                    var equipmentItem = _equipmentItems?.FirstOrDefault(i => i.Index == content.ReferenceId);
+                    if (equipmentItem != null)
+                    {
+                        itemName = equipmentItem.Name;
+                    }
+
+                    var item = new ListViewItem(itemName)
+                    {
+                        Tag = content
+                    };
+
+                    item.SubItems.Add(content.Quantity.ToString());
+                    item.SubItems.Add(content.Charges.ToString());
+
+                    lvContainerContent.Items.Add(item);
+                }
+            }
+        }
+
         private void BindCameraControls()
         {
             if (_saveGameViewModel.Camera == null) return;
@@ -613,78 +668,97 @@ namespace SummonerSaveFileEditor
         {
             string initialDirectory = null;
 
-            // First try to use the last folder the user accessed
-            string lastFolder = SettingsManager.GetLastFolder();
-            if (lastFolder != null)
+            try
             {
-                initialDirectory = lastFolder;
-            }
-            // If no last folder, check for game's savegames folder
-            else
-            {
-                string gameInstallPath = ResourceLoader.GetGameInstallationPath();
-                if (!string.IsNullOrEmpty(gameInstallPath))
+                // First try to use the last folder the user accessed
+                string lastFolder = SettingsManager.GetLastFolder();
+                if (lastFolder != null)
                 {
-                    string saveGamesPath = Path.Combine(gameInstallPath, "savegame");
-                    if (Directory.Exists(saveGamesPath))
+                    initialDirectory = lastFolder;
+                }
+                // If no last folder, check for game's savegames folder
+                else
+                {
+                    string gameInstallPath = ResourceLoader.GetGameInstallationPath();
+                    if (!string.IsNullOrEmpty(gameInstallPath))
                     {
-                        initialDirectory = saveGamesPath;
+                        string saveGamesPath = Path.Combine(gameInstallPath, "savegame");
+                        if (Directory.Exists(saveGamesPath))
+                        {
+                            initialDirectory = saveGamesPath;
+                        }
+                        else
+                        {
+                            // Fallback to game install path if savegames folder doesn't exist
+                            initialDirectory = gameInstallPath;
+                        }
                     }
                     else
                     {
-                        // Fallback to game install path if savegames folder doesn't exist
-                        initialDirectory = gameInstallPath;
+                        // Final fallback
+                        initialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                     }
                 }
-                else
+
+                //using var dialog = new OpenFileDialog
+                //{
+                //    Filter = "Summoner Save Files (*.sav)|*.sav",
+                //    Title = "Open Save File",
+                //    InitialDirectory = initialDirectory
+                //};
+
+                //if (dialog.ShowDialog() == DialogResult.OK)
+                //{
+                using (var browser = new SaveGameBrowserForm(initialDirectory))
                 {
-                    // Final fallback
-                    initialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                    if (browser.ShowDialog() == DialogResult.OK)
+                    {
+                        string selectedFilePath = browser.SelectedFilePath;
+
+                        UpdateTitleWithFileName(selectedFilePath);
+
+                        using var reader = new BinaryReader(File.OpenRead(selectedFilePath));
+                        _saveGameViewModel = SaveFileService.ReadSaveFile(reader, _knownItems, out _originalInventorySize);
+                        SaveFileService.ReadSaveGameHeader(reader, _saveGameViewModel);
+                        SaveFileService.ReadTimeAndDescription(reader, out float seconds, out string desc);
+                        SaveFileService.ReadPostThumbnailData(reader, _saveGameViewModel);
+
+                        SaveFileService.ReadItemFlags(reader, _knownItems, out _itemFlags);
+                        SaveFileService.ReadAreaBlockData(reader, _saveGameViewModel);
+                        SaveFileService.ReadCharactersAndCreatures(reader, _saveGameViewModel);
+                        SaveFileService.ReadCamera(reader, _saveGameViewModel);
+                        SaveFileService.ReadContainerSection(reader, _saveGameViewModel);
+                        SaveFileService.ReadPostContainerData(reader, _saveGameViewModel);
+
+                        _saveGameViewModel.GameTimeSeconds = seconds;
+                        _saveGameViewModel.Description = desc;
+
+                        PopulateEquipmentComboBoxes();
+                        PopulateGameItemsList();
+                        PopulateContainersList();
+                        PopulateContainerGameItemsList();
+                        ClearAllBindings(this);
+
+                        BindTimeAndDescription();
+                        BindInventoryControls();
+                        BindCharacterPanels();
+                        BindCharacterSkillsAndEquipment();
+                        BindSkillLists();
+                        PopulateCreatureList();
+                        BindCameraControls();
+
+                        UpdateCharacterTabsState();
+
+                        DisplayThumbnailImage();
+
+                        SettingsManager.SaveLastFolder(Path.GetDirectoryName(selectedFilePath));
+                    }
                 }
             }
-
-            using var dialog = new OpenFileDialog
+            catch (Exception ex)
             {
-                Filter = "Summoner Save Files (*.sav)|*.sav",
-                Title = "Open Save File",
-                InitialDirectory = initialDirectory
-            };
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                UpdateTitleWithFileName(dialog.FileName);
-
-                using var reader = new BinaryReader(File.OpenRead(dialog.FileName));
-                _saveGameViewModel = SaveFileService.ReadSaveFile(reader, _knownItems, out _originalInventorySize);
-                SaveFileService.ReadSaveGameHeader(reader, _saveGameViewModel);
-                SaveFileService.ReadTimeAndDescription(reader, out float seconds, out string desc);
-                SaveFileService.ReadPostThumbnailData(reader, _saveGameViewModel);
-
-                SaveFileService.ReadItemFlags(reader, _knownItems, out _itemFlags);
-                SaveFileService.ReadAreaBlockData(reader, _saveGameViewModel);
-                SaveFileService.ReadCharactersAndCreatures(reader, _saveGameViewModel);
-                SaveFileService.ReadCamera(reader, _saveGameViewModel);
-                SaveFileService.ReadContSection(reader, _saveGameViewModel);
-                _saveGameViewModel.GameTimeSeconds = seconds;
-                _saveGameViewModel.Description = desc;
-
-                PopulateEquipmentComboBoxes();
-                PopulateGameItemsList();
-                ClearAllBindings(this);
-
-                BindTimeAndDescription();
-                BindInventoryControls();
-                BindCharacterPanels();
-                BindCharacterSkillsAndEquipment();
-                BindSkillLists();
-                PopulateCreatureList();
-                BindCameraControls();
-
-                UpdateCharacterTabsState();
-
-                DisplayThumbnailImage();
-
-                SettingsManager.SaveLastFolder(Path.GetDirectoryName(dialog.FileName));
+                MessageBox.Show($"Error opening file: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //throw;
             }
         }
 
@@ -748,42 +822,42 @@ namespace SummonerSaveFileEditor
                 }
             }
 
-            using var dialog = new SaveFileDialog
+            using (var browser = new SaveGameBrowserForm(initialDirectory, true))
             {
-                Filter = "Summoner Save Files (*.sav)|*.sav",
-                Title = "Save Modified File",
-                InitialDirectory = initialDirectory
-            };
-
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                foreach (var flag in _itemFlags)
+                if (browser.ShowDialog() == DialogResult.OK)
                 {
-                    // Find matching item in _knownItems
-                    var knownItem = _knownItems.FirstOrDefault(item => item.Hash == flag.Hash);
-                    if (knownItem != null)
+                    string selectedFilePath = browser.SelectedFilePath;
+
+                    foreach (var flag in _itemFlags)
                     {
-                        flag.IdentifiedBit = knownItem.IdentifiedBit;
+                        // Find matching item in _knownItems
+                        var knownItem = _knownItems.FirstOrDefault(item => item.Hash == flag.Hash);
+                        if (knownItem != null)
+                        {
+                            flag.IdentifiedBit = knownItem.IdentifiedBit;
+                        }
                     }
+
+                    WriteToPreallocatedFile(selectedFilePath, 270755, writer =>
+                    {
+                        SaveFileService.WriteSaveFile(writer, _saveGameViewModel, _knownItems, _originalInventorySize);
+                        SaveFileService.WriteSaveGameHeader(writer, _saveGameViewModel);
+                        //SaveFileService.WriteTimeAndDescription(writer, _saveGameViewModel.GameTimeSeconds, _saveGameViewModel.Description);
+                        SaveFileService.WritePostThumbnailData(writer, _saveGameViewModel);
+
+                        SaveFileService.WriteItemFlags(writer, _itemFlags);
+                        SaveFileService.WriteAreaBlockData(writer, _saveGameViewModel);
+
+                        SaveFileService.WriteCharactersAndCreatures(writer, _saveGameViewModel);
+                        SaveFileService.WriteCamera(writer, _saveGameViewModel);
+                        SaveFileService.WriteContainerSection(writer, _saveGameViewModel);
+                        SaveFileService.WritePostContainerData(writer, _saveGameViewModel);
+
+                    });
+
+                    SettingsManager.SaveLastFolder(Path.GetDirectoryName(selectedFilePath));
+                    MessageBox.Show("Save completed successfully.", "Save File", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                WriteToPreallocatedFile(dialog.FileName, 270755, writer =>
-                {
-                    SaveFileService.WriteSaveFile(writer, _saveGameViewModel, _knownItems, _originalInventorySize);
-                    SaveFileService.WriteSaveGameHeader(writer, _saveGameViewModel);
-                    //SaveFileService.WriteTimeAndDescription(writer, _saveGameViewModel.GameTimeSeconds, _saveGameViewModel.Description);
-                    SaveFileService.WritePostThumbnailData(writer, _saveGameViewModel);
-
-                    SaveFileService.WriteItemFlags(writer, _itemFlags);
-                    SaveFileService.WriteAreaBlockData(writer, _saveGameViewModel);
-
-                    SaveFileService.WriteCharactersAndCreatures(writer, _saveGameViewModel);
-                    SaveFileService.WriteCamera(writer, _saveGameViewModel);
-                    SaveFileService.WriteContSection(writer, _saveGameViewModel);
-                });
-
-                SettingsManager.SaveLastFolder(Path.GetDirectoryName(dialog.FileName));
-                MessageBox.Show("Save completed successfully.", "Save File", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -795,11 +869,6 @@ namespace SummonerSaveFileEditor
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"Summoner Save Editor\nVersion {Application.ProductVersion}", "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            // Optional: load larger preview image, no-op for now
         }
 
         private void SetupEquipmentSlotLogic()
@@ -1016,6 +1085,293 @@ namespace SummonerSaveFileEditor
                 }
             }
         }
+
+        private void PopulateContainerGameItemsList()
+        {
+            lvContainerGameItems.Items.Clear();
+
+            if (_equipmentItems == null || _equipmentItems.Count == 0)
+                return;
+
+            foreach (var item in _equipmentItems.OrderBy(i => i.Name))
+            {
+                var listViewItem = new ListViewItem(item.Name)
+                {
+                    Tag = item
+                };
+
+                listViewItem.SubItems.Add(item.Category);
+
+                lvContainerGameItems.Items.Add(listViewItem);
+            }
+        }
+
+        private void lvContainers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayContainerContents();
+
+            if (lvContainers.SelectedItems.Count > 0 && lvContainers.SelectedItems[0].Tag is Container container)
+            {
+                UpdateContainerPositionControls(container);
+                UpdateContainerItemsLabel(container);
+            }
+        }
+        private void UpdateContainerPositionControls(Container container)
+        {
+            if (container != null)
+            {
+                numContainerPosX.Value = (decimal)container.Position.X;
+                numContainerPosY.Value = (decimal)container.Position.Y;
+                numContainerPosZ.Value = (decimal)container.Position.Z;
+            }
+        }
+
+        private void btnAddContainer_Click(object sender, EventArgs e)
+        {
+            // Create a new container with default position
+            var newContainer = new Container
+            {
+                Position = new Vector3(0, 0, 0),
+                ContentCount = 0,
+                Flags = 0 // Not locked by default
+            };
+
+            // Add to the model
+            _saveGameViewModel.Containers.Add(newContainer);
+
+            // Add to the ListView
+            var item = new ListViewItem($"({newContainer.Position.X:F1}, {newContainer.Position.Y:F1}, {newContainer.Position.Z:F1})")
+            {
+                Tag = newContainer
+            };
+            item.SubItems.Add(newContainer.IsLocked ? "Locked" : "Unlocked");
+            lvContainers.Items.Add(item);
+
+            // Select the new container
+            lvContainers.Items[lvContainers.Items.Count - 1].Selected = true;
+            lvContainers.EnsureVisible(lvContainers.Items.Count - 1);
+
+            UpdateContainerCountLabel();
+        }
+
+        private void btnRemoveContainer_Click(object sender, EventArgs e)
+        {
+            if (lvContainers.SelectedItems.Count == 0)
+                return;
+
+            if (MessageBox.Show("Are you sure you want to remove the selected container?",
+                               "Confirm Container Removal",
+                               MessageBoxButtons.YesNo,
+                               MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (lvContainers.SelectedItems[0].Tag is Container container)
+                {
+                    // Remove from model
+                    _saveGameViewModel.Containers.Remove(container);
+
+                    // Remove from ListView
+                    lvContainers.Items.Remove(lvContainers.SelectedItems[0]);
+
+                    // Update container counts
+                    UpdateContainerCountLabel();
+                    UpdateContainerItemsLabel();
+                }
+            }
+        }
+
+        private void btnModifyContainer_Click(object sender, EventArgs e)
+        {
+            if (lvContainers.SelectedItems.Count == 0)
+                return;
+
+            if (lvContainers.SelectedItems[0].Tag is Container container)
+            {
+                // Update the position
+                container.Position = new Vector3(
+                    (float)numContainerPosX.Value,
+                    (float)numContainerPosY.Value,
+                    (float)numContainerPosZ.Value
+                );
+
+                // Update the ListView item
+                lvContainers.SelectedItems[0].Text = $"({container.Position.X:F1}, {container.Position.Y:F1}, {container.Position.Z:F1})";
+            }
+        }
+
+        private void btnToggleContainerLock_Click(object sender, EventArgs e)
+        {
+            if (lvContainers.SelectedItems.Count == 0)
+                return;
+
+            if (lvContainers.SelectedItems[0].Tag is Container container)
+            {
+                // Toggle the lock flag
+                if (container.IsLocked)
+                    container.Flags &= unchecked((byte)~0x01); // Clear the lock bit
+                else
+                    container.Flags |= 0x01; // Set the lock bit
+
+                // Update the ListView item
+                lvContainers.SelectedItems[0].SubItems[1].Text = container.IsLocked ? "Locked" : "Unlocked";
+            }
+        }
+
+        private void UpdateContainerCountLabel()
+        {
+            // Constants for container section
+            const int CONT_SECTION_SIZE = 6324;
+            const int CONT_HEADER_SIZE = 8;  // "CONT" + container count (4 bytes + 4 bytes)
+            const int CONTAINER_FIXED_SIZE = 17;  // Position (12 bytes) + content count (4 bytes) + flags (1 byte)
+            const int CONTAINER_ITEM_SIZE = 8;  // ReferenceId (4 bytes) + Quantity (2 bytes) + Charges (2 bytes)
+
+            // Calculate current used space
+            int usedSpace = CONT_HEADER_SIZE;
+
+            foreach (var container in _saveGameViewModel.Containers)
+            {
+                usedSpace += CONTAINER_FIXED_SIZE + (container.Contents.Count * CONTAINER_ITEM_SIZE);
+            }
+
+            // Calculate remaining space
+            int remainingSpace = CONT_SECTION_SIZE - usedSpace;
+
+            // Calculate theoretical maximum additional empty containers
+            int maxAdditionalEmptyContainers = remainingSpace / CONTAINER_FIXED_SIZE;
+
+            // Update the label
+            int currentCount = _saveGameViewModel.Containers.Count;
+            int maxTotalContainers = currentCount + maxAdditionalEmptyContainers;
+            lblContainers.Text = $"Containers ({currentCount}/{maxTotalContainers})";
+        }
+
+        private void UpdateContainerItemsLabel(Container container = null)
+        {
+            if (container == null && lvContainers.SelectedItems.Count > 0)
+            {
+                container = lvContainers.SelectedItems[0].Tag as Container;
+            }
+
+            if (container != null)
+            {
+                int itemCount = container.Contents.Count;
+                lblContainerContent.Text = $"Container Contents ({itemCount}/16)";
+            }
+            else
+            {
+                lblContainerContent.Text = "Container Contents (0/16)";
+            }
+        }
+
+        private void btnAddToContainer_Click(object sender, EventArgs e)
+        {
+            if (lvContainers.SelectedItems.Count == 0 || lvContainerGameItems.SelectedItems.Count == 0)
+                return;
+
+            if (lvContainers.SelectedItems[0].Tag is Container container)
+            {
+                // Check if adding the selected items would exceed the 16-item limit
+                int currentCount = container.Contents.Count;
+                int selectedCount = lvContainerGameItems.SelectedItems.Count;
+
+                if (currentCount + selectedCount > 16)
+                {
+                    MessageBox.Show(
+                        $"Cannot add {selectedCount} items. Containers are limited to 16 items maximum.\n\n" +
+                        $"Current items: {currentCount}\nRemaining slots: {16 - currentCount}",
+                        "Container Capacity Exceeded",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                foreach (ListViewItem selectedItem in lvContainerGameItems.SelectedItems)
+                {
+                    if (selectedItem.Tag is EquipmentItem equipmentItem)
+                    {
+                        // Create a new container item
+                        var containerItem = new ContainerItem
+                        {
+                            ReferenceId = equipmentItem.Index,
+                            Quantity = (short)numContainerItemQuantity.Value,
+                            Charges = (short)numContainerItemCharges.Value
+                        };
+
+                        // Add to the container
+                        container.Contents.Add(containerItem);
+                        container.ContentCount = container.Contents.Count;
+
+                        // Add to the ListView
+                        var item = new ListViewItem(equipmentItem.Name)
+                        {
+                            Tag = containerItem
+                        };
+                        item.SubItems.Add(containerItem.Quantity.ToString());
+                        item.SubItems.Add(containerItem.Charges.ToString());
+                        lvContainerContent.Items.Add(item);
+                    }
+                }
+
+                // Update the label to show the new count
+                UpdateContainerItemsLabel(container);
+                UpdateContainerCountLabel();
+            }
+        }
+
+        private void btnRemoveFromContainer_Click(object sender, EventArgs e)
+        {
+            if (lvContainers.SelectedItems.Count == 0 || lvContainerContent.SelectedItems.Count == 0)
+                return;
+
+            if (lvContainers.SelectedItems[0].Tag is Container container)
+            {
+                // Create a list of items to remove (to avoid collection modification issues)
+                List<ListViewItem> itemsToRemove = new List<ListViewItem>();
+                foreach (ListViewItem selectedItem in lvContainerContent.SelectedItems)
+                {
+                    itemsToRemove.Add(selectedItem);
+                }
+
+                // Remove items from both the ListView and container
+                foreach (ListViewItem item in itemsToRemove)
+                {
+                    if (item.Tag is ContainerItem containerItem)
+                    {
+                        container.Contents.Remove(containerItem);
+                        lvContainerContent.Items.Remove(item);
+                    }
+                }
+
+                // Update the container's content count
+                container.ContentCount = container.Contents.Count;
+
+                // Update the label to show the new count
+                UpdateContainerItemsLabel(container);
+            }
+        }
+
+        private void btnApplyToContainerItems_Click(object sender, EventArgs e)
+        {
+            if (lvContainerContent.SelectedItems.Count == 0)
+                return;
+
+            short quantity = (short)numContainerItemQuantity.Value;
+            short charges = (short)numContainerItemCharges.Value;
+
+            foreach (ListViewItem selectedItem in lvContainerContent.SelectedItems)
+            {
+                if (selectedItem.Tag is ContainerItem containerItem)
+                {
+                    // Update the model
+                    containerItem.Quantity = quantity;
+                    containerItem.Charges = charges;
+
+                    // Update the ListView
+                    selectedItem.SubItems[1].Text = quantity.ToString();
+                    selectedItem.SubItems[2].Text = charges.ToString();
+                }
+            }
+        }
+
 
         private List<ComboBox> GetAllEquipmentComboBoxes()
         {
