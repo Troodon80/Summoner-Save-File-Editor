@@ -49,6 +49,7 @@ A Windows Forms application for viewing and editing save files (.sav) for the cl
    - **Inventory**: Manage items, quantities and charges, item identification, and gold
    - **Creatures**: Edit enemies and NPCs (Use with caution)
    - **Camera**: Adjust camera settings (Disabled until properly verified)
+   - **Containers**: Edit containers; specifically, loot containers dropped by enemies, not other loot found in the world (even if the backpack/leather bag looks the same, they're controlled by some world/area state flags instead)
 3. Make your desired changes
 4. Click "Save" to write your changes to a new save file or overwrite an existing file (always make backups in either case!)
 
