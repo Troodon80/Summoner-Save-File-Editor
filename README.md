@@ -23,6 +23,16 @@ A Windows Forms application for viewing and editing save files (.sav) for the cl
   - Adjust creature HP, AP, and level
   - Modify creature position data
 
+- **Container Editing**
+  - Modify the contents of existing containers which have been dropped by enemies
+
+- **Quest Visibility**
+  - Enable or disable quests' visibilty (note: does not affect quest progress)
+
+- **Level Items**
+  - Enable or disable level items; or just use the list to check and see what you have or have not obtained
+    - These are items in the world, usually quest related
+
 - **General Save Data**
   - Edit save description
   - Modify game time
