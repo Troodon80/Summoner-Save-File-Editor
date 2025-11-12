@@ -55,10 +55,13 @@ A Windows Forms application for viewing and editing save files (.sav) for the cl
 2. Click "Open" to select a Summoner save file (.sav)
 2. Navigate between tabs to edit different aspects of the save:
    - **Start**: Description, time, and thumbnail view
-   - **Character tabs**: Edit stats, equipment, and skills for each character
+   - **Character tabs**: Edit stats, equipment, skills, and location for each character (and Summon)
    - **Inventory**: Manage items, quantities and charges, item identification, and gold
    - **Creatures**: Edit enemies and NPCs (Use with caution)
    - **Camera**: Adjust camera settings (Disabled until properly verified)
+   - **Containers**: Sacks dropped by enemies which contain items (not to be confused with large containers with an activation scripts)
+   - **Quests**: Quest visibility display; whether or not they appear in the journal (note: disabling has no affect on actual quest progress)
+   - **Level Items**: Items in the world, whether or not they've been collected/whether they're visible in the world; you cannot modify the actual items within these containers, as those items are set in TBL files. You could use this as a checklist to see what you're missing.
 3. Make your desired changes
 4. Click "Save" to write your changes to a new save file or overwrite an existing file (always make backups in either case!)
 
