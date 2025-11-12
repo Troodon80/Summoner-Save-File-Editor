@@ -5,7 +5,7 @@ A Windows Forms application for viewing and editing save files (.sav) for the cl
 ## Features
 
 - **Character Editing**
-  - Modify stats for Joseph, Flece, Rosalind, and Jekhar
+  - Modify stats for Joseph, Flece, Rosalind, Jekhar, and current Summon (as applicable)
   - Adjust level, experience, and skill points
   - Change HP and AP values (current and maximum)
   - Customize equipment loadout
