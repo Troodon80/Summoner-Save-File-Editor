@@ -1,6 +1,6 @@
 # Summoner Save File Editor
 
-A Windows Forms application for viewing and editing save files (.sav) for the classic RPG game Summoner. This tool provides a comprehensive interface for modifying character stats, inventory items, equipment, skills, and more.
+This project provides a Windows Forms GUI save-game editor for Summoner (2001 PC), with comprehensive support for editing character stats, skills, equipment, inventory, and additional save-file fields beyond those handled by earlier publicly released editors.
 
 ## Features
 
