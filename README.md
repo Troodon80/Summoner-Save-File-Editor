@@ -27,7 +27,7 @@ This project provides a Windows Forms GUI save-game editor for Summoner (2001 PC
   - Modify the contents of existing containers which have been dropped by enemies
 
 - **Quest Visibility**
-  - Enable or disable quests' visibilty (note: does not affect quest progress)
+  - Enable or disable quests' visibility (note: does not affect quest progress)
 
 - **Level Items**
   - Enable or disable level items; or just use the list to check and see what you have or have not obtained
